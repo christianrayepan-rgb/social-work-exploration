@@ -327,6 +327,50 @@
             line-height: 1.7;
         }
 
+        /* ==================== BOARD PERFORMANCE TABLE STYLES ==================== */
+        .performance-table-wrapper {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            border: 2px solid var(--border-dark);
+            overflow-x: auto;
+            margin-top: 20px;
+        }
+
+        .perf-table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: center;
+            font-size: 0.92rem;
+        }
+
+        .perf-table th {
+            background-color: var(--bg-dark-violet);
+            color: var(--accent-gold);
+            font-family: var(--font-serif);
+            padding: 14px 18px;
+            border: 1px solid var(--border-light);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+        }
+
+        .perf-table td {
+            padding: 12px 16px;
+            border: 1px solid rgba(42, 27, 61, 0.1);
+            color: var(--text-dark);
+        }
+
+        .perf-table tr:nth-child(even) {
+            background-color: var(--cream-bg);
+        }
+
+        .perf-highlight-row {
+            background-color: rgba(212, 175, 55, 0.15) !important;
+            font-weight: 700;
+        }
+
         /* ==================== CAREER PATHWAYS SECTION ==================== */
         .careers-container {
             display: grid;
@@ -396,7 +440,7 @@
             margin-top: 10px;
         }
 
-        /* ==================== HALL OF FAMERS (TOP NOTCHERS) ==================== */
+        /* ==================== HALL OF FAMERS (TOP NOTCHERS - CLICKABLE) ==================== */
         .hof-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -411,11 +455,15 @@
             text-align: center;
             border: 2px solid var(--accent-gold);
             box-shadow: 0 8px 25px rgba(0,0,0,0.06);
-            transition: transform 0.3s ease;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
         }
 
         .hof-card:hover {
             transform: translateY(-6px);
+            box-shadow: 0 12px 30px rgba(42, 27, 61, 0.15);
+            background: var(--cream-bg);
         }
 
         .hof-badge {
@@ -452,6 +500,7 @@
         .hof-exam {
             font-size: 0.8rem;
             color: #666;
+            margin-bottom: 12px;
         }
 
         /* ==================== CORE PATHWAYS GRID ==================== */
@@ -998,6 +1047,7 @@
         <nav id="navbar">
             <ul>
                 <li><a href="#about">About SW</a></li>
+                <li><a href="#performance">Board Performance</a></li>
                 <li><a href="#careers">Career Opportunities</a></li>
                 <li><a href="#hall-of-fame">Hall of Fame</a></li>
                 <li><a href="#assessment">Career Quiz</a></li>
@@ -1023,7 +1073,7 @@
         <p class="hero-desc">An interactive awareness platform for students to discover, explore, understand, and consider the field of Social Work.</p>
         <div class="hero-buttons">
             <a href="#assessment" class="btn-gold"><i class="fa-solid fa-compass"></i> Start Interactive Assessment</a>
-            <a href="#careers" class="btn-primary">Explore Pathways</a>
+            <a href="#performance" class="btn-primary">Board Performance</a>
         </div>
     </section>
 
@@ -1047,6 +1097,86 @@
                 <p>The Bachelor of Science in Social Work readies professionals who are globally competitive and dedicated to promoting social justice, human dignity, and empowerment within communities. Rooted in Catholic Christian principles, the program provides students with the essential knowledge, skills, and ethical grounding needed to tackle intricate social challenges and encourage sustainable growth. Graduates are equipped to spearhead transformative projects that enhance the well-being and comprehensive development of individuals, families, and communities.</p>
             </div>
 
+        </div>
+    </section>
+
+    <!-- ==================== NEW SECTION: BOARD EXAMINATION PERFORMANCE TABLE ==================== -->
+    <section class="section" id="performance" style="background-color: var(--cream-bg);">
+        <div class="section-header">
+            <div class="section-subtitle">Academic Excellence & Licensure Track Record</div>
+            <h2 class="section-title">UNO-R Social Work Program Board Examination Performance</h2>
+        </div>
+
+        <div class="performance-table-wrapper">
+            <table class="perf-table">
+                <thead>
+                    <tr>
+                        <th>Year and Examination Period</th>
+                        <th>Number of Examinees</th>
+                        <th>Number of Passers</th>
+                        <th>Passing Percentage</th>
+                        <th>National Passing Rate</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="perf-highlight-row">
+                        <td><strong>Sep-26</strong></td>
+                        <td>53</td>
+                        <td>50</td>
+                        <td><strong>94.34%</strong></td>
+                        <td>76.27%</td>
+                    </tr>
+                    <tr>
+                        <td>September 2025</td>
+                        <td>46</td>
+                        <td>32</td>
+                        <td>84.78%</td>
+                        <td>76.02%</td>
+                    </tr>
+                    <tr>
+                        <td>September 2024</td>
+                        <td>45</td>
+                        <td>35</td>
+                        <td>77.78%</td>
+                        <td>64.49%</td>
+                    </tr>
+                    <tr>
+                        <td>September 2023</td>
+                        <td>43</td>
+                        <td>27</td>
+                        <td>62.79%</td>
+                        <td>56.76%</td>
+                    </tr>
+                    <tr>
+                        <td>September 2022</td>
+                        <td>23</td>
+                        <td>19</td>
+                        <td>82.61%</td>
+                        <td>62.56%</td>
+                    </tr>
+                    <tr>
+                        <td>August 2021</td>
+                        <td>12</td>
+                        <td>8</td>
+                        <td>66.67%</td>
+                        <td>37.75%</td>
+                    </tr>
+                    <tr>
+                        <td>February 2021</td>
+                        <td>4</td>
+                        <td>2</td>
+                        <td>50.00%</td>
+                        <td>33.60%</td>
+                    </tr>
+                    <tr>
+                        <td>August 2019</td>
+                        <td>44</td>
+                        <td>28</td>
+                        <td>63.64%</td>
+                        <td>46.31%</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </section>
 
@@ -1170,31 +1300,39 @@
         </div>
     </section>
 
-    <!-- ==================== HALL OF FAMERS (TOP NOTCHERS) ==================== -->
+    <!-- ==================== HALL OF FAMERS (TOP NOTCHERS - CLICKABLE) ==================== -->
     <section class="section" id="hall-of-fame">
         <div class="section-header">
-            <div class="section-subtitle">Academic Excellence & Pride</div>
-            <h2 class="section-title">Hall of Famers (SWLE Top Notchers)</h2>
+            <div class="section-subtitle">Academic Excellence & Pride (CLICK TO SEE WHO THEY ARE)</div>
+            <h2 class="section-title">Hall of Famers (PRC SWLE Top Notchers)</h2>
         </div>
 
         <div class="hof-grid">
-            <div class="hof-card">
+            <!-- Top Notcher Card 1 -->
+            <div class="hof-card" onclick="openHofModal('bico')">
                 <div class="hof-badge"><i class="fa-solid fa-trophy"></i></div>
-                <div class="hof-name">BS Social Work Alumnus</div>
-                <div class="hof-rank">RANK 1 - TOP NOTCHER</div>
-                <div class="hof-exam">Social Work Licensure Examination (SWLE)</div>
+                <div class="hof-name">Julian Mae Bico</div>
+                <div class="hof-rank">TOP NOTCHER (PRC SWLE 2026)</div>
+                <div class="hof-exam">University of Negros Occidental - Recoletos</div>
+                <div class="click-hint">Click for Full Bio & Details <i class="fa-solid fa-arrow-right"></i></div>
             </div>
-            <div class="hof-card">
+
+            <!-- Top Notcher Card 2 -->
+            <div class="hof-card" onclick="openHofModal('escander')">
                 <div class="hof-badge"><i class="fa-solid fa-medal"></i></div>
-                <div class="hof-name">BS Social Work Alumna</div>
-                <div class="hof-rank">TOP 5 PLACER</div>
-                <div class="hof-exam">Social Work Licensure Examination (SWLE)</div>
+                <div class="hof-name">Jobeth Adara Escander</div>
+                <div class="hof-rank">TOP NOTCHER (PRC SWLE 2026)</div>
+                <div class="hof-exam">University of Negros Occidental - Recoletos</div>
+                <div class="click-hint">Click for Full Bio & Details <i class="fa-solid fa-arrow-right"></i></div>
             </div>
-            <div class="hof-card">
+
+            <!-- Top Notcher Card 3 -->
+            <div class="hof-card" onclick="openHofModal('lamera')">
                 <div class="hof-badge"><i class="fa-solid fa-award"></i></div>
-                <div class="hof-name">BS Social Work Alumnus</div>
-                <div class="hof-rank">TOP 10 PLACER</div>
-                <div class="hof-exam">Social Work Licensure Examination (SWLE)</div>
+                <div class="hof-name">Kaye Eunice Lamera</div>
+                <div class="hof-rank">TOP 9 NATIONAL PLACER (81.40%)</div>
+                <div class="hof-exam">Social Work Licensure Exam (Aug 2019)</div>
+                <div class="click-hint">Click for Full Bio & Details <i class="fa-solid fa-arrow-right"></i></div>
             </div>
         </div>
     </section>
@@ -1521,7 +1659,55 @@
 
     <!-- ==================== JAVASCRIPT CLICK & MODAL LOGIC ==================== -->
     <script>
-        /* ==================== CAREER SECTOR MODALS (POSSIBLE POSITIONS PER AGENCY) ==================== */
+        /* ==================== HALL OF FAMERS MODAL LOGIC ==================== */
+        const hofModalData = {
+            bico: {
+                icon: '<i class="fa-solid fa-trophy" style="color: var(--accent-gold);"></i>',
+                title: 'Julian Mae Bico',
+                subtitle: 'PRC SWLE Topnotcher | UNO-R Magna Cum Laude',
+                body: `
+                    <p><strong>Julian Mae Bico</strong> earned her Bachelor of Science in Social Work from the University of Negros Occidental - Recoletos (UNO-R), graduating Magna Cum Laude.</p>
+                    <h4 style="color: var(--accent-gold); margin-top: 15px; margin-bottom: 8px;">PRC Board Exam Achievement:</h4>
+                    <p>Earning top national honours in the Social Work Licensure Examination, her achievement exemplifies the academic rigor, commitment to social justice, and professional excellence cultivated at UNO-R.</p>
+                `
+            },
+            escander: {
+                icon: '<i class="fa-solid fa-medal" style="color: var(--accent-gold);"></i>',
+                title: 'Jobeth Adara Escander',
+                subtitle: 'PRC SWLE Topnotcher | UNO-R Graduate',
+                body: `
+                    <p><strong>Jobeth Adara Escander</strong> is a distinguished graduate of the University of Negros Occidental - Recoletos (UNO-R) BS Social Work Program.</p>
+                    <h4 style="color: var(--accent-gold); margin-top: 15px; margin-bottom: 8px;">PRC Board Exam Achievement:</h4>
+                    <p>Securing top placement nationwide in the Social Work Licensure Examination, Jobeth's accomplishment brings national pride to the university and inspires future social work students.</p>
+                `
+            },
+            lamera: {
+                icon: '<i class="fa-solid fa-award" style="color: var(--accent-gold);"></i>',
+                title: 'Kaye Eunice Lamera',
+                subtitle: 'Rank 9 National Placer (81.40%) | August 2019 SWLE',
+                body: `
+                    <p><strong>Kaye Eunice Lamera</strong> represented UNO-R at the national level by ranking **9th nationwide** in the August 2019 Social Work Board Examination with a rating of **81.40%**.</p>
+                    <h4 style="color: var(--accent-gold); margin-top: 15px; margin-bottom: 8px;">PRC Official Board Exam Rating:</h4>
+                    <p>Ranked #9 among thousands of examinees across the Philippines, establishing UNO-R as a center of excellence in Social Work education.</p>
+                `
+            }
+        };
+
+        function openHofModal(key) {
+            const data = hofModalData[key];
+            if (data) {
+                document.getElementById('modalIconContainer').innerHTML = data.icon;
+                document.getElementById('modalTitle').innerText = data.title;
+                document.getElementById('modalSubtitle').innerText = data.subtitle;
+                document.getElementById('modalBody').innerHTML = data.body;
+                document.getElementById('modalFooterBtn').innerHTML = `
+                    <button class="btn-gold" onclick="closeDetailModal()"><i class="fa-solid fa-check"></i> Close Profile</button>
+                `;
+                document.getElementById('detailModal').style.display = 'flex';
+            }
+        }
+
+        /* ==================== CAREER SECTOR MODALS ==================== */
         const careerModalData = {
             gov: {
                 icon: '<i class="fa-solid fa-building-flag"></i>',
