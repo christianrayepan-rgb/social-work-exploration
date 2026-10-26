@@ -235,6 +235,11 @@
             text-transform: uppercase;
             font-size: 0.85rem;
             transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
         }
 
         .btn-gold:hover {
@@ -320,10 +325,10 @@
             line-height: 1.7;
         }
 
-        /* ==================== CAREER PATHWAYS SECTION ==================== */
+        /* ==================== CAREER PATHWAYS SECTION (CLICKABLE CARDS) ==================== */
         .careers-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 25px;
             margin-top: 30px;
         }
@@ -334,16 +339,22 @@
             border-radius: 20px;
             padding: 30px;
             transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
         .career-box:hover {
             border-color: var(--accent-gold);
-            transform: translateY(-5px);
+            transform: translateY(-6px);
             background: rgba(59, 35, 84, 0.95);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.3);
         }
 
         .career-box-icon {
-            font-size: 2rem;
+            font-size: 2.2rem;
             color: var(--accent-gold);
             margin-bottom: 15px;
         }
@@ -366,9 +377,22 @@
             font-size: 0.85rem;
             color: var(--cream-accent);
             line-height: 1.6;
+            margin-bottom: 15px;
         }
 
-        /* ==================== CORE PATHWAYS GRID (CLICKABLE CARDS) ==================== */
+        .click-hint-gold {
+            font-size: 0.75rem;
+            color: var(--accent-gold);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            margin-top: 10px;
+        }
+
+        /* ==================== CORE PATHWAYS GRID ==================== */
         .features-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -432,7 +456,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(26, 16, 38, 0.85);
+            background: rgba(26, 16, 38, 0.88);
             backdrop-filter: blur(8px);
             display: none;
             justify-content: center;
@@ -446,8 +470,10 @@
             color: var(--cream-bg);
             border: 2px solid var(--accent-gold);
             border-radius: 25px;
-            max-width: 650px;
+            max-width: 680px;
             width: 100%;
+            max-height: 85vh;
+            overflow-y: auto;
             padding: 40px;
             position: relative;
             box-shadow: 0 25px 60px rgba(0,0,0,0.5);
@@ -469,7 +495,7 @@
         }
 
         .modal-icon {
-            font-size: 3rem;
+            font-size: 2.8rem;
             color: var(--accent-gold);
             margin-bottom: 15px;
         }
@@ -478,7 +504,7 @@
             font-family: var(--font-serif);
             font-size: 1.8rem;
             color: var(--cream-bg);
-            margin-bottom: 10px;
+            margin-bottom: 8px;
         }
 
         .modal-subtitle {
@@ -497,13 +523,24 @@
             margin-bottom: 25px;
         }
 
+        .modal-body p {
+            margin-bottom: 12px;
+        }
+
         .modal-body ul {
-            margin-top: 15px;
+            margin-top: 10px;
+            margin-bottom: 15px;
             padding-left: 20px;
         }
 
         .modal-body li {
             margin-bottom: 8px;
+        }
+
+        .modal-footer-btn {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
         }
 
         /* ==================== INTERACTIVE QUIZ ==================== */
@@ -605,7 +642,7 @@
         .filter-tabs {
             display: flex;
             justify-content: center;
-            gap: 15px;
+            gap: 12px;
             margin-bottom: 40px;
             flex-wrap: wrap;
         }
@@ -613,10 +650,10 @@
         .tab-btn {
             background: rgba(42, 27, 61, 0.08);
             border: 1px solid var(--border-dark);
-            padding: 8px 24px;
+            padding: 8px 20px;
             border-radius: 25px;
             font-weight: 500;
-            font-size: 0.85rem;
+            font-size: 0.82rem;
             cursor: pointer;
             transition: all 0.3s ease;
         }
@@ -628,8 +665,8 @@
 
         .cards-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+            gap: 25px;
         }
 
         .card-item {
@@ -641,14 +678,17 @@
             transition: transform 0.3s ease;
             display: flex;
             flex-direction: column;
+            cursor: pointer;
         }
 
         .card-item:hover {
             transform: translateY(-5px);
+            border-color: var(--accent-gold);
+            box-shadow: 0 12px 30px rgba(42, 27, 61, 0.15);
         }
 
         .card-image {
-            height: 220px;
+            height: 200px;
             position: relative;
             background-color: var(--bg-dark-violet);
             overflow: hidden;
@@ -679,7 +719,7 @@
         }
 
         .card-content {
-            padding: 25px;
+            padding: 22px;
             display: flex;
             flex-direction: column;
             flex-grow: 1;
@@ -694,42 +734,27 @@
 
         .card-title {
             font-family: var(--font-serif);
-            font-size: 1.15rem;
+            font-size: 1.1rem;
             color: var(--bg-dark-violet);
-            margin-bottom: 12px;
+            margin-bottom: 10px;
         }
 
         .card-desc {
-            font-size: 0.85rem;
+            font-size: 0.83rem;
             color: #555;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             flex-grow: 1;
         }
 
-        .card-speakers {
-            font-size: 0.78rem;
+        .card-link-badge {
+            font-size: 0.75rem;
             color: var(--bg-dark-violet);
-            font-weight: 600;
-            margin-bottom: 15px;
-            background: rgba(212, 175, 55, 0.15);
-            padding: 6px 12px;
-            border-radius: 8px;
-        }
-
-        .card-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            color: var(--bg-dark-violet);
-            font-weight: 600;
-            font-size: 0.8rem;
+            font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 1px;
-            transition: color 0.3s ease;
-        }
-
-        .card-link:hover {
-            color: var(--accent-gold);
+            display: flex;
+            align-items: center;
+            gap: 6px;
         }
 
         /* ==================== ANNOUNCEMENTS SECTION ==================== */
@@ -752,7 +777,7 @@
             color: var(--cream-bg);
         }
 
-        /* ==================== QR CODE & CONTACT SECTION ==================== */
+        /* ==================== CLICKABLE CONTACT & LOCATION SECTION ==================== */
         .contact-container {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -797,22 +822,33 @@
         .contact-details {
             display: flex;
             flex-direction: column;
-            gap: 15px;
+            gap: 16px;
             margin-bottom: 30px;
         }
 
-        .contact-item {
+        .contact-item-link {
             display: flex;
             align-items: center;
             gap: 15px;
             font-size: 0.95rem;
             color: var(--cream-accent);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            padding: 6px 10px;
+            border-radius: 10px;
         }
 
-        .contact-item i {
+        .contact-item-link:hover {
+            background: rgba(212, 175, 55, 0.12);
             color: var(--accent-gold);
-            font-size: 1.2rem;
+            transform: translateX(5px);
+        }
+
+        .contact-item-link i {
+            color: var(--accent-gold);
+            font-size: 1.25rem;
             width: 25px;
+            text-align: center;
         }
 
         /* ==================== FOOTER ==================== */
@@ -946,129 +982,171 @@
         </div>
     </section>
 
-    <!-- ==================== BSSW CAREER OPPORTUNITIES ==================== -->
+    <!-- ==================== BSSW CAREER OPPORTUNITIES (CLICKABLE CARDS) ==================== -->
     <section class="section section-dark" id="careers">
         <div class="section-header">
-            <div class="section-subtitle">Career Opportunities in the Philippines & Beyond</div>
+            <div class="section-subtitle">Career Opportunities in the Philippines & Beyond (CLICK TO EXPLORE)</div>
             <h2 class="section-title">Where Can a BSSW Degree Take You?</h2>
         </div>
 
         <div class="careers-container">
-            <div class="career-box">
-                <i class="fa-solid fa-building-flag career-box-icon"></i>
-                <h3 class="career-box-title">Government Social Welfare</h3>
-                <div class="career-box-positions">DSWD, LGUs, Municipal & City Offices</div>
-                <p class="career-box-desc"><strong>Key Roles:</strong> Social Welfare Officer, Municipal Social Welfare Officer, Case Manager, Disaster Emergency Worker, Program Coordinator.</p>
+            <!-- 1. Government Social Welfare -->
+            <div class="career-box" onclick="openCareerModal('gov')">
+                <div>
+                    <i class="fa-solid fa-building-flag career-box-icon"></i>
+                    <h3 class="career-box-title">Government Social Welfare</h3>
+                    <div class="career-box-positions">DSWD, LGUs, Municipal & City Offices</div>
+                    <p class="career-box-desc"><strong>Key Roles:</strong> Social Welfare Officer, Municipal Social Welfare Officer, Case Manager, Disaster Emergency Worker, Program Coordinator.</p>
+                </div>
+                <div class="click-hint-gold">Click to Read Full Explanation <i class="fa-solid fa-arrow-right"></i></div>
             </div>
-            <div class="career-box">
-                <i class="fa-solid fa-hand-holding-heart career-box-icon"></i>
-                <h3 class="career-box-title">NGOs & Civil Society</h3>
-                <h4 class="career-box-positions">Non-Profits, Foundations & Advocacy Groups</h4>
-                <p class="career-box-desc"><strong>Key Roles:</strong> Project Officer, Community Development Worker, Child Protection Officer, MEAL Specialist.</p>
+
+            <!-- 2. NGOs & Civil Society -->
+            <div class="career-box" onclick="openCareerModal('ngo')">
+                <div>
+                    <i class="fa-solid fa-hand-holding-heart career-box-icon"></i>
+                    <h3 class="career-box-title">NGOs & Civil Society</h3>
+                    <h4 class="career-box-positions">Non-Profits, Foundations & Advocacy Groups</h4>
+                    <p class="career-box-desc"><strong>Key Roles:</strong> Project Officer, Community Development Worker, Child Protection Officer, MEAL Specialist.</p>
+                </div>
+                <div class="click-hint-gold">Click to Read Full Explanation <i class="fa-solid fa-arrow-right"></i></div>
             </div>
-            <div class="career-box">
-                <i class="fa-solid fa-hospital-user career-box-icon"></i>
-                <h3 class="career-box-title">Medical & Healthcare</h3>
-                <h4 class="career-box-positions">Public/Private Hospitals & Rehab Centers</h4>
-                <p class="career-box-desc"><strong>Key Roles:</strong> Medical Social Worker, Patient Support Worker, Hospital Case Manager, Patient Assistance Officer.</p>
+
+            <!-- 3. Medical & Healthcare -->
+            <div class="career-box" onclick="openCareerModal('med')">
+                <div>
+                    <i class="fa-solid fa-hospital-user career-box-icon"></i>
+                    <h3 class="career-box-title">Medical & Healthcare</h3>
+                    <h4 class="career-box-positions">Public/Private Hospitals & Rehab Centers</h4>
+                    <p class="career-box-desc"><strong>Key Roles:</strong> Medical Social Worker, Patient Support Worker, Hospital Case Manager, Patient Assistance Officer.</p>
+                </div>
+                <div class="click-hint-gold">Click to Read Full Explanation <i class="fa-solid fa-arrow-right"></i></div>
             </div>
-            <div class="career-box">
-                <i class="fa-solid fa-people-roof career-box-icon"></i>
-                <h3 class="career-box-title">Child Welfare & Residential Care</h3>
-                <h4 class="career-box-positions">Residential Facilities & Adoption Agencies</h4>
-                <p class="career-box-desc"><strong>Key Roles:</strong> Child & Family Social Worker, Residential Worker, Adoption/Foster Care Worker, Reintegration Support.</p>
+
+            <!-- 4. Child Welfare & Residential Care -->
+            <div class="career-box" onclick="openCareerModal('child')">
+                <div>
+                    <i class="fa-solid fa-people-roof career-box-icon"></i>
+                    <h3 class="career-box-title">Child Welfare & Residential Care</h3>
+                    <h4 class="career-box-positions">Residential Facilities & Adoption Agencies</h4>
+                    <p class="career-box-desc"><strong>Key Roles:</strong> Child & Family Social Worker, Residential Worker, Adoption/Foster Care Worker, Reintegration Support.</p>
+                </div>
+                <div class="click-hint-gold">Click to Read Full Explanation <i class="fa-solid fa-arrow-right"></i></div>
             </div>
-            <div class="career-box">
-                <i class="fa-solid fa-school-flag career-box-icon"></i>
-                <h3 class="career-box-title">Schools & Youth Services</h3>
-                <h4 class="career-box-positions">Educational Institutions & Student Affairs</h4>
-                <p class="career-box-desc"><strong>Key Roles:</strong> Student Services Officer, Youth Development Officer, School Social Worker, Student Support Case Worker.</p>
+
+            <!-- 5. Schools & Youth Services -->
+            <div class="career-box" onclick="openCareerModal('school')">
+                <div>
+                    <i class="fa-solid fa-school-flag career-box-icon"></i>
+                    <h3 class="career-box-title">Schools & Youth Services</h3>
+                    <h4 class="career-box-positions">Educational Institutions & Student Affairs</h4>
+                    <p class="career-box-desc"><strong>Key Roles:</strong> Student Services Officer, Youth Development Officer, School Social Worker, Student Support Case Worker.</p>
+                </div>
+                <div class="click-hint-gold">Click to Read Full Explanation <i class="fa-solid fa-arrow-right"></i></div>
             </div>
-            <div class="career-box">
-                <i class="fa-solid fa-house-medical-flag career-box-icon"></i>
-                <h3 class="career-box-title">DRRM & Humanitarian Response</h3>
-                <h4 class="career-box-positions">Disaster Agencies & Humanitarian NGOs</h4>
-                <p class="career-box-desc"><strong>Key Roles:</strong> Disaster Response Worker, Humanitarian Case Worker, Emergency Assistance Officer, Psychosocial Support Worker.</p>
+
+            <!-- 6. DRRM & Humanitarian Response -->
+            <div class="career-box" onclick="openCareerModal('drrm')">
+                <div>
+                    <i class="fa-solid fa-house-medical-flag career-box-icon"></i>
+                    <h3 class="career-box-title">DRRM & Humanitarian Response</h3>
+                    <h4 class="career-box-positions">Disaster Agencies & Humanitarian NGOs</h4>
+                    <p class="career-box-desc"><strong>Key Roles:</strong> Disaster Response Worker, Humanitarian Case Worker, Emergency Assistance Officer, Psychosocial Support Worker.</p>
+                </div>
+                <div class="click-hint-gold">Click to Read Full Explanation <i class="fa-solid fa-arrow-right"></i></div>
             </div>
-            <div class="career-box">
-                <i class="fa-solid fa-users-gear career-box-icon"></i>
-                <h3 class="career-box-title">Community Dev. & Advocacy</h3>
-                <h4 class="career-box-positions">Barangays, IP Communities & Rural Programs</h4>
-                <p class="career-box-desc"><strong>Key Roles:</strong> Community Organizer, Social Mobilization Officer, Human Rights Officer, Livelihood Project Officer.</p>
+
+            <!-- 7. Community Development & Advocacy -->
+            <div class="career-box" onclick="openCareerModal('comm')">
+                <div>
+                    <i class="fa-solid fa-users-gear career-box-icon"></i>
+                    <h3 class="career-box-title">Community Dev. & Advocacy</h3>
+                    <h4 class="career-box-positions">Barangays, IP Communities & Rural Programs</h4>
+                    <p class="career-box-desc"><strong>Key Roles:</strong> Community Organizer, Social Mobilization Officer, Human Rights Officer, Livelihood Project Officer.</p>
+                </div>
+                <div class="click-hint-gold">Click to Read Full Explanation <i class="fa-solid fa-arrow-right"></i></div>
             </div>
-            <div class="career-box">
-                <i class="fa-solid fa-wheelchair career-box-icon"></i>
-                <h3 class="career-box-title">Specialized Populations</h3>
-                <h4 class="career-box-positions">Senior Centers, PWD Programs, Rehab Services</h4>
-                <p class="career-box-desc"><strong>Key Roles:</strong> Disability Inclusion Officer, Older Persons Welfare Worker, Gender-Based Violence Worker, Reintegration Specialist.</p>
+
+            <!-- 8. Specialized Populations -->
+            <div class="career-box" onclick="openCareerModal('spec')">
+                <div>
+                    <i class="fa-solid fa-wheelchair career-box-icon"></i>
+                    <h3 class="career-box-title">Specialized Populations</h3>
+                    <h4 class="career-box-positions">Senior Centers, PWD Programs, Rehab Services</h4>
+                    <p class="career-box-desc"><strong>Key Roles:</strong> Disability Inclusion Officer, Older Persons Welfare Worker, Gender-Based Violence Worker, Reintegration Specialist.</p>
+                </div>
+                <div class="click-hint-gold">Click to Read Full Explanation <i class="fa-solid fa-arrow-right"></i></div>
             </div>
-            <div class="career-box">
-                <i class="fa-solid fa-chart-line career-box-icon"></i>
-                <h3 class="career-box-title">Research & Policy Analysis</h3>
-                <h4 class="career-box-positions">Research Institutes & Policy Groups</h4>
-                <p class="career-box-desc"><strong>Key Roles:</strong> Social Research Assistant, Policy Research Officer, Program Evaluator, Social Development Researcher.</p>
+
+            <!-- 9. Research & Social Policy -->
+            <div class="career-box" onclick="openCareerModal('policy')">
+                <div>
+                    <i class="fa-solid fa-chart-line career-box-icon"></i>
+                    <h3 class="career-box-title">Research & Policy Analysis</h3>
+                    <h4 class="career-box-positions">Research Institutes & Policy Groups</h4>
+                    <p class="career-box-desc"><strong>Key Roles:</strong> Social Research Assistant, Policy Research Officer, Program Evaluator, Social Development Researcher.</p>
+                </div>
+                <div class="click-hint-gold">Click to Read Full Explanation <i class="fa-solid fa-arrow-right"></i></div>
             </div>
-            <div class="career-box">
-                <i class="fa-solid fa-globe career-box-icon"></i>
-                <h3 class="career-box-title">International Dev. & Academia</h3>
-                <h4 class="career-box-positions">Global INGOs, Academic Institutions & Consultancy</h4>
-                <p class="career-box-desc"><strong>Key Roles:</strong> Protection Project Officer, Fieldwork Coordinator, Social Work Educator, International Humanitarian Staff.</p>
+
+            <!-- 10. International Development & Education -->
+            <div class="career-box" onclick="openCareerModal('intl')">
+                <div>
+                    <i class="fa-solid fa-globe career-box-icon"></i>
+                    <h3 class="career-box-title">International Dev. & Academia</h3>
+                    <h4 class="career-box-positions">Global INGOs, Academic Institutions & Consultancy</h4>
+                    <p class="career-box-desc"><strong>Key Roles:</strong> Protection Project Officer, Fieldwork Coordinator, Social Work Educator, International Humanitarian Staff.</p>
+                </div>
+                <div class="click-hint-gold">Click to Read Full Explanation <i class="fa-solid fa-arrow-right"></i></div>
             </div>
         </div>
     </section>
 
-    <!-- ==================== CORE PATHWAYS (CLICKABLE TO POPUP PAGE) ==================== -->
+    <!-- ==================== CORE PATHWAYS ==================== -->
     <section class="section">
         <div class="section-header">
             <div class="section-subtitle">FIELDS OF PRACTICE (CLICK ANY TO EXPLORE)</div>
             <h2 class="section-title">WHAT MAKES OUR SPECIALTY UNIQUE?</h2>
         </div>
         <div class="features-grid">
-            
-            <!-- 1. CHILD & FAMILY WELFARE -->
             <div class="feature-card" onclick="openDetailModal('child')">
                 <i class="fa-solid fa-child feature-icon"></i>
                 <div class="feature-title">CHILD & FAMILY WELFARE</div>
                 <div class="feature-desc">Protecting child rights, foster care, and strengthening family bonds.</div>
                 <div class="click-hint">Click for Full Details <i class="fa-solid fa-arrow-right"></i></div>
             </div>
-
-            <!-- 2. MEDICAL & HEALTH -->
             <div class="feature-card" onclick="openDetailModal('medical')">
                 <i class="fa-solid fa-hospital feature-icon"></i>
                 <div class="feature-title">MEDICAL & HEALTH</div>
                 <div class="feature-desc">Providing psychosocial assessment and assistance in healthcare settings.</div>
                 <div class="click-hint">Click for Full Details <i class="fa-solid fa-arrow-right"></i></div>
             </div>
-
-            <!-- 3. SPECIALIZED INCLUSION -->
             <div class="feature-card" onclick="openDetailModal('inclusion')">
                 <i class="fa-solid fa-hand-holding-hand feature-icon"></i>
                 <div class="feature-title">SPECIALIZED INCLUSION</div>
                 <div class="feature-desc">Supporting PWDs, senior citizens, and specialized rehabilitation.</div>
                 <div class="click-hint">Click for Full Details <i class="fa-solid fa-arrow-right"></i></div>
             </div>
-
-            <!-- 4. COMMUNITY DEV. -->
             <div class="feature-card" onclick="openDetailModal('community')">
                 <i class="fa-solid fa-users feature-icon"></i>
                 <div class="feature-title">COMMUNITY DEV.</div>
                 <div class="feature-desc">Empowering grassroot communities toward sustainable growth.</div>
                 <div class="click-hint">Click for Full Details <i class="fa-solid fa-arrow-right"></i></div>
             </div>
-
         </div>
     </section>
 
-    <!-- ==================== EXPANDED DETAIL MODAL / SUB-PAGE ==================== -->
+    <!-- ==================== UNIVERSAL DETAIL MODAL / SUB-PAGE ==================== -->
     <div class="modal-overlay" id="detailModal">
         <div class="modal-card">
             <span class="modal-close" onclick="closeDetailModal()">&times;</span>
             <div id="modalIconContainer" class="modal-icon"></div>
-            <h3 class="modal-title" id="modalTitle">Specialty Title</h3>
-            <div class="modal-subtitle" id="modalSubtitle">Field Breakdown</div>
-            <div class="modal-body" id="modalBody">Full breakdown text goes here...</div>
-            <button class="btn-gold" onclick="closeDetailModal()"><i class="fa-solid fa-check"></i> Close Overview</button>
+            <h3 class="modal-title" id="modalTitle">Overview</h3>
+            <div class="modal-subtitle" id="modalSubtitle">Details & Links</div>
+            <div class="modal-body" id="modalBody">Loading information...</div>
+            <div class="modal-footer-btn" id="modalFooterBtn">
+                <button class="btn-gold" onclick="closeDetailModal()"><i class="fa-solid fa-check"></i> Close Overview</button>
+            </div>
         </div>
     </div>
 
@@ -1104,84 +1182,146 @@
     <!-- ==================== ACTIVITIES & EVENTS SECTION ==================== -->
     <section class="section" id="activities">
         <div class="section-header">
-            <div class="section-subtitle">Student Life & Engagement</div>
+            <div class="section-subtitle">Student Life & Engagement (CLICK ANY CARD FOR DETAILS)</div>
             <h2 class="section-title">Activities, Events & Recognition</h2>
         </div>
 
+        <!-- Filter Tabs -->
         <div class="filter-tabs">
             <button class="tab-btn active" onclick="filterCategory('all')">All Highlights</button>
-            <button class="tab-btn" onclick="filterCategory('seminars')">Seminars & Research</button>
             <button class="tab-btn" onclick="filterCategory('events')">Events & Assemblies</button>
-            <button class="tab-btn" onclick="filterCategory('achievements')">Achievements & Recognition</button>
+            <button class="tab-btn" onclick="filterCategory('seminars')">Seminars & Workshops</button>
+            <button class="tab-btn" onclick="filterCategory('achievements')">Achievements & Ceremonies</button>
         </div>
 
         <div class="cards-grid" id="contentCardsGrid">
-            <div class="card-item" data-category="seminars">
+
+            <!-- Welcome Smash 2026 -->
+            <div class="card-item" data-category="events" onclick="openEventModal('smash26', 'https://www.facebook.com/share/p/19iRw1h6bA/?mibextid=wwXIfr')">
                 <div class="card-image">
-                    <img src="image1.jpg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600&q=80';" alt="Mind Care Seminar">
-                    <span class="card-category">Seminar</span>
+                    <img src="image3.jpg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=600&q=80';" alt="Welcome Smash 2026">
+                    <span class="card-category">Event</span>
                 </div>
                 <div class="card-content">
-                    <div class="card-date">April 29, 2023</div>
-                    <h3 class="card-title">Mind Care: Psychosocial Well-Being</h3>
-                    <p class="card-desc"><strong>PAGHIMAKAS:</strong> Life through the lens of college student assistants living in economically disadvantaged areas. Seminar on Mind Care & Psychosocial Well-Being.</p>
-                    <div class="card-speakers"><i class="fa-solid fa-user-graduate"></i> Speakers: John Carlo C. Junto, James F. Opuan, Chrismel Ray G. Tabujara</div>
-                    <a href="https://www.facebook.com/profile.php?id=61577358956111" target="_blank" class="card-link">View Details <i class="fa-solid fa-arrow-right"></i></a>
+                    <div class="card-date">2026 HIGHLIGHT</div>
+                    <h3 class="card-title">Welcome Smash 2026</h3>
+                    <p class="card-desc">Annual university welcome event uniting new and returning social work students.</p>
+                    <div class="card-link-badge">Click to Open Details <i class="fa-solid fa-arrow-right"></i></div>
                 </div>
             </div>
 
-            <div class="card-item" data-category="seminars">
+            <!-- JSWAP Freshmen Assembly & Orientation 2024 -->
+            <div class="card-item" data-category="events" onclick="openEventModal('jswap24', 'https://www.facebook.com/share/1HSDNniQtw/?mibextid=wwXIfr')">
                 <div class="card-image">
-                    <img src="image2.jpg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1531545514256-b1400bc00f31?auto=format&fit=crop&w=600&q=80';" alt="Empowering Teenage Mothers">
-                    <span class="card-category">Seminar</span>
-                </div>
-                <div class="card-content">
-                    <div class="card-date">March 30, 2023</div>
-                    <h3 class="card-title">Empowering Teenage Mothers</h3>
-                    <p class="card-desc">Family Planning Awareness Talk focusing on the level of awareness among teenage mothers in a third class municipality in Negros Occidental.</p>
-                    <div class="card-speakers"><i class="fa-solid fa-user-graduate"></i> Speakers: Jamaica G. Aban, Geraldine B. Catigan, Mary Joy G. Gregorio</div>
-                    <a href="https://www.facebook.com/profile.php?id=61577358956111" target="_blank" class="card-link">View Details <i class="fa-solid fa-arrow-right"></i></a>
-                </div>
-            </div>
-
-            <div class="card-item" data-category="events" id="events">
-                <div class="card-image">
-                    <img src="image3.jpg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=600&q=80';" alt="Social Work Student Assembly">
+                    <img src="image1.jpg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=600&q=80';" alt="JSWAP Freshmen Orientation">
                     <span class="card-category">Assembly</span>
                 </div>
                 <div class="card-content">
-                    <div class="card-date">Academic Year Highlight</div>
-                    <h3 class="card-title">JSWAP Student Body Assembly</h3>
-                    <p class="card-desc">General gathering and orientation of Social Work students, faculty, and student chapter representatives celebrating unity and academic milestones.</p>
-                    <a href="https://www.facebook.com/profile.php?id=61577358956111" target="_blank" class="card-link">View Facebook Post <i class="fa-solid fa-arrow-right"></i></a>
+                    <div class="card-date">2024 HIGHLIGHT</div>
+                    <h3 class="card-title">JSWAP Freshmen Assembly 2024</h3>
+                    <p class="card-desc">Orientation and formal welcome of new Social Work students into the organization.</p>
+                    <div class="card-link-badge">Click to Open Details <i class="fa-solid fa-arrow-right"></i></div>
                 </div>
             </div>
 
-            <div class="card-item" data-category="events">
+            <!-- Community Outreach Ipil Ipil 2025 -->
+            <div class="card-item" data-category="events" onclick="openEventModal('ipil25', 'https://www.facebook.com/share/p/1DQDiHwHFG/?mibextid=wwXIfr')">
                 <div class="card-image">
-                    <img src="image4.jpg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=600&q=80';" alt="Social Work Night - The Final Sunrise">
+                    <img src="image2.jpg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1531545514256-b1400bc00f31?auto=format&fit=crop&w=600&q=80';" alt="Community Outreach Ipil Ipil">
+                    <span class="card-category">Outreach</span>
+                </div>
+                <div class="card-content">
+                    <div class="card-date">2025 HIGHLIGHT</div>
+                    <h3 class="card-title">Community Outreach Ipil-Ipil 2025</h3>
+                    <p class="card-desc">Field outreach and community engagement initiative supporting local families.</p>
+                    <div class="card-link-badge">Click to Open Details <i class="fa-solid fa-arrow-right"></i></div>
+                </div>
+            </div>
+
+            <!-- Dalangpan Awarding 2026 -->
+            <div class="card-item" data-category="achievements" onclick="openEventModal('dalangpan26', 'https://www.facebook.com/share/p/1CRvtQiqYr/?mibextid=wwXIfr')">
+                <div class="card-image">
+                    <img src="image5.jpg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1567427017947-545c5f8d16ad?auto=format&fit=crop&w=600&q=80';" alt="Dalangpan Awarding 2026">
+                    <span class="card-category">Awarding</span>
+                </div>
+                <div class="card-content">
+                    <div class="card-date">2026 HIGHLIGHT</div>
+                    <h3 class="card-title">Dalangpan Awarding Ceremony 2026</h3>
+                    <p class="card-desc">Honoring outstanding social work student leaders, projects, and academic achievements.</p>
+                    <div class="card-link-badge">Click to Open Details <i class="fa-solid fa-arrow-right"></i></div>
+                </div>
+            </div>
+
+            <!-- Commissioning Ceremony 2026 -->
+            <div class="card-item" data-category="achievements" onclick="openEventModal('comm26', 'https://www.facebook.com/share/p/1K8SpxtEba/?mibextid=wwXIfr')">
+                <div class="card-image">
+                    <img src="image4.jpg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=600&q=80';" alt="Commissioning Ceremony 2026">
+                    <span class="card-category">Ceremony</span>
+                </div>
+                <div class="card-content">
+                    <div class="card-date">2026 HIGHLIGHT</div>
+                    <h3 class="card-title">Commissioning Ceremony 2026</h3>
+                    <p class="card-desc">Formal send-off and commissioning of graduating social work students into fieldwork.</p>
+                    <div class="card-link-badge">Click to Open Details <i class="fa-solid fa-arrow-right"></i></div>
+                </div>
+            </div>
+
+            <!-- Social Work Night 2026 -->
+            <div class="card-item" data-category="events" onclick="openEventModal('swnight26', 'https://www.facebook.com/share/p/19V3acMAYv/?mibextid=wwXIfr')">
+                <div class="card-image">
+                    <img src="image4.jpg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=600&q=80';" alt="Social Work Night 2026">
                     <span class="card-category">Gala Night</span>
                 </div>
                 <div class="card-content">
-                    <div class="card-date">Social Work Night</div>
-                    <h3 class="card-title">The Final Sunrise: Social Work Night</h3>
-                    <p class="card-desc">A formal celebratory banquet and recognition night for graduating social work students, faculty members, and student advocates.</p>
-                    <a href="https://www.facebook.com/profile.php?id=61577358956111" target="_blank" class="card-link">View Facebook Post <i class="fa-solid fa-arrow-right"></i></a>
+                    <div class="card-date">2026 HIGHLIGHT</div>
+                    <h3 class="card-title">Social Work Night 2026</h3>
+                    <p class="card-desc">Grand celebratory gala honoring department achievements and student fellowship.</p>
+                    <div class="card-link-badge">Click to Open Details <i class="fa-solid fa-arrow-right"></i></div>
                 </div>
             </div>
 
-            <div class="card-item" data-category="achievements">
+            <!-- JSWAP National Conference 2025 -->
+            <div class="card-item" data-category="seminars" onclick="openEventModal('jswapconf25', 'https://www.facebook.com/share/p/1LzaXmUqgu/?mibextid=wwXIfr')">
                 <div class="card-image">
-                    <img src="image5.jpg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1567427017947-545c5f8d16ad?auto=format&fit=crop&w=600&q=80';" alt="Certificate Awarding Ceremony">
-                    <span class="card-category">Recognition</span>
+                    <img src="image1.jpg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600&q=80';" alt="JSWAP National Conference">
+                    <span class="card-category">Conference</span>
                 </div>
                 <div class="card-content">
-                    <div class="card-date">Honor Ceremony</div>
-                    <h3 class="card-title">Certificate of Appreciation Awarding</h3>
-                    <p class="card-desc">Formal presentation of certificates of appreciation honoring student leaders, organizers, and guest speakers for their contributions to social work advocacy.</p>
-                    <a href="https://www.facebook.com/profile.php?id=61577358956111" target="_blank" class="card-link">View Facebook Post <i class="fa-solid fa-arrow-right"></i></a>
+                    <div class="card-date">2025 HIGHLIGHT</div>
+                    <h3 class="card-title">JSWAP National Conference 2025</h3>
+                    <p class="card-desc">Delegation of student social workers representing UNO-R at the national conference.</p>
+                    <div class="card-link-badge">Click to Open Details <i class="fa-solid fa-arrow-right"></i></div>
                 </div>
             </div>
+
+            <!-- World Mental Health Awareness 2025 -->
+            <div class="card-item" data-category="seminars" onclick="openEventModal('mhealth25', 'https://www.facebook.com/share/v/1A4aJ87NM8/?mibextid=wwXIfr')">
+                <div class="card-image">
+                    <img src="image2.jpg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1531545514256-b1400bc00f31?auto=format&fit=crop&w=600&q=80';" alt="World Mental Health Awareness">
+                    <span class="card-category">Seminar</span>
+                </div>
+                <div class="card-content">
+                    <div class="card-date">2025 HIGHLIGHT</div>
+                    <h3 class="card-title">World Mental Health Awareness (Inside & Out)</h3>
+                    <p class="card-desc">Symposium on psychosocial wellness and self-care strategies for student advocates.</p>
+                    <div class="card-link-badge">Click to Open Details <i class="fa-solid fa-arrow-right"></i></div>
+                </div>
+            </div>
+
+            <!-- Grade 12 Immersion 2026 -->
+            <div class="card-item" data-category="seminars" onclick="openEventModal('immersion26', 'https://www.facebook.com/share/p/1ErSX8JnWA/?mibextid=wwXIfr')">
+                <div class="card-image">
+                    <img src="image3.jpg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=600&q=80';" alt="Grade 12 Immersion">
+                    <span class="card-category">Immersion</span>
+                </div>
+                <div class="card-content">
+                    <div class="card-date">2026 HIGHLIGHT</div>
+                    <h3 class="card-title">Grade 12 SHS Career Immersion 2026</h3>
+                    <p class="card-desc">Interactive campus orientation introducing Senior High students to the BSSW program.</p>
+                    <div class="card-link-badge">Click to Open Details <i class="fa-solid fa-arrow-right"></i></div>
+                </div>
+            </div>
+
         </div>
     </section>
 
@@ -1215,7 +1355,7 @@
         </div>
     </section>
 
-    <!-- ==================== CONTACT & LIVE GITHUB PAGES QR CODE SECTION ==================== -->
+    <!-- ==================== CLICKABLE CONTACT & LOCATION SECTION ==================== -->
     <section class="section section-dark" id="contact" style="background-color: #211432;">
         <div class="contact-container">
             <div class="contact-info">
@@ -1224,24 +1364,32 @@
                 <p style="color: var(--cream-accent); margin-bottom: 25px; font-size: 0.95rem;">Have questions about the program, curriculum, or career pathways? Connect with our admissions counselors and student leaders.</p>
 
                 <div class="contact-details">
-                    <div class="contact-item">
+                    <!-- 1. Clickable Map Location -->
+                    <a href="https://maps.google.com/?q=University+of+Negros+Occidental+-+Recoletos+Bacolod" target="_blank" class="contact-item-link" title="Open Google Maps Location">
                         <i class="fa-solid fa-location-dot"></i>
                         <span>University of Negros Occidental - Recoletos, College of Arts and Sciences</span>
-                    </div>
-                    <div class="contact-item">
+                    </a>
+
+                    <!-- 2. Clickable Email -->
+                    <a href="mailto:socialwork.admissions@uno-r.edu.ph" class="contact-item-link" title="Send Email">
                         <i class="fa-solid fa-envelope"></i>
                         <span>socialwork.admissions@uno-r.edu.ph</span>
-                    </div>
-                    <div class="contact-item">
+                    </a>
+
+                    <!-- 3. Clickable Phone -->
+                    <a href="tel:+630344332449" class="contact-item-link" title="Call Office Phone">
                         <i class="fa-solid fa-phone"></i>
                         <span>+63 (034) 433-2449</span>
-                    </div>
-                    <div class="contact-item">
+                    </a>
+
+                    <!-- 4. Clickable Facebook Link -->
+                    <a href="https://www.facebook.com/profile.php?id=61577358956111" target="_blank" class="contact-item-link" title="Visit Facebook Profile">
                         <i class="fa-brands fa-facebook" style="color: var(--accent-gold);"></i>
-                        <a href="https://www.facebook.com/profile.php?id=61577358956111" target="_blank" style="color: var(--accent-gold); text-decoration: underline;">Official Facebook Profile</a>
-                    </div>
+                        <span style="color: var(--accent-gold); text-decoration: underline;">Official Facebook Profile</span>
+                    </a>
                 </div>
 
+                <!-- 5. Big Action Button to Facebook Page -->
                 <a href="https://www.facebook.com/profile.php?id=61577358956111" target="_blank" class="btn-gold"><i class="fa-brands fa-facebook"></i> Visit Official Facebook Page</a>
             </div>
 
@@ -1265,8 +1413,8 @@
         
         <div class="social-links">
             <a href="https://www.facebook.com/profile.php?id=61577358956111" class="social-icon" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
-            <a href="#" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
-            <a href="#" class="social-icon"><i class="fa-brands fa-youtube"></i></a>
+            <a href="https://www.facebook.com/profile.php?id=61577358956111" class="social-icon" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.facebook.com/profile.php?id=61577358956111" class="social-icon" target="_blank"><i class="fa-brands fa-youtube"></i></a>
         </div>
 
         <div class="copyright">
@@ -1274,10 +1422,198 @@
         </div>
     </footer>
 
-    <!-- ==================== JAVASCRIPT LOGIC ==================== -->
+    <!-- ==================== JAVASCRIPT CLICK & MODAL LOGIC ==================== -->
     <script>
-        /* ==================== INTERACTIVE SUB-PAGE MODAL DETAILS ==================== */
-        const detailData = {
+        /* ==================== CAREER SECTOR MODALS ==================== */
+        const careerModalData = {
+            gov: {
+                icon: '<i class="fa-solid fa-building-flag"></i>',
+                title: 'Government Social Welfare Services',
+                subtitle: 'Public Sector Career Pathway',
+                body: `
+                    <p>Government social welfare represents the cornerstone of public social protection in the Philippines[cite: 1]. BSSW graduates in this sector work directly with government agencies like the Department of Social Welfare and Development (DSWD), Local Government Units (LGUs), City Social Welfare Offices, and Municipal Development Centers.</p>
+                    <h4 style="color: var(--accent-gold); margin-top: 15px;">Primary Responsibilities & Work Environment:</h4>
+                    <ul>
+                        <li><strong>Case Management & Assessment:</strong> Evaluating client eligibility for social assistance, housing, and emergency funds.</li>
+                        <li><strong>Disaster Emergency Response:</strong> Operating on the frontlines during natural disasters to distribute relief goods and manage evacuation shelters.</li>
+                        <li><strong>Community Program Coordination:</strong> Implementing national welfare drives such as 4Ps (Pantawid Pamilyang Pilipino Program), Sustainable Livelihood Programs (SLP), and KALAHI-CIDSS.</li>
+                    </ul>
+                `
+            },
+            ngo: {
+                icon: '<i class="fa-solid fa-hand-holding-heart"></i>',
+                title: 'NGOs & Civil Society Organizations',
+                subtitle: 'Non-Profit & Advocacy Pathway',
+                body: `
+                    <p>Non-Governmental Organizations (NGOs) and civil society groups offer dynamic environments focused on grassroots advocacy, human rights protection, and targeted socio-economic development.</p>
+                    <h4 style="color: var(--accent-gold); margin-top: 15px;">Primary Responsibilities & Work Environment:</h4>
+                    <ul>
+                        <li><strong>Project Management & Field Operations:</strong> Designing and implementing community initiatives funded by local and international donors.</li>
+                        <li><strong>MEAL (Monitoring, Evaluation, Accountability & Learning):</strong> Measuring social impact and assessing program effectiveness.</li>
+                        <li><strong>Policy Advocacy & Human Rights:</strong> Campaigning against human trafficking, poverty, and social inequality.</li>
+                    </ul>
+                `
+            },
+            med: {
+                icon: '<i class="fa-solid fa-hospital-user"></i>',
+                title: 'Medical & Healthcare Social Work',
+                subtitle: 'Clinical & Hospital Practice Pathway',
+                body: `
+                    <p>Medical Social Workers practice in public hospitals, private clinics, rehabilitation centers, and mental health facilities, supporting patients and their families through illness and financial distress.</p>
+                    <h4 style="color: var(--accent-gold); margin-top: 15px;">Primary Responsibilities & Work Environment:</h4>
+                    <ul>
+                        <li><strong>Psychosocial Intake & Assessment:</strong> Evaluating the social and economic conditions impacting a patient's treatment.</li>
+                        <li><strong>Financial Assistance Coordination:</strong> Helping patients access Malasakit Centers, PhilHealth, DOH assistance, and hospital charity funds.</li>
+                        <li><strong>Discharge Planning & Counseling:</strong> Ensuring patients have appropriate care plans and community support upon leaving the hospital.</li>
+                    </ul>
+                `
+            },
+            child: {
+                icon: '<i class="fa-solid fa-people-roof"></i>',
+                title: 'Child Welfare & Residential Care',
+                subtitle: 'Child Protection & Family Support Pathway',
+                body: `
+                    <p>This pathway focuses on protecting children's fundamental rights, providing safe sanctuary for orphaned or abused youth, and facilitating adoption or foster placement.</p>
+                    <h4 style="color: var(--accent-gold); margin-top: 15px;">Primary Responsibilities & Work Environment:</h4>
+                    <ul>
+                        <li><strong>Child Protection Case Work:</strong> Investigating cases of child abuse, neglect, or exploitation alongside legal authorities.</li>
+                        <li><strong>Adoption & Foster Placement:</strong> Preparing Home Study Reports (HSR) and evaluating prospective adoptive families.</li>
+                        <li><strong>Residential Care Management:</strong> Supervising daily support, schooling, and counseling in child care centers and orphanages.</li>
+                    </ul>
+                `
+            },
+            school: {
+                icon: '<i class="fa-solid fa-school-flag"></i>',
+                title: 'Schools & Youth Development Services',
+                subtitle: 'Educational Guidance & Youth Support Pathway',
+                body: `
+                    <p>School Social Workers collaborate with guidance counselors, teachers, and parents to support students facing academic, behavioral, or personal difficulties.</p>
+                    <h4 style="color: var(--accent-gold); margin-top: 15px;">Primary Responsibilities & Work Environment:</h4>
+                    <ul>
+                        <li><strong>Student Intervention & Guidance:</strong> Addressing issues such as bullying, chronic absenteeism, and family distress.</li>
+                        <li><strong>Youth Leadership Development:</strong> Organizing school-wide anti-bullying drives, leadership camps, and peer support programs.</li>
+                        <li><strong>Parent-School Liaison:</strong> Conducting home visits to bridge communication between families and school administration.</li>
+                    </ul>
+                `
+            },
+            drrm: {
+                icon: '<i class="fa-solid fa-house-medical-flag"></i>',
+                title: 'Disaster Risk Reduction & Response (DRRM)',
+                subtitle: 'Emergency Relief & Humanitarian Response',
+                body: `
+                    <p>Given the susceptibility of the Philippines to natural disasters, DRRM social workers play a vital role in pre-disaster planning, emergency response, and community rehabilitation.</p>
+                    <h4 style="color: var(--accent-gold); margin-top: 15px;">Primary Responsibilities & Work Environment:</h4>
+                    <ul>
+                        <li><strong>Evacuation Center Management:</strong> Ensuring safe, dignified living conditions for displaced families in evacuation sites.</li>
+                        <li><strong>Psychosocial First Aid (PFA):</strong> Providing immediate crisis counseling and trauma support to disaster survivors.</li>
+                        <li><strong>Community Resiliency Training:</strong> Educating local barangays on climate adaptation and disaster preparedness.</li>
+                    </ul>
+                `
+            },
+            comm: {
+                icon: '<i class="fa-solid fa-users-gear"></i>',
+                title: 'Community Development & Grassroots Advocacy',
+                subtitle: 'Rural & Tribal Community Organizing Pathway',
+                body: `
+                    <p>Community Organizers (CO) empower rural areas, informal settlements, and indigenous communities to organize assemblies, secure basic services, and manage local resources.</p>
+                    <h4 style="color: var(--accent-gold); margin-top: 15px;">Primary Responsibilities & Work Environment:</h4>
+                    <ul>
+                        <li><strong>Grassroots Mobilization:</strong> Uniting community members to identify shared problems and demand civic solutions.</li>
+                        <li><strong>Livelihood Cooperative Formation:</strong> Helping women's groups and farmers establish micro-enterprises.</li>
+                        <li><strong>Indigenous Peoples (IP) Advocacy:</strong> Safeguarding ancestral domain rights and ancestral land preservation.</li>
+                    </ul>
+                `
+            },
+            spec: {
+                icon: '<i class="fa-solid fa-wheelchair"></i>',
+                title: 'Specialized Populations & Social Protection',
+                subtitle: 'Inclusion & Specialized Care Pathway',
+                body: `
+                    <p>Social workers in this field champion the dignity, safety, and inclusion of marginalized populations including persons with disabilities (PWDs), senior citizens, and victims of gender-based violence.</p>
+                    <h4 style="color: var(--accent-gold); margin-top: 15px;">Primary Responsibilities & Work Environment:</h4>
+                    <ul>
+                        <li><strong>Disability Rights & Inclusion:</strong> Setting up accessibility initiatives, vocational training, and PWD benefits.</li>
+                        <li><strong>Senior Citizen Welfare:</strong> Managing day-care centers for older persons, social pensions, and elder care advocacy.</li>
+                        <li><strong>Gender & Anti-Violence Services:</strong> Operating crisis hotlines, shelters, and recovery support for survivors of abuse.</li>
+                    </ul>
+                `
+            },
+            policy: {
+                icon: '<i class="fa-solid fa-chart-line"></i>',
+                title: 'Research & Social Policy Analysis',
+                subtitle: 'Policy Reform & Academic Research Pathway',
+                body: `
+                    <p>Social researchers analyze poverty statistics, evaluate government welfare programs, and draft evidence-based recommendations to reform national social legislation.</p>
+                    <h4 style="color: var(--accent-gold); margin-top: 15px;">Primary Responsibilities & Work Environment:</h4>
+                    <ul>
+                        <li><strong>Policy Assessment & Impact Evaluation:</strong> Conducting quantitative and qualitative research on social welfare policies.</li>
+                        <li><strong>Data Collection & Field Surveys:</strong> Gathering empirical data directly from marginalized sectors.</li>
+                        <li><strong>Legislative Consultation:</strong> Presenting research findings to lawmakers and government policy heads.</li>
+                    </ul>
+                `
+            },
+            intl: {
+                icon: '<i class="fa-solid fa-globe"></i>',
+                title: 'International Development & Higher Education',
+                subtitle: 'Global INGO & Academic Career Pathway',
+                body: `
+                    <p>Social workers with advanced degrees or specialized experience work in international agencies (such as UNICEF, UNHCR, UN Women) or serve as faculty members in BSSW academic programs.</p>
+                    <h4 style="color: var(--accent-gold); margin-top: 15px;">Primary Responsibilities & Work Environment:</h4>
+                    <ul>
+                        <li><strong>Global Humanitarian Operations:</strong> Coordinating refugee assistance, international child protection, and global development.</li>
+                        <li><strong>Social Work Education:</strong> Teaching BSSW courses, mentoring students, and supervising field instruction.</li>
+                        <li><strong>International Consultancy:</strong> Advising global non-profits on country-specific social protection strategies.</li>
+                    </ul>
+                `
+            }
+        };
+
+        function openCareerModal(key) {
+            const data = careerModalData[key];
+            if (data) {
+                document.getElementById('modalIconContainer').innerHTML = data.icon;
+                document.getElementById('modalTitle').innerText = data.title;
+                document.getElementById('modalSubtitle').innerText = data.subtitle;
+                document.getElementById('modalBody').innerHTML = data.body;
+                document.getElementById('modalFooterBtn').innerHTML = `
+                    <button class="btn-gold" onclick="closeDetailModal()"><i class="fa-solid fa-check"></i> Close Overview</button>
+                    <a href="#contact" onclick="closeDetailModal()" class="btn-primary" style="padding: 10px 20px; text-decoration: none; display: inline-flex; align-items: center; gap: 8px;">Inquire Admission</a>
+                `;
+                document.getElementById('detailModal').style.display = 'flex';
+            }
+        }
+
+        /* ==================== EVENT & HIGHLIGHT MODALS ==================== */
+        function openEventModal(eventId, fbUrl) {
+            const eventTitles = {
+                smash26: 'Welcome Smash 2026',
+                jswap24: 'JSWAP Freshmen Assembly and Orientation 2024',
+                ipil25: 'Community Outreach Ipil-Ipil 2025',
+                dalangpan26: 'Dalangpan Awarding Ceremony 2026',
+                comm26: 'Commissioning Ceremony 2026',
+                swnight26: 'Social Work Night 2026',
+                jswapconf25: 'JSWAP National Conference 2025',
+                mhealth25: 'World Mental Health Awareness (Inside & Out) 2025',
+                immersion26: 'Grade 12 SHS Immersion 2026'
+            };
+
+            const title = eventTitles[eventId] || 'Activity Details';
+            document.getElementById('modalIconContainer').innerHTML = '<i class="fa-brands fa-facebook" style="color: var(--accent-gold);"></i>';
+            document.getElementById('modalTitle').innerText = title;
+            document.getElementById('modalSubtitle').innerText = 'Official Activity Highlight';
+            document.getElementById('modalBody').innerHTML = `
+                <p>This event is an official activity hosted by the BS Social Work program and the Junior Social Workers Association of the Philippines (JSWAP) chapter.</p>
+                <p style="margin-top: 10px;">Click the button below to open the complete official Facebook post, photo gallery, and event documentation.</p>
+            `;
+            document.getElementById('modalFooterBtn').innerHTML = `
+                <a href="${fbUrl}" target="_blank" class="btn-gold" style="text-decoration: none;"><i class="fa-brands fa-facebook"></i> View Full Facebook Post</a>
+                <button class="btn-primary" onclick="closeDetailModal()">Close</button>
+            `;
+            document.getElementById('detailModal').style.display = 'flex';
+        }
+
+        /* ==================== CORE SPECIALTY MODALS ==================== */
+        const specialtyData = {
             child: {
                 icon: '<i class="fa-solid fa-child"></i>',
                 title: 'Child & Family Welfare',
@@ -1337,12 +1673,15 @@
         };
 
         function openDetailModal(type) {
-            const data = detailData[type];
+            const data = specialtyData[type];
             if (data) {
                 document.getElementById('modalIconContainer').innerHTML = data.icon;
                 document.getElementById('modalTitle').innerText = data.title;
                 document.getElementById('modalSubtitle').innerText = data.subtitle;
                 document.getElementById('modalBody').innerHTML = data.body;
+                document.getElementById('modalFooterBtn').innerHTML = `
+                    <button class="btn-gold" onclick="closeDetailModal()"><i class="fa-solid fa-check"></i> Close Overview</button>
+                `;
                 document.getElementById('detailModal').style.display = 'flex';
             }
         }
