@@ -368,7 +368,7 @@
             line-height: 1.6;
         }
 
-        /* ==================== CORE PATHWAYS GRID ==================== */
+        /* ==================== CORE PATHWAYS GRID (CLICKABLE CARDS) ==================== */
         .features-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -377,34 +377,133 @@
         }
 
         .feature-card {
-            background: var(--bg-card-violet);
-            padding: 30px 20px;
+            background: white;
+            padding: 35px 25px;
             border-radius: 20px;
             text-align: center;
-            border: 1px solid var(--border-light);
-            transition: transform 0.3s ease;
+            border: 1px solid var(--border-dark);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
         }
 
         .feature-card:hover {
             transform: translateY(-8px);
+            box-shadow: 0 12px 30px rgba(42, 27, 61, 0.15);
+            border-color: var(--accent-gold);
         }
 
         .feature-icon {
-            font-size: 2.2rem;
+            font-size: 2.5rem;
             color: var(--accent-gold);
             margin-bottom: 15px;
         }
 
         .feature-title {
             font-family: var(--font-serif);
-            font-size: 1.1rem;
+            font-size: 1.15rem;
+            color: var(--bg-dark-violet);
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .feature-desc {
+            font-size: 0.85rem;
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .click-hint {
+            font-size: 0.75rem;
+            color: var(--accent-gold);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+        }
+
+        /* ==================== POPUP MODAL (EXPANDED PAGE VIEW) ==================== */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(26, 16, 38, 0.85);
+            backdrop-filter: blur(8px);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 2000;
+            padding: 20px;
+        }
+
+        .modal-card {
+            background: var(--bg-dark-violet);
+            color: var(--cream-bg);
+            border: 2px solid var(--accent-gold);
+            border-radius: 25px;
+            max-width: 650px;
+            width: 100%;
+            padding: 40px;
+            position: relative;
+            box-shadow: 0 25px 60px rgba(0,0,0,0.5);
+            animation: fadeIn 0.3s ease;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 25px;
+            font-size: 1.8rem;
+            color: var(--accent-gold);
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+
+        .modal-close:hover {
+            transform: scale(1.2);
+        }
+
+        .modal-icon {
+            font-size: 3rem;
+            color: var(--accent-gold);
+            margin-bottom: 15px;
+        }
+
+        .modal-title {
+            font-family: var(--font-serif);
+            font-size: 1.8rem;
             color: var(--cream-bg);
             margin-bottom: 10px;
         }
 
-        .feature-desc {
-            font-size: 0.8rem;
+        .modal-subtitle {
+            color: var(--accent-gold);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .modal-body {
+            font-size: 0.95rem;
             color: var(--cream-accent);
+            line-height: 1.7;
+            margin-bottom: 25px;
+        }
+
+        .modal-body ul {
+            margin-top: 15px;
+            padding-left: 20px;
+        }
+
+        .modal-body li {
+            margin-bottom: 8px;
         }
 
         /* ==================== INTERACTIVE QUIZ ==================== */
@@ -855,79 +954,60 @@
         </div>
 
         <div class="careers-container">
-            <!-- 1. Government Social Welfare -->
             <div class="career-box">
                 <i class="fa-solid fa-building-flag career-box-icon"></i>
                 <h3 class="career-box-title">Government Social Welfare</h3>
                 <div class="career-box-positions">DSWD, LGUs, Municipal & City Offices</div>
                 <p class="career-box-desc"><strong>Key Roles:</strong> Social Welfare Officer, Municipal Social Welfare Officer, Case Manager, Disaster Emergency Worker, Program Coordinator.</p>
             </div>
-
-            <!-- 2. NGOs & Civil Society -->
             <div class="career-box">
                 <i class="fa-solid fa-hand-holding-heart career-box-icon"></i>
                 <h3 class="career-box-title">NGOs & Civil Society</h3>
                 <h4 class="career-box-positions">Non-Profits, Foundations & Advocacy Groups</h4>
                 <p class="career-box-desc"><strong>Key Roles:</strong> Project Officer, Community Development Worker, Child Protection Officer, MEAL Specialist.</p>
             </div>
-
-            <!-- 3. Medical & Healthcare -->
             <div class="career-box">
                 <i class="fa-solid fa-hospital-user career-box-icon"></i>
                 <h3 class="career-box-title">Medical & Healthcare</h3>
                 <h4 class="career-box-positions">Public/Private Hospitals & Rehab Centers</h4>
                 <p class="career-box-desc"><strong>Key Roles:</strong> Medical Social Worker, Patient Support Worker, Hospital Case Manager, Patient Assistance Officer.</p>
             </div>
-
-            <!-- 4. Child Welfare & Residential Care -->
             <div class="career-box">
                 <i class="fa-solid fa-people-roof career-box-icon"></i>
                 <h3 class="career-box-title">Child Welfare & Residential Care</h3>
                 <h4 class="career-box-positions">Residential Facilities & Adoption Agencies</h4>
                 <p class="career-box-desc"><strong>Key Roles:</strong> Child & Family Social Worker, Residential Worker, Adoption/Foster Care Worker, Reintegration Support.</p>
             </div>
-
-            <!-- 5. Schools & Youth Services -->
             <div class="career-box">
                 <i class="fa-solid fa-school-flag career-box-icon"></i>
                 <h3 class="career-box-title">Schools & Youth Services</h3>
                 <h4 class="career-box-positions">Educational Institutions & Student Affairs</h4>
                 <p class="career-box-desc"><strong>Key Roles:</strong> Student Services Officer, Youth Development Officer, School Social Worker, Student Support Case Worker.</p>
             </div>
-
-            <!-- 6. DRRM & Humanitarian Response -->
             <div class="career-box">
                 <i class="fa-solid fa-house-medical-flag career-box-icon"></i>
                 <h3 class="career-box-title">DRRM & Humanitarian Response</h3>
                 <h4 class="career-box-positions">Disaster Agencies & Humanitarian NGOs</h4>
                 <p class="career-box-desc"><strong>Key Roles:</strong> Disaster Response Worker, Humanitarian Case Worker, Emergency Assistance Officer, Psychosocial Support Worker.</p>
             </div>
-
-            <!-- 7. Community Development & Advocacy -->
             <div class="career-box">
                 <i class="fa-solid fa-users-gear career-box-icon"></i>
                 <h3 class="career-box-title">Community Dev. & Advocacy</h3>
                 <h4 class="career-box-positions">Barangays, IP Communities & Rural Programs</h4>
                 <p class="career-box-desc"><strong>Key Roles:</strong> Community Organizer, Social Mobilization Officer, Human Rights Officer, Livelihood Project Officer.</p>
             </div>
-
-            <!-- 8. Specialized Populations -->
             <div class="career-box">
                 <i class="fa-solid fa-wheelchair career-box-icon"></i>
                 <h3 class="career-box-title">Specialized Populations</h3>
                 <h4 class="career-box-positions">Senior Centers, PWD Programs, Rehab Services</h4>
                 <p class="career-box-desc"><strong>Key Roles:</strong> Disability Inclusion Officer, Older Persons Welfare Worker, Gender-Based Violence Worker, Reintegration Specialist.</p>
             </div>
-
-            <!-- 9. Research & Social Policy -->
             <div class="career-box">
                 <i class="fa-solid fa-chart-line career-box-icon"></i>
                 <h3 class="career-box-title">Research & Policy Analysis</h3>
                 <h4 class="career-box-positions">Research Institutes & Policy Groups</h4>
                 <p class="career-box-desc"><strong>Key Roles:</strong> Social Research Assistant, Policy Research Officer, Program Evaluator, Social Development Researcher.</p>
             </div>
-
-            <!-- 10. International Development & Education -->
             <div class="career-box">
                 <i class="fa-solid fa-globe career-box-icon"></i>
                 <h3 class="career-box-title">International Dev. & Academia</h3>
@@ -937,35 +1017,60 @@
         </div>
     </section>
 
-    <!-- ==================== CORE PATHWAYS ==================== -->
+    <!-- ==================== CORE PATHWAYS (CLICKABLE TO POPUP PAGE) ==================== -->
     <section class="section">
         <div class="section-header">
-            <div class="section-subtitle">Fields of Practice</div>
-            <h2 class="section-title">What Makes Our Specialty Unique?</h2>
+            <div class="section-subtitle">FIELDS OF PRACTICE (CLICK ANY TO EXPLORE)</div>
+            <h2 class="section-title">WHAT MAKES OUR SPECIALTY UNIQUE?</h2>
         </div>
         <div class="features-grid">
-            <div class="feature-card" style="background: white; border: 1px solid var(--border-dark);">
+            
+            <!-- 1. CHILD & FAMILY WELFARE -->
+            <div class="feature-card" onclick="openDetailModal('child')">
                 <i class="fa-solid fa-child feature-icon"></i>
-                <div class="feature-title" style="color: var(--bg-dark-violet);">Child & Family Welfare</div>
-                <div class="feature-desc" style="color: #666;">Protecting child rights, foster care, and strengthening family bonds.</div>
+                <div class="feature-title">CHILD & FAMILY WELFARE</div>
+                <div class="feature-desc">Protecting child rights, foster care, and strengthening family bonds.</div>
+                <div class="click-hint">Click for Full Details <i class="fa-solid fa-arrow-right"></i></div>
             </div>
-            <div class="feature-card" style="background: white; border: 1px solid var(--border-dark);">
+
+            <!-- 2. MEDICAL & HEALTH -->
+            <div class="feature-card" onclick="openDetailModal('medical')">
                 <i class="fa-solid fa-hospital feature-icon"></i>
-                <div class="feature-title" style="color: var(--bg-dark-violet);">Medical & Health</div>
-                <div class="feature-desc" style="color: #666;">Providing psychosocial assessment and assistance in healthcare.</div>
+                <div class="feature-title">MEDICAL & HEALTH</div>
+                <div class="feature-desc">Providing psychosocial assessment and assistance in healthcare settings.</div>
+                <div class="click-hint">Click for Full Details <i class="fa-solid fa-arrow-right"></i></div>
             </div>
-            <div class="feature-card" style="background: white; border: 1px solid var(--border-dark);">
+
+            <!-- 3. SPECIALIZED INCLUSION -->
+            <div class="feature-card" onclick="openDetailModal('inclusion')">
                 <i class="fa-solid fa-hand-holding-hand feature-icon"></i>
-                <div class="feature-title" style="color: var(--bg-dark-violet);">Specialized Inclusion</div>
-                <div class="feature-desc" style="color: #666;">Supporting PWDs, senior citizens, and specialized rehabilitation.</div>
+                <div class="feature-title">SPECIALIZED INCLUSION</div>
+                <div class="feature-desc">Supporting PWDs, senior citizens, and specialized rehabilitation.</div>
+                <div class="click-hint">Click for Full Details <i class="fa-solid fa-arrow-right"></i></div>
             </div>
-            <div class="feature-card" style="background: white; border: 1px solid var(--border-dark);">
+
+            <!-- 4. COMMUNITY DEV. -->
+            <div class="feature-card" onclick="openDetailModal('community')">
                 <i class="fa-solid fa-users feature-icon"></i>
-                <div class="feature-title" style="color: var(--bg-dark-violet);">Community Dev.</div>
-                <div class="feature-desc" style="color: #666;">Empowering grassroot communities toward sustainable growth.</div>
+                <div class="feature-title">COMMUNITY DEV.</div>
+                <div class="feature-desc">Empowering grassroot communities toward sustainable growth.</div>
+                <div class="click-hint">Click for Full Details <i class="fa-solid fa-arrow-right"></i></div>
             </div>
+
         </div>
     </section>
+
+    <!-- ==================== EXPANDED DETAIL MODAL / SUB-PAGE ==================== -->
+    <div class="modal-overlay" id="detailModal">
+        <div class="modal-card">
+            <span class="modal-close" onclick="closeDetailModal()">&times;</span>
+            <div id="modalIconContainer" class="modal-icon"></div>
+            <h3 class="modal-title" id="modalTitle">Specialty Title</h3>
+            <div class="modal-subtitle" id="modalSubtitle">Field Breakdown</div>
+            <div class="modal-body" id="modalBody">Full breakdown text goes here...</div>
+            <button class="btn-gold" onclick="closeDetailModal()"><i class="fa-solid fa-check"></i> Close Overview</button>
+        </div>
+    </div>
 
     <!-- ==================== CAREER ASSESSMENT QUIZ ==================== -->
     <section class="section section-dark" id="assessment" style="background: linear-gradient(rgba(42, 27, 61, 0.95), rgba(42, 27, 61, 0.95)), url('https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1920&q=80') center/cover;">
@@ -1003,7 +1108,6 @@
             <h2 class="section-title">Activities, Events & Recognition</h2>
         </div>
 
-        <!-- Category Filter Tabs -->
         <div class="filter-tabs">
             <button class="tab-btn active" onclick="filterCategory('all')">All Highlights</button>
             <button class="tab-btn" onclick="filterCategory('seminars')">Seminars & Research</button>
@@ -1011,10 +1115,7 @@
             <button class="tab-btn" onclick="filterCategory('achievements')">Achievements & Recognition</button>
         </div>
 
-        <!-- Grid with Attached Uploaded Images 1 to 5 -->
         <div class="cards-grid" id="contentCardsGrid">
-
-            <!-- IMAGE 1 -->
             <div class="card-item" data-category="seminars">
                 <div class="card-image">
                     <img src="image1.jpg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600&q=80';" alt="Mind Care Seminar">
@@ -1029,7 +1130,6 @@
                 </div>
             </div>
 
-            <!-- IMAGE 2 -->
             <div class="card-item" data-category="seminars">
                 <div class="card-image">
                     <img src="image2.jpg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1531545514256-b1400bc00f31?auto=format&fit=crop&w=600&q=80';" alt="Empowering Teenage Mothers">
@@ -1044,7 +1144,6 @@
                 </div>
             </div>
 
-            <!-- IMAGE 3 -->
             <div class="card-item" data-category="events" id="events">
                 <div class="card-image">
                     <img src="image3.jpg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=600&q=80';" alt="Social Work Student Assembly">
@@ -1058,7 +1157,6 @@
                 </div>
             </div>
 
-            <!-- IMAGE 4 -->
             <div class="card-item" data-category="events">
                 <div class="card-image">
                     <img src="image4.jpg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=600&q=80';" alt="Social Work Night - The Final Sunrise">
@@ -1072,7 +1170,6 @@
                 </div>
             </div>
 
-            <!-- IMAGE 5 -->
             <div class="card-item" data-category="achievements">
                 <div class="card-image">
                     <img src="image5.jpg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1567427017947-545c5f8d16ad?auto=format&fit=crop&w=600&q=80';" alt="Certificate Awarding Ceremony">
@@ -1085,7 +1182,6 @@
                     <a href="https://www.facebook.com/profile.php?id=61577358956111" target="_blank" class="card-link">View Facebook Post <i class="fa-solid fa-arrow-right"></i></a>
                 </div>
             </div>
-
         </div>
     </section>
 
@@ -1153,7 +1249,6 @@
                 <h4 style="font-family: var(--font-serif); color: var(--bg-dark-violet); margin-bottom: 8px;">Scan to Access Mobile Portal</h4>
                 <p style="font-size: 0.8rem; color: #555; margin-bottom: 18px;">Scan with your mobile camera anytime, anywhere.</p>
                 
-                <!-- OFFICIAL GITHUB PAGES PUBLIC SCANNABLE QR CODE (VIOLET COLORED QR) -->
                 <div class="qr-box">
                     <img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=https://christianrayepan-rgb.github.io/social-work-exploration/&color=2a1b3d" alt="Official Mobile QR Code">
                 </div>
@@ -1179,8 +1274,90 @@
         </div>
     </footer>
 
-    <!-- ==================== JAVASCRIPT QUIZ & BULLETIN LOGIC ==================== -->
+    <!-- ==================== JAVASCRIPT LOGIC ==================== -->
     <script>
+        /* ==================== INTERACTIVE SUB-PAGE MODAL DETAILS ==================== */
+        const detailData = {
+            child: {
+                icon: '<i class="fa-solid fa-child"></i>',
+                title: 'Child & Family Welfare',
+                subtitle: 'Core Specialty Breakdown',
+                body: `
+                    <p>Child and Family Welfare focuses on safeguarding rights, protecting vulnerable children, and reinforcing family structures across communities[cite: 1]. Practitioners advocate for youth experiencing neglect, trauma, or poverty[cite: 1].</p>
+                    <h4 style="color: var(--accent-gold); margin-top: 15px; margin-bottom: 8px;">Key Career Roles & Settings:</h4>
+                    <ul>
+                        <li><strong>Child Protection Officer:</strong> Works with DSWD or international NGOs to prevent abuse and manage case files.</li>
+                        <li><strong>Foster & Adoption Specialist:</strong> Conducts home evaluations, placement assessments, and legal family integration.</li>
+                        <li><strong>Residential Care Social Worker:</strong> Provides direct care management in children's shelters and youth centers.</li>
+                    </ul>
+                `
+            },
+            medical: {
+                icon: '<i class="fa-solid fa-hospital"></i>',
+                title: 'Medical & Healthcare Social Work',
+                subtitle: 'Core Specialty Breakdown',
+                body: `
+                    <p>Medical Social Workers act as the bridge between healthcare providers, patients, and their families. They address financial, emotional, and social barriers to treatment and recovery.</p>
+                    <h4 style="color: var(--accent-gold); margin-top: 15px; margin-bottom: 8px;">Key Career Roles & Settings:</h4>
+                    <ul>
+                        <li><strong>Hospital Medical Social Worker:</strong> Evaluates patient eligibility for medical assistance and government aid.</li>
+                        <li><strong>Rehabilitation Case Manager:</strong> Supports patients recovering from addiction or physical disability.</li>
+                        <li><strong>Psychosocial Care Specialist:</strong> Offers counseling and emotional guidance during critical end-of-life or chronic care.</li>
+                    </ul>
+                `
+            },
+            inclusion: {
+                icon: '<i class="fa-solid fa-hand-holding-hand"></i>',
+                title: 'Specialized Inclusion & Protection',
+                subtitle: 'Core Specialty Breakdown',
+                body: `
+                    <p>This sector is dedicated to advancing the rights and accessibility of marginalized groups, including Persons with Disabilities (PWDs), senior citizens, and survivors of gender-based violence.</p>
+                    <h4 style="color: var(--accent-gold); margin-top: 15px; margin-bottom: 8px;">Key Career Roles & Settings:</h4>
+                    <ul>
+                        <li><strong>Disability Rights Advocate:</strong> Implements community accessibility programs and vocational placement.</li>
+                        <li><strong>Older Persons Welfare Officer:</strong> Coordinates senior citizen centers, pension distribution, and care facilities.</li>
+                        <li><strong>GBV Protection Worker:</strong> Manages crisis intervention centers and legal support networks for women and vulnerable groups.</li>
+                    </ul>
+                `
+            },
+            community: {
+                icon: '<i class="fa-solid fa-users"></i>',
+                title: 'Community Development & Advocacy',
+                subtitle: 'Core Specialty Breakdown',
+                body: `
+                    <p>Community Development shifts focus from individual casework to systemic change, empowering entire villages, barangays, and indigenous groups to build economic and social self-reliance.</p>
+                    <h4 style="color: var(--accent-gold); margin-top: 15px; margin-bottom: 8px;">Key Career Roles & Settings:</h4>
+                    <ul>
+                        <li><strong>Community Organizer (CO):</strong> Facilitates grassroot assemblies, livelihood projects, and local leadership training.</li>
+                        <li><strong>Livelihood & Microfinance Officer:</strong> Helps rural families establish sustainable cooperative initiatives.</li>
+                        <li><strong>Indigenous Peoples (IP) Advocate:</strong> Protects land rights, cultural heritage, and equal social service access.</li>
+                    </ul>
+                `
+            }
+        };
+
+        function openDetailModal(type) {
+            const data = detailData[type];
+            if (data) {
+                document.getElementById('modalIconContainer').innerHTML = data.icon;
+                document.getElementById('modalTitle').innerText = data.title;
+                document.getElementById('modalSubtitle').innerText = data.subtitle;
+                document.getElementById('modalBody').innerHTML = data.body;
+                document.getElementById('detailModal').style.display = 'flex';
+            }
+        }
+
+        function closeDetailModal() {
+            document.getElementById('detailModal').style.display = 'none';
+        }
+
+        window.onclick = function(event) {
+            const modal = document.getElementById('detailModal');
+            if (event.target === modal) {
+                closeDetailModal();
+            }
+        };
+
         /* ==================== CAREER ASSESSMENT QUIZ ==================== */
         const quizQuestions = [
             {
