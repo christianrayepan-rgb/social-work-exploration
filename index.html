@@ -300,7 +300,7 @@
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 50px;
-            align-items: center;
+            align-items: stretch;
         }
 
         .about-card {
@@ -310,22 +310,24 @@
             box-shadow: 0 10px 30px rgba(0,0,0,0.05);
             border: 1px solid var(--border-dark);
             position: relative;
+            display: flex;
+            flex-direction: column;
         }
 
         .about-card h3 {
             font-family: var(--font-serif);
-            font-size: 1.6rem;
+            font-size: 1.45rem;
             color: var(--bg-dark-violet);
             margin-bottom: 15px;
         }
 
         .about-card p {
             color: #49395e;
-            font-size: 0.95rem;
+            font-size: 0.93rem;
             line-height: 1.7;
         }
 
-        /* ==================== CAREER PATHWAYS SECTION (CLICKABLE CARDS) ==================== */
+        /* ==================== CAREER PATHWAYS SECTION ==================== */
         .careers-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -359,24 +361,26 @@
             margin-bottom: 15px;
         }
 
-        .career-box-title {
+        .career-field-title {
             font-family: var(--font-serif);
             font-size: 1.25rem;
             color: var(--cream-bg);
-            margin-bottom: 10px;
+            margin-bottom: 8px;
         }
 
-        .career-box-positions {
-            font-size: 0.85rem;
+        .career-setting-label {
+            font-size: 0.8rem;
             color: var(--accent-gold);
-            font-weight: 600;
-            margin-bottom: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 4px;
         }
 
-        .career-box-desc {
-            font-size: 0.85rem;
+        .career-setting-value {
+            font-size: 0.88rem;
             color: var(--cream-accent);
-            line-height: 1.6;
+            line-height: 1.5;
             margin-bottom: 15px;
         }
 
@@ -390,6 +394,64 @@
             align-items: center;
             gap: 6px;
             margin-top: 10px;
+        }
+
+        /* ==================== HALL OF FAMERS (TOP NOTCHERS) ==================== */
+        .hof-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .hof-card {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            border: 2px solid var(--accent-gold);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+            transition: transform 0.3s ease;
+        }
+
+        .hof-card:hover {
+            transform: translateY(-6px);
+        }
+
+        .hof-badge {
+            width: 70px;
+            height: 70px;
+            background: var(--bg-dark-violet);
+            color: var(--accent-gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            margin: 0 auto 15px;
+            border: 2px solid var(--accent-gold);
+        }
+
+        .hof-name {
+            font-family: var(--font-serif);
+            font-size: 1.2rem;
+            color: var(--bg-dark-violet);
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .hof-rank {
+            font-size: 0.85rem;
+            color: var(--accent-gold);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+
+        .hof-exam {
+            font-size: 0.8rem;
+            color: #666;
         }
 
         /* ==================== CORE PATHWAYS GRID ==================== */
@@ -937,6 +999,7 @@
             <ul>
                 <li><a href="#about">About SW</a></li>
                 <li><a href="#careers">Career Opportunities</a></li>
+                <li><a href="#hall-of-fame">Hall of Fame</a></li>
                 <li><a href="#assessment">Career Quiz</a></li>
                 <li><a href="#activities">Activities & Events</a></li>
                 <li><a href="#contact">Contact</a></li>
@@ -957,7 +1020,7 @@
     <section class="hero-section">
         <div class="hero-tagline">Discover Your Path</div>
         <h1 class="hero-title">Social Work Career Exploration</h1>
-        <p class="hero-desc">An interactive awareness platform for Senior High School students to discover, explore, understand, and consider the field of Social Work.</p>
+        <p class="hero-desc">An interactive awareness platform for students to discover, explore, understand, and consider the field of Social Work.</p>
         <div class="hero-buttons">
             <a href="#assessment" class="btn-gold"><i class="fa-solid fa-compass"></i> Start Interactive Assessment</a>
             <a href="#careers" class="btn-primary">Explore Pathways</a>
@@ -971,21 +1034,26 @@
             <h2 class="section-title">About Social Work Program</h2>
         </div>
         <div class="about-grid">
+            
+            <!-- Global Definition of the Social Work Profession -->
             <div class="about-card">
-                <h3><i class="fa-solid fa-heart-pulse" style="color: var(--accent-gold);"></i> About Social Work</h3>
-                <p>Social work is a regulated profession in the Philippines committed to nurturing and improving essential social relationships while enhancing social functioning[cite: 1]. Its objective is to promote holistic individual and community development through proven methodologies[cite: 1].</p>
+                <h3><i class="fa-solid fa-globe" style="color: var(--accent-gold);"></i> Global Definition of the Social Work Profession</h3>
+                <p>Social work is a practice-based profession and an academic discipline that promotes social change and development, social cohesion, and the empowerment and liberation of people. Principles of social justice, human rights, collective responsibility and respect for diversities are central to social work. Underpinned by theories of social work, social sciences, humanities and indigenous knowledges, social work engages people and structures to address life challenges and enhance wellbeing. The above definition may be amplified at national and/or regional levels.</p>
             </div>
+
+            <!-- Bachelor of Science in Social Work Meaning -->
             <div class="about-card">
-                <h3><i class="fa-solid fa-graduation-cap" style="color: var(--accent-gold);"></i> BS Social Work Program</h3>
-                <p>The Bachelor of Science in Social Work (BSSW) prepares graduates for generalist practice with individuals, families, groups, and communities[cite: 1]. Rooted in Catholic Christian values, it equips students to pass the Social Work Licensure Examination (SWLE)[cite: 1].</p>
+                <h3><i class="fa-solid fa-graduation-cap" style="color: var(--accent-gold);"></i> Bachelor of Science in Social Work (BSSW)</h3>
+                <p>The Bachelor of Science in Social Work readies professionals who are globally competitive and dedicated to promoting social justice, human dignity, and empowerment within communities. Rooted in Catholic Christian principles, the program provides students with the essential knowledge, skills, and ethical grounding needed to tackle intricate social challenges and encourage sustainable growth. Graduates are equipped to spearhead transformative projects that enhance the well-being and comprehensive development of individuals, families, and communities.</p>
             </div>
+
         </div>
     </section>
 
-    <!-- ==================== BSSW CAREER OPPORTUNITIES (CLICKABLE CARDS) ==================== -->
+    <!-- ==================== BSSW CAREER OPPORTUNITIES ==================== -->
     <section class="section section-dark" id="careers">
         <div class="section-header">
-            <div class="section-subtitle">Career Opportunities in the Philippines & Beyond (CLICK TO EXPLORE)</div>
+            <div class="section-subtitle">Career Opportunities in the Philippines & Beyond (CLICK TO EXPLORE POSITIONS)</div>
             <h2 class="section-title">Where Can a BSSW Degree Take You?</h2>
         </div>
 
@@ -994,116 +1062,145 @@
             <div class="career-box" onclick="openCareerModal('gov')">
                 <div>
                     <i class="fa-solid fa-building-flag career-box-icon"></i>
-                    <h3 class="career-box-title">Government Social Welfare</h3>
-                    <div class="career-box-positions">DSWD, LGUs, Municipal & City Offices</div>
-                    <p class="career-box-desc"><strong>Key Roles:</strong> Social Welfare Officer, Municipal Social Welfare Officer, Case Manager, Disaster Emergency Worker, Program Coordinator.</p>
+                    <h3 class="career-field-title">Government Social Welfare Services</h3>
+                    <div class="career-setting-label">Possible Settings:</div>
+                    <div class="career-setting-value">DSWD National/Regional Offices, Local Government Units (LGUs), City & Municipal Social Welfare and Development Offices.</div>
                 </div>
-                <div class="click-hint-gold">Click to Read Full Explanation <i class="fa-solid fa-arrow-right"></i></div>
+                <div class="click-hint-gold">Click to View Possible Positions <i class="fa-solid fa-arrow-right"></i></div>
             </div>
 
             <!-- 2. NGOs & Civil Society -->
             <div class="career-box" onclick="openCareerModal('ngo')">
                 <div>
                     <i class="fa-solid fa-hand-holding-heart career-box-icon"></i>
-                    <h3 class="career-box-title">NGOs & Civil Society</h3>
-                    <h4 class="career-box-positions">Non-Profits, Foundations & Advocacy Groups</h4>
-                    <p class="career-box-desc"><strong>Key Roles:</strong> Project Officer, Community Development Worker, Child Protection Officer, MEAL Specialist.</p>
+                    <h3 class="career-field-title">NGOs & Civil Society Organizations</h3>
+                    <div class="career-setting-label">Possible Settings:</div>
+                    <div class="career-setting-value">Non-Profit Foundations, Civil Society Alliances, Community-Based Advocacy Groups, Faith-Based Charities.</div>
                 </div>
-                <div class="click-hint-gold">Click to Read Full Explanation <i class="fa-solid fa-arrow-right"></i></div>
+                <div class="click-hint-gold">Click to View Possible Positions <i class="fa-solid fa-arrow-right"></i></div>
             </div>
 
             <!-- 3. Medical & Healthcare -->
             <div class="career-box" onclick="openCareerModal('med')">
                 <div>
                     <i class="fa-solid fa-hospital-user career-box-icon"></i>
-                    <h3 class="career-box-title">Medical & Healthcare</h3>
-                    <h4 class="career-box-positions">Public/Private Hospitals & Rehab Centers</h4>
-                    <p class="career-box-desc"><strong>Key Roles:</strong> Medical Social Worker, Patient Support Worker, Hospital Case Manager, Patient Assistance Officer.</p>
+                    <h3 class="career-field-title">Medical & Healthcare Social Work</h3>
+                    <div class="career-setting-label">Possible Settings:</div>
+                    <div class="career-setting-value">Public & Private Hospitals, Mental Health Facilities, Rehabilitation Centers, Dialysis & Cancer Clinics.</div>
                 </div>
-                <div class="click-hint-gold">Click to Read Full Explanation <i class="fa-solid fa-arrow-right"></i></div>
+                <div class="click-hint-gold">Click to View Possible Positions <i class="fa-solid fa-arrow-right"></i></div>
             </div>
 
             <!-- 4. Child Welfare & Residential Care -->
             <div class="career-box" onclick="openCareerModal('child')">
                 <div>
                     <i class="fa-solid fa-people-roof career-box-icon"></i>
-                    <h3 class="career-box-title">Child Welfare & Residential Care</h3>
-                    <h4 class="career-box-positions">Residential Facilities & Adoption Agencies</h4>
-                    <p class="career-box-desc"><strong>Key Roles:</strong> Child & Family Social Worker, Residential Worker, Adoption/Foster Care Worker, Reintegration Support.</p>
+                    <h3 class="career-field-title">Child Welfare & Residential Protection</h3>
+                    <div class="career-setting-label">Possible Settings:</div>
+                    <div class="career-setting-value">Orphanages, Children's Shelters, Adoption & Foster Care Agencies, Youth Rehabilitation Centers.</div>
                 </div>
-                <div class="click-hint-gold">Click to Read Full Explanation <i class="fa-solid fa-arrow-right"></i></div>
+                <div class="click-hint-gold">Click to View Possible Positions <i class="fa-solid fa-arrow-right"></i></div>
             </div>
 
             <!-- 5. Schools & Youth Services -->
             <div class="career-box" onclick="openCareerModal('school')">
                 <div>
                     <i class="fa-solid fa-school-flag career-box-icon"></i>
-                    <h3 class="career-box-title">Schools & Youth Services</h3>
-                    <h4 class="career-box-positions">Educational Institutions & Student Affairs</h4>
-                    <p class="career-box-desc"><strong>Key Roles:</strong> Student Services Officer, Youth Development Officer, School Social Worker, Student Support Case Worker.</p>
+                    <h3 class="career-field-title">Schools & Educational Institutions</h3>
+                    <div class="career-setting-label">Possible Settings:</div>
+                    <div class="career-setting-value">Elementary & High Schools, Universities, Student Affairs Offices, Special Education (SPED) Centers.</div>
                 </div>
-                <div class="click-hint-gold">Click to Read Full Explanation <i class="fa-solid fa-arrow-right"></i></div>
+                <div class="click-hint-gold">Click to View Possible Positions <i class="fa-solid fa-arrow-right"></i></div>
             </div>
 
             <!-- 6. DRRM & Humanitarian Response -->
             <div class="career-box" onclick="openCareerModal('drrm')">
                 <div>
                     <i class="fa-solid fa-house-medical-flag career-box-icon"></i>
-                    <h3 class="career-box-title">DRRM & Humanitarian Response</h3>
-                    <h4 class="career-box-positions">Disaster Agencies & Humanitarian NGOs</h4>
-                    <p class="career-box-desc"><strong>Key Roles:</strong> Disaster Response Worker, Humanitarian Case Worker, Emergency Assistance Officer, Psychosocial Support Worker.</p>
+                    <h3 class="career-field-title">Disaster Risk Reduction & Response</h3>
+                    <div class="career-setting-label">Possible Settings:</div>
+                    <div class="career-setting-value">MDRRMO / CDRRMO Emergency Response Centers, Red Cross Chapters, Relief Outposts.</div>
                 </div>
-                <div class="click-hint-gold">Click to Read Full Explanation <i class="fa-solid fa-arrow-right"></i></div>
+                <div class="click-hint-gold">Click to View Possible Positions <i class="fa-solid fa-arrow-right"></i></div>
             </div>
 
             <!-- 7. Community Development & Advocacy -->
             <div class="career-box" onclick="openCareerModal('comm')">
                 <div>
                     <i class="fa-solid fa-users-gear career-box-icon"></i>
-                    <h3 class="career-box-title">Community Dev. & Advocacy</h3>
-                    <h4 class="career-box-positions">Barangays, IP Communities & Rural Programs</h4>
-                    <p class="career-box-desc"><strong>Key Roles:</strong> Community Organizer, Social Mobilization Officer, Human Rights Officer, Livelihood Project Officer.</p>
+                    <h3 class="career-field-title">Community Development & Advocacy</h3>
+                    <div class="career-setting-label">Possible Settings:</div>
+                    <div class="career-setting-value">Barangay Cooperatives, Rural Development Projects, Tribal & Indigenous Peoples (IP) Communities.</div>
                 </div>
-                <div class="click-hint-gold">Click to Read Full Explanation <i class="fa-solid fa-arrow-right"></i></div>
+                <div class="click-hint-gold">Click to View Possible Positions <i class="fa-solid fa-arrow-right"></i></div>
             </div>
 
             <!-- 8. Specialized Populations -->
             <div class="career-box" onclick="openCareerModal('spec')">
                 <div>
                     <i class="fa-solid fa-wheelchair career-box-icon"></i>
-                    <h3 class="career-box-title">Specialized Populations</h3>
-                    <h4 class="career-box-positions">Senior Centers, PWD Programs, Rehab Services</h4>
-                    <p class="career-box-desc"><strong>Key Roles:</strong> Disability Inclusion Officer, Older Persons Welfare Worker, Gender-Based Violence Worker, Reintegration Specialist.</p>
+                    <h3 class="career-field-title">Specialized Care & Protection</h3>
+                    <div class="career-setting-label">Possible Settings:</div>
+                    <div class="career-setting-value">Senior Citizen Day Centers, PWD Vocational Facilities, Crisis Shelters for Abuse Survivors.</div>
                 </div>
-                <div class="click-hint-gold">Click to Read Full Explanation <i class="fa-solid fa-arrow-right"></i></div>
+                <div class="click-hint-gold">Click to View Possible Positions <i class="fa-solid fa-arrow-right"></i></div>
             </div>
 
-            <!-- 9. Research & Social Policy -->
+            <!-- 9. Research & Policy Analysis -->
             <div class="career-box" onclick="openCareerModal('policy')">
                 <div>
                     <i class="fa-solid fa-chart-line career-box-icon"></i>
-                    <h3 class="career-box-title">Research & Policy Analysis</h3>
-                    <h4 class="career-box-positions">Research Institutes & Policy Groups</h4>
-                    <p class="career-box-desc"><strong>Key Roles:</strong> Social Research Assistant, Policy Research Officer, Program Evaluator, Social Development Researcher.</p>
+                    <h3 class="career-field-title">Research & Policy Analysis</h3>
+                    <div class="career-setting-label">Possible Settings:</div>
+                    <div class="career-setting-value">Social Research Institutes, Policy Think Tanks, Government Legislative Advisory Bodies.</div>
                 </div>
-                <div class="click-hint-gold">Click to Read Full Explanation <i class="fa-solid fa-arrow-right"></i></div>
+                <div class="click-hint-gold">Click to View Possible Positions <i class="fa-solid fa-arrow-right"></i></div>
             </div>
 
             <!-- 10. International Development & Education -->
             <div class="career-box" onclick="openCareerModal('intl')">
                 <div>
                     <i class="fa-solid fa-globe career-box-icon"></i>
-                    <h3 class="career-box-title">International Dev. & Academia</h3>
-                    <h4 class="career-box-positions">Global INGOs, Academic Institutions & Consultancy</h4>
-                    <p class="career-box-desc"><strong>Key Roles:</strong> Protection Project Officer, Fieldwork Coordinator, Social Work Educator, International Humanitarian Staff.</p>
+                    <h3 class="career-field-title">International Dev. & Higher Education</h3>
+                    <div class="career-setting-label">Possible Settings:</div>
+                    <div class="career-setting-value">Global Non-Profits (UNICEF, UNHCR), Academic Departments, International Consultancies.</div>
                 </div>
-                <div class="click-hint-gold">Click to Read Full Explanation <i class="fa-solid fa-arrow-right"></i></div>
+                <div class="click-hint-gold">Click to View Possible Positions <i class="fa-solid fa-arrow-right"></i></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== HALL OF FAMERS (TOP NOTCHERS) ==================== -->
+    <section class="section" id="hall-of-fame">
+        <div class="section-header">
+            <div class="section-subtitle">Academic Excellence & Pride</div>
+            <h2 class="section-title">Hall of Famers (SWLE Top Notchers)</h2>
+        </div>
+
+        <div class="hof-grid">
+            <div class="hof-card">
+                <div class="hof-badge"><i class="fa-solid fa-trophy"></i></div>
+                <div class="hof-name">BS Social Work Alumnus</div>
+                <div class="hof-rank">RANK 1 - TOP NOTCHER</div>
+                <div class="hof-exam">Social Work Licensure Examination (SWLE)</div>
+            </div>
+            <div class="hof-card">
+                <div class="hof-badge"><i class="fa-solid fa-medal"></i></div>
+                <div class="hof-name">BS Social Work Alumna</div>
+                <div class="hof-rank">TOP 5 PLACER</div>
+                <div class="hof-exam">Social Work Licensure Examination (SWLE)</div>
+            </div>
+            <div class="hof-card">
+                <div class="hof-badge"><i class="fa-solid fa-award"></i></div>
+                <div class="hof-name">BS Social Work Alumnus</div>
+                <div class="hof-rank">TOP 10 PLACER</div>
+                <div class="hof-exam">Social Work Licensure Examination (SWLE)</div>
             </div>
         </div>
     </section>
 
     <!-- ==================== CORE PATHWAYS ==================== -->
-    <section class="section">
+    <section class="section section-dark">
         <div class="section-header">
             <div class="section-subtitle">FIELDS OF PRACTICE (CLICK ANY TO EXPLORE)</div>
             <h2 class="section-title">WHAT MAKES OUR SPECIALTY UNIQUE?</h2>
@@ -1151,10 +1248,10 @@
     </div>
 
     <!-- ==================== CAREER ASSESSMENT QUIZ ==================== -->
-    <section class="section section-dark" id="assessment" style="background: linear-gradient(rgba(42, 27, 61, 0.95), rgba(42, 27, 61, 0.95)), url('https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1920&q=80') center/cover;">
+    <section class="section" id="assessment" style="background: linear-gradient(rgba(42, 27, 61, 0.95), rgba(42, 27, 61, 0.95)), url('https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1920&q=80') center/cover;">
         <div class="section-header">
             <div class="section-subtitle">Interactive Career Matching</div>
-            <h2 class="section-title">Discover Your Potential Pathway</h2>
+            <h2 class="section-title" style="color: var(--cream-bg);">Discover Your Potential Pathway</h2>
         </div>
 
         <div class="quiz-container">
@@ -1418,151 +1515,145 @@
         </div>
 
         <div class="copyright">
-            &copy; 2026 BS Social Work Program. All Rights Reserved. Designed for SHS Career Awareness.
+            &copy; 2026 BS Social Work Program. All Rights Reserved.
         </div>
     </footer>
 
     <!-- ==================== JAVASCRIPT CLICK & MODAL LOGIC ==================== -->
     <script>
-        /* ==================== CAREER SECTOR MODALS ==================== */
+        /* ==================== CAREER SECTOR MODALS (POSSIBLE POSITIONS PER AGENCY) ==================== */
         const careerModalData = {
             gov: {
                 icon: '<i class="fa-solid fa-building-flag"></i>',
                 title: 'Government Social Welfare Services',
-                subtitle: 'Public Sector Career Pathway',
+                subtitle: 'Field of Practice: Public Sector & Government Welfare',
                 body: `
-                    <p>Government social welfare represents the cornerstone of public social protection in the Philippines[cite: 1]. BSSW graduates in this sector work directly with government agencies like the Department of Social Welfare and Development (DSWD), Local Government Units (LGUs), City Social Welfare Offices, and Municipal Development Centers.</p>
-                    <h4 style="color: var(--accent-gold); margin-top: 15px;">Primary Responsibilities & Work Environment:</h4>
+                    <p><strong>Possible Settings:</strong> DSWD National/Regional Offices, Local Government Units (LGUs), City & Municipal Social Welfare and Development Offices.</p>
+                    <h4 style="color: var(--accent-gold); margin-top: 15px; margin-bottom: 8px;">Possible Positions per Agency / Setting:</h4>
                     <ul>
-                        <li><strong>Case Management & Assessment:</strong> Evaluating client eligibility for social assistance, housing, and emergency funds.</li>
-                        <li><strong>Disaster Emergency Response:</strong> Operating on the frontlines during natural disasters to distribute relief goods and manage evacuation shelters.</li>
-                        <li><strong>Community Program Coordination:</strong> Implementing national welfare drives such as 4Ps (Pantawid Pamilyang Pilipino Program), Sustainable Livelihood Programs (SLP), and KALAHI-CIDSS.</li>
+                        <li><strong>DSWD Main & Regional Offices:</strong> Social Welfare Officer (I - V), Project Development Officer, MEAL Specialist, Disaster Emergency Response Officer.</li>
+                        <li><strong>LGU & Municipal Social Welfare Offices:</strong> City/Municipal Social Welfare Officer (MSWDO), Community Case Manager, 4Ps Focal Person.</li>
+                        <li><strong>Public Housing & Resettlement Agencies:</strong> Community Relations Officer, Relocation Case Officer.</li>
                     </ul>
                 `
             },
             ngo: {
                 icon: '<i class="fa-solid fa-hand-holding-heart"></i>',
                 title: 'NGOs & Civil Society Organizations',
-                subtitle: 'Non-Profit & Advocacy Pathway',
+                subtitle: 'Field of Practice: Non-Profit & Grassroots Advocacy',
                 body: `
-                    <p>Non-Governmental Organizations (NGOs) and civil society groups offer dynamic environments focused on grassroots advocacy, human rights protection, and targeted socio-economic development.</p>
-                    <h4 style="color: var(--accent-gold); margin-top: 15px;">Primary Responsibilities & Work Environment:</h4>
+                    <p><strong>Possible Settings:</strong> Non-Profit Foundations, Civil Society Alliances, Community-Based Advocacy Groups, Faith-Based Charities.</p>
+                    <h4 style="color: var(--accent-gold); margin-top: 15px; margin-bottom: 8px;">Possible Positions per Agency / Setting:</h4>
                     <ul>
-                        <li><strong>Project Management & Field Operations:</strong> Designing and implementing community initiatives funded by local and international donors.</li>
-                        <li><strong>MEAL (Monitoring, Evaluation, Accountability & Learning):</strong> Measuring social impact and assessing program effectiveness.</li>
-                        <li><strong>Policy Advocacy & Human Rights:</strong> Campaigning against human trafficking, poverty, and social inequality.</li>
+                        <li><strong>Non-Governmental Organizations (NGOs):</strong> Project Officer, Program Coordinator, Field Community Organizer, Child Rights Advocate.</li>
+                        <li><strong>Civil Society Coalitions:</strong> Policy Advocate, Human Rights Campaigner, Social Mobilization Specialist.</li>
+                        <li><strong>Faith-Based & Charitable Foundations:</strong> Outreach Coordinator, Grant Administrator, Direct Relief Specialist.</li>
                     </ul>
                 `
             },
             med: {
                 icon: '<i class="fa-solid fa-hospital-user"></i>',
                 title: 'Medical & Healthcare Social Work',
-                subtitle: 'Clinical & Hospital Practice Pathway',
+                subtitle: 'Field of Practice: Health & Clinical Social Work',
                 body: `
-                    <p>Medical Social Workers practice in public hospitals, private clinics, rehabilitation centers, and mental health facilities, supporting patients and their families through illness and financial distress.</p>
-                    <h4 style="color: var(--accent-gold); margin-top: 15px;">Primary Responsibilities & Work Environment:</h4>
+                    <p><strong>Possible Settings:</strong> Public & Private Hospitals, Mental Health Facilities, Rehabilitation Centers, Dialysis & Cancer Clinics.</p>
+                    <h4 style="color: var(--accent-gold); margin-top: 15px; margin-bottom: 8px;">Possible Positions per Agency / Setting:</h4>
                     <ul>
-                        <li><strong>Psychosocial Intake & Assessment:</strong> Evaluating the social and economic conditions impacting a patient's treatment.</li>
-                        <li><strong>Financial Assistance Coordination:</strong> Helping patients access Malasakit Centers, PhilHealth, DOH assistance, and hospital charity funds.</li>
-                        <li><strong>Discharge Planning & Counseling:</strong> Ensuring patients have appropriate care plans and community support upon leaving the hospital.</li>
+                        <li><strong>Public / General Hospitals:</strong> Medical Social Worker, Patient Assistance Officer, Hospital Case Manager.</li>
+                        <li><strong>Malasakit & Social Service Counters:</strong> Intake Evaluation Officer, Medical Financial Aid Assessor.</li>
+                        <li><strong>Rehabilitation & Mental Health Centers:</strong> Psychosocial Counselor, Addiction Recovery Case Worker, Discharge Planner.</li>
                     </ul>
                 `
             },
             child: {
                 icon: '<i class="fa-solid fa-people-roof"></i>',
                 title: 'Child Welfare & Residential Care',
-                subtitle: 'Child Protection & Family Support Pathway',
+                subtitle: 'Field of Practice: Child Protection & Family Welfare',
                 body: `
-                    <p>This pathway focuses on protecting children's fundamental rights, providing safe sanctuary for orphaned or abused youth, and facilitating adoption or foster placement.</p>
-                    <h4 style="color: var(--accent-gold); margin-top: 15px;">Primary Responsibilities & Work Environment:</h4>
+                    <p><strong>Possible Settings:</strong> Orphanages, Children's Shelters, Adoption & Foster Care Agencies, Youth Rehabilitation Centers.</p>
+                    <h4 style="color: var(--accent-gold); margin-top: 15px; margin-bottom: 8px;">Possible Positions per Agency / Setting:</h4>
                     <ul>
-                        <li><strong>Child Protection Case Work:</strong> Investigating cases of child abuse, neglect, or exploitation alongside legal authorities.</li>
-                        <li><strong>Adoption & Foster Placement:</strong> Preparing Home Study Reports (HSR) and evaluating prospective adoptive families.</li>
-                        <li><strong>Residential Care Management:</strong> Supervising daily support, schooling, and counseling in child care centers and orphanages.</li>
+                        <li><strong>Child Protection Centers:</strong> Child & Family Social Worker, Child Abuse Case Evaluator.</li>
+                        <li><strong>Adoption & Placement Agencies:</strong> Adoption Case Worker, Foster Care Assessor, Home Study Specialist.</li>
+                        <li><strong>Residential Care Homes:</strong> Houseparent Supervisor, Youth Reintegration Specialist, Sanctuary Case Worker.</li>
                     </ul>
                 `
             },
             school: {
                 icon: '<i class="fa-solid fa-school-flag"></i>',
-                title: 'Schools & Youth Development Services',
-                subtitle: 'Educational Guidance & Youth Support Pathway',
+                title: 'Schools & Educational Institutions',
+                subtitle: 'Field of Practice: Educational & School Social Work',
                 body: `
-                    <p>School Social Workers collaborate with guidance counselors, teachers, and parents to support students facing academic, behavioral, or personal difficulties.</p>
-                    <h4 style="color: var(--accent-gold); margin-top: 15px;">Primary Responsibilities & Work Environment:</h4>
+                    <p><strong>Possible Settings:</strong> Elementary & High Schools, Universities, Student Affairs Offices, Special Education (SPED) Centers.</p>
+                    <h4 style="color: var(--accent-gold); margin-top: 15px; margin-bottom: 8px;">Possible Positions per Agency / Setting:</h4>
                     <ul>
-                        <li><strong>Student Intervention & Guidance:</strong> Addressing issues such as bullying, chronic absenteeism, and family distress.</li>
-                        <li><strong>Youth Leadership Development:</strong> Organizing school-wide anti-bullying drives, leadership camps, and peer support programs.</li>
-                        <li><strong>Parent-School Liaison:</strong> Conducting home visits to bridge communication between families and school administration.</li>
+                        <li><strong>Basic & Higher Education Schools:</strong> School Social Worker, Student Guidance Assistant, Anti-Bullying Program Officer.</li>
+                        <li><strong>University Student Affairs:</strong> Student Welfare Specialist, Scholarship & Assistance Coordinator.</li>
+                        <li><strong>Special Education Centers:</strong> SPED Social Work Specialist, Family Integration Officer.</li>
                     </ul>
                 `
             },
             drrm: {
                 icon: '<i class="fa-solid fa-house-medical-flag"></i>',
                 title: 'Disaster Risk Reduction & Response (DRRM)',
-                subtitle: 'Emergency Relief & Humanitarian Response',
+                subtitle: 'Field of Practice: Humanitarian & Emergency Response',
                 body: `
-                    <p>Given the susceptibility of the Philippines to natural disasters, DRRM social workers play a vital role in pre-disaster planning, emergency response, and community rehabilitation.</p>
-                    <h4 style="color: var(--accent-gold); margin-top: 15px;">Primary Responsibilities & Work Environment:</h4>
+                    <p><strong>Possible Settings:</strong> MDRRMO / CDRRMO Emergency Response Centers, Red Cross Chapters, Relief Outposts.</p>
+                    <h4 style="color: var(--accent-gold); margin-top: 15px; margin-bottom: 8px;">Possible Positions per Agency / Setting:</h4>
                     <ul>
-                        <li><strong>Evacuation Center Management:</strong> Ensuring safe, dignified living conditions for displaced families in evacuation sites.</li>
-                        <li><strong>Psychosocial First Aid (PFA):</strong> Providing immediate crisis counseling and trauma support to disaster survivors.</li>
-                        <li><strong>Community Resiliency Training:</strong> Educating local barangays on climate adaptation and disaster preparedness.</li>
+                        <li><strong>Disaster Management Offices (DRRMO):</strong> Disaster Emergency Officer, Relief Distribution Officer, Climate Resiliency Coordinator.</li>
+                        <li><strong>Humanitarian Relief Agencies:</strong> Psychosocial First Aid (PFA) Officer, Evacuation Center Manager.</li>
                     </ul>
                 `
             },
             comm: {
                 icon: '<i class="fa-solid fa-users-gear"></i>',
-                title: 'Community Development & Grassroots Advocacy',
-                subtitle: 'Rural & Tribal Community Organizing Pathway',
+                title: 'Community Development & Advocacy',
+                subtitle: 'Field of Practice: Rural & Grassroots Community Organizing',
                 body: `
-                    <p>Community Organizers (CO) empower rural areas, informal settlements, and indigenous communities to organize assemblies, secure basic services, and manage local resources.</p>
-                    <h4 style="color: var(--accent-gold); margin-top: 15px;">Primary Responsibilities & Work Environment:</h4>
+                    <p><strong>Possible Settings:</strong> Barangay Cooperatives, Rural Development Projects, Tribal & Indigenous Peoples (IP) Communities.</p>
+                    <h4 style="color: var(--accent-gold); margin-top: 15px; margin-bottom: 8px;">Possible Positions per Agency / Setting:</h4>
                     <ul>
-                        <li><strong>Grassroots Mobilization:</strong> Uniting community members to identify shared problems and demand civic solutions.</li>
-                        <li><strong>Livelihood Cooperative Formation:</strong> Helping women's groups and farmers establish micro-enterprises.</li>
-                        <li><strong>Indigenous Peoples (IP) Advocacy:</strong> Safeguarding ancestral domain rights and ancestral land preservation.</li>
+                        <li><strong>Community Cooperatives & Barangays:</strong> Community Organizer (CO), Livelihood Project Coordinator.</li>
+                        <li><strong>Indigenous Rights Organizations:</strong> IP Advocacy Officer, Ancestral Domain Facilitator.</li>
                     </ul>
                 `
             },
             spec: {
                 icon: '<i class="fa-solid fa-wheelchair"></i>',
-                title: 'Specialized Populations & Social Protection',
-                subtitle: 'Inclusion & Specialized Care Pathway',
+                title: 'Specialized Care & Protection',
+                subtitle: 'Field of Practice: Inclusion & Vulnerable Population Services',
                 body: `
-                    <p>Social workers in this field champion the dignity, safety, and inclusion of marginalized populations including persons with disabilities (PWDs), senior citizens, and victims of gender-based violence.</p>
-                    <h4 style="color: var(--accent-gold); margin-top: 15px;">Primary Responsibilities & Work Environment:</h4>
+                    <p><strong>Possible Settings:</strong> Senior Citizen Day Centers, PWD Vocational Facilities, Crisis Shelters for Abuse Survivors.</p>
+                    <h4 style="color: var(--accent-gold); margin-top: 15px; margin-bottom: 8px;">Possible Positions per Agency / Setting:</h4>
                     <ul>
-                        <li><strong>Disability Rights & Inclusion:</strong> Setting up accessibility initiatives, vocational training, and PWD benefits.</li>
-                        <li><strong>Senior Citizen Welfare:</strong> Managing day-care centers for older persons, social pensions, and elder care advocacy.</li>
-                        <li><strong>Gender & Anti-Violence Services:</strong> Operating crisis hotlines, shelters, and recovery support for survivors of abuse.</li>
+                        <li><strong>PWD & Senior Care Facilities:</strong> Disability Inclusion Officer, Older Persons Welfare Specialist.</li>
+                        <li><strong>Crisis Rehabilitation Centers:</strong> Gender-Based Violence Protection Officer, Crisis Intervention Worker.</li>
                     </ul>
                 `
             },
             policy: {
                 icon: '<i class="fa-solid fa-chart-line"></i>',
-                title: 'Research & Social Policy Analysis',
-                subtitle: 'Policy Reform & Academic Research Pathway',
+                title: 'Research & Policy Analysis',
+                subtitle: 'Field of Practice: Social Research & Policy Reform',
                 body: `
-                    <p>Social researchers analyze poverty statistics, evaluate government welfare programs, and draft evidence-based recommendations to reform national social legislation.</p>
-                    <h4 style="color: var(--accent-gold); margin-top: 15px;">Primary Responsibilities & Work Environment:</h4>
+                    <p><strong>Possible Settings:</strong> Social Research Institutes, Policy Think Tanks, Government Legislative Advisory Bodies.</p>
+                    <h4 style="color: var(--accent-gold); margin-top: 15px; margin-bottom: 8px;">Possible Positions per Agency / Setting:</h4>
                     <ul>
-                        <li><strong>Policy Assessment & Impact Evaluation:</strong> Conducting quantitative and qualitative research on social welfare policies.</li>
-                        <li><strong>Data Collection & Field Surveys:</strong> Gathering empirical data directly from marginalized sectors.</li>
-                        <li><strong>Legislative Consultation:</strong> Presenting research findings to lawmakers and government policy heads.</li>
+                        <li><strong>Research & Policy Institutes:</strong> Social Research Assistant, Policy Research Officer, Program Evaluator.</li>
                     </ul>
                 `
             },
             intl: {
                 icon: '<i class="fa-solid fa-globe"></i>',
-                title: 'International Development & Higher Education',
-                subtitle: 'Global INGO & Academic Career Pathway',
+                title: 'International Dev. & Higher Education',
+                subtitle: 'Field of Practice: Global Humanitarian & Academic Instruction',
                 body: `
-                    <p>Social workers with advanced degrees or specialized experience work in international agencies (such as UNICEF, UNHCR, UN Women) or serve as faculty members in BSSW academic programs.</p>
-                    <h4 style="color: var(--accent-gold); margin-top: 15px;">Primary Responsibilities & Work Environment:</h4>
+                    <p><strong>Possible Settings:</strong> Global Non-Profits (UNICEF, UNHCR), Academic Departments, International Consultancies.</p>
+                    <h4 style="color: var(--accent-gold); margin-top: 15px; margin-bottom: 8px;">Possible Positions per Agency / Setting:</h4>
                     <ul>
-                        <li><strong>Global Humanitarian Operations:</strong> Coordinating refugee assistance, international child protection, and global development.</li>
-                        <li><strong>Social Work Education:</strong> Teaching BSSW courses, mentoring students, and supervising field instruction.</li>
-                        <li><strong>International Consultancy:</strong> Advising global non-profits on country-specific social protection strategies.</li>
+                        <li><strong>International INGOs:</strong> Global Protection Officer, Country Fieldwork Coordinator.</li>
+                        <li><strong>Universities & Colleges:</strong> Social Work Educator, Academic Field Instructor.</li>
                     </ul>
                 `
             }
