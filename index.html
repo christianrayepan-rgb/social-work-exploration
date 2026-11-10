@@ -68,11 +68,12 @@
         }
 
         .header-logo-img {
-            width: 45px;
-            height: 45px;
+            width: 48px;
+            height: 48px;
             border-radius: 50%;
             object-fit: cover;
             border: 2px solid var(--accent-gold);
+            background-color: #fff;
         }
 
         .logo-title {
@@ -1051,8 +1052,41 @@
     <!-- ==================== NAVIGATION BAR ==================== -->
     <header>
         <div class="logo-container">
-            <!-- Official UNO-R Social Work Seal -->
-            <img src="logo.jpg" onerror="this.onerror=null; this.src='https://raw.githubusercontent.com/christianrayepan-rgb/social-work-exploration/main/logo.jpg';" alt="UNO-R Social Work Program Logo" class="header-logo-img">
+            <!-- EMBEDDED OFFICIAL UNO-R SOCIAL WORK SEAL SVG -->
+            <svg class="header-logo-img" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+                <!-- Background Circle -->
+                <circle cx="250" cy="250" r="240" fill="#3b2354" stroke="#d4af37" stroke-width="8"/>
+                <!-- Outer Ring -->
+                <circle cx="250" cy="250" r="215" fill="none" stroke="#ffffff" stroke-width="4"/>
+                <circle cx="250" cy="250" r="150" fill="#3b2354" stroke="#ffffff" stroke-width="4"/>
+                
+                <!-- Circular Ring Text Path -->
+                <path id="textPathTop" d="M 70,250 A 180,180 0 1,1 430,250" fill="none"/>
+                <path id="textPathBottom" d="M 430,250 A 180,180 0 0,1 70,250" fill="none"/>
+
+                <text fill="#ffffff" font-family="'Cinzel', serif" font-size="20" font-weight="bold" letter-spacing="2">
+                    <textPath href="#textPathTop" startOffset="50%" text-anchor="middle">
+                        UNIVERSITY OF NEGROS OCCIDENTAL - RECOLETOS
+                    </textPath>
+                </text>
+                <text fill="#d4af37" font-family="'Cinzel', serif" font-size="22" font-weight="bold" letter-spacing="3">
+                    <textPath href="#textPathBottom" startOffset="50%" text-anchor="middle">
+                        SOCIAL WORK PROGRAM
+                    </textPath>
+                </text>
+
+                <!-- Interlocking Star / People Emblem -->
+                <g transform="translate(250, 245) scale(0.95)" text-anchor="middle">
+                    <!-- Central Heart & Book Icon -->
+                    <circle cx="0" cy="-5" r="50" fill="#d4af37"/>
+                    <!-- Flaming Heart with Book -->
+                    <path d="M-15,-12 C-25,-30 0,-35 0,-10 C0,-35 25,-30 15,-12 C10,0 0,15 0,15 C0,15 -10,0 -15,-12 Z" fill="#d32f2f"/>
+                    <!-- Book -->
+                    <path d="M-20,10 Q0,0 20,10 L20,25 Q0,15 -20,25 Z" fill="#ffffff" stroke="#2a1b3d" stroke-width="2"/>
+                    <text x="0" y="42" fill="#ffffff" font-family="'Montserrat', sans-serif" font-size="16" font-weight="bold">est. 1970</text>
+                </g>
+            </svg>
+
             <div>
                 <div class="logo-title">UNO-R SOCIAL WORK PROGRAM</div>
                 <div class="logo-subtitle">Career Exploration</div>
