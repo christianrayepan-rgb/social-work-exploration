@@ -43,7 +43,6 @@
             color: inherit;
         }
 
-        /* HEADER & NAV */
         header {
             position: fixed;
             top: 0;
@@ -189,7 +188,6 @@
             background-color: var(--cream-bg);
         }
 
-        /* HERO SECTION */
         .hero-section {
             height: 100vh;
             background: linear-gradient(rgba(42, 27, 61, 0.85), rgba(42, 27, 61, 0.95)),
@@ -234,7 +232,6 @@
             justify-content: center;
         }
 
-        /* SECTIONS */
         .section {
             padding: 90px 8%;
         }
@@ -282,7 +279,6 @@
             color: var(--cream-bg);
         }
 
-        /* ABOUT GRID */
         .about-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -304,7 +300,6 @@
             margin-bottom: 15px;
         }
 
-        /* PERFORMANCE TABLE */
         .performance-table-wrapper {
             background: #ffffff;
             border-radius: 20px;
@@ -337,7 +332,6 @@
             font-weight: 700;
         }
 
-        /* CAREER PATHWAYS */
         .careers-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -366,7 +360,6 @@
             margin-bottom: 8px;
         }
 
-        /* HALL OF FAME */
         .hof-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -411,7 +404,6 @@
             margin-bottom: 8px;
         }
 
-        /* QUIZ CONTAINER */
         .quiz-container {
             max-width: 800px;
             margin: 0 auto;
@@ -485,7 +477,6 @@
             text-transform: uppercase;
         }
 
-        /* ACTIVITIES & EVENTS GRID */
         .pdf-banner {
             background: var(--bg-card-violet);
             border: 2px solid var(--accent-gold);
@@ -565,20 +556,13 @@
             line-height: 1.4;
         }
 
-        .card-desc {
-            font-size: 0.85rem;
-            color: #555;
-            margin-bottom: 20px;
-            flex-grow: 1;
-        }
-
         .card-action-btns {
             display: flex;
             flex-direction: column;
             gap: 8px;
+            margin-top: auto;
         }
 
-        /* CONTACT SECTION */
         .contact-container {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -858,7 +842,7 @@
         </div>
     </section>
 
-    <!-- 5-QUESTION QUIZ -->
+    <!-- QUIZ SECTION -->
     <section class="section" id="assessment" style="background: linear-gradient(rgba(42, 27, 61, 0.95), rgba(42, 27, 61, 0.95));">
         <div class="section-header">
             <div class="section-subtitle">5-Question Career Matcher</div>
@@ -881,7 +865,7 @@
         </div>
     </section>
 
-    <!-- ACTIVITIES & EVENTS SECTION (USING YOUR UPLOADED EVENT PHOTOS) -->
+    <!-- ACTIVITIES & EVENTS SECTION (STRICTLY MATCHED TO YOUR PDF) -->
     <section class="section" id="activities">
         <div class="section-header">
             <div class="section-subtitle">Official Records & Events</div>
@@ -896,7 +880,8 @@
         </div>
 
         <div class="cards-grid" id="contentCardsGrid">
-            <!-- Event 1 -->
+            
+            <!-- Page 1 / Event 1 -->
             <div class="card-item">
                 <div class="card-image-wrapper">
                     <img src="image1.jpg" alt="Levamen Societatem">
@@ -904,7 +889,6 @@
                 </div>
                 <div class="card-body">
                     <h3 class="card-title">Levamen Societatem: Relieving Society through Social Work Research</h3>
-                    <p class="card-desc">PAGHIMAKAS: Life through the lens of college student assistants living in economically disadvantaged areas.</p>
                     <div class="card-action-btns">
                         <a href="https://www.facebook.com/share/p/1EzjbcjMPP/" target="_blank" class="btn-gold"><i class="fa-brands fa-facebook"></i> View FB Post</a>
                         <a href="EVENTS_ ACTIVITIES ( EJ & ANGEL)_compressed.pdf" target="_blank" class="btn-primary"><i class="fa-solid fa-file-pdf"></i> View in PDF</a>
@@ -912,15 +896,14 @@
                 </div>
             </div>
 
-            <!-- Event 2 -->
+            <!-- Page 1 / Event 2 -->
             <div class="card-item">
                 <div class="card-image-wrapper">
                     <img src="image2.jpg" alt="Mahal ang Magmahal">
-                    <span class="card-tag">Video Feature</span>
+                    <span class="card-tag">Video</span>
                 </div>
                 <div class="card-body">
                     <h3 class="card-title">Mahal ang Magmahal</h3>
-                    <p class="card-desc">Video feature documenting love and compassionate social work service.</p>
                     <div class="card-action-btns">
                         <a href="https://www.facebook.com/share/v/16AKDMfGYGp/" target="_blank" class="btn-gold"><i class="fa-brands fa-facebook"></i> Watch Video</a>
                         <a href="EVENTS_ ACTIVITIES ( EJ & ANGEL)_compressed.pdf" target="_blank" class="btn-primary"><i class="fa-solid fa-file-pdf"></i> View in PDF</a>
@@ -928,7 +911,7 @@
                 </div>
             </div>
 
-            <!-- Event 3 -->
+            <!-- Page 1 / Event 3 -->
             <div class="card-item">
                 <div class="card-image-wrapper">
                     <img src="image3.jpg" alt="SHARED HUMANITY">
@@ -936,7 +919,6 @@
                 </div>
                 <div class="card-body">
                     <h3 class="card-title">SHARED HUMANITY</h3>
-                    <p class="card-desc">Community outreach honoring human dignity and empathy across diverse sectors.</p>
                     <div class="card-action-btns">
                         <a href="https://www.facebook.com/share/p/19gi25wsAE/" target="_blank" class="btn-gold"><i class="fa-brands fa-facebook"></i> View FB Post</a>
                         <a href="EVENTS_ ACTIVITIES ( EJ & ANGEL)_compressed.pdf" target="_blank" class="btn-primary"><i class="fa-solid fa-file-pdf"></i> View in PDF</a>
@@ -944,15 +926,14 @@
                 </div>
             </div>
 
-            <!-- Event 4 -->
+            <!-- Page 2 / Event 4 -->
             <div class="card-item">
                 <div class="card-image-wrapper">
                     <img src="image4.jpg" alt="Metro Bacolod District Jail Visit">
                     <span class="card-tag">Correctional SW</span>
                 </div>
                 <div class="card-body">
-                    <h3 class="card-title">Metro Bacolod District Jail Female Dormitory Visit</h3>
-                    <p class="card-desc">Correctional outreach providing support at Brgy. Handumanan, Bacolod City.</p>
+                    <h3 class="card-title">UNO-R Social Work Program and JSWAP UNO-R Chapter visited the Metro Bacolod District Jail Female Dormitory in Brgy. Handumanan, Bacolod City</h3>
                     <div class="card-action-btns">
                         <a href="https://www.facebook.com/share/p/19pEtJcrqo/" target="_blank" class="btn-gold"><i class="fa-brands fa-facebook"></i> View FB Post</a>
                         <a href="EVENTS_ ACTIVITIES ( EJ & ANGEL)_compressed.pdf" target="_blank" class="btn-primary"><i class="fa-solid fa-file-pdf"></i> View in PDF</a>
@@ -960,15 +941,14 @@
                 </div>
             </div>
 
-            <!-- Event 5 -->
+            <!-- Page 2 / Event 5 -->
             <div class="card-item">
                 <div class="card-image-wrapper">
-                    <img src="image5.jpg" alt="Women's Month 2026 Celebration">
+                    <img src="image5.jpg" alt="Women's Month 2026">
                     <span class="card-tag">Advocacy</span>
                 </div>
                 <div class="card-body">
-                    <h3 class="card-title">Women's Month 2026 Celebration</h3>
-                    <p class="card-desc">Field Instruction (FI) students active involvement in women and gender advocacy.</p>
+                    <h3 class="card-title">Our Field Instruction (FI) students joined the celebration of Women's Month 2026</h3>
                     <div class="card-action-btns">
                         <a href="https://www.facebook.com/share/p/1CB48SRw4M/" target="_blank" class="btn-gold"><i class="fa-brands fa-facebook"></i> View FB Post</a>
                         <a href="EVENTS_ ACTIVITIES ( EJ & ANGEL)_compressed.pdf" target="_blank" class="btn-primary"><i class="fa-solid fa-file-pdf"></i> View in PDF</a>
@@ -976,15 +956,14 @@
                 </div>
             </div>
 
-            <!-- Event 6 -->
+            <!-- Page 3 / Event 6 -->
             <div class="card-item">
                 <div class="card-image-wrapper">
                     <img src="image6.jpg" alt="HEALING HEARTS AFTER THE FIRE">
-                    <span class="card-tag">Crisis Intervention</span>
+                    <span class="card-tag">Relief</span>
                 </div>
                 <div class="card-body">
                     <h3 class="card-title">HEALING HEARTS AFTER THE FIRE</h3>
-                    <p class="card-desc">Emergency psychosocial response provided to fire victim families.</p>
                     <div class="card-action-btns">
                         <a href="https://www.facebook.com/share/p/19Rrv2vKUD/" target="_blank" class="btn-gold"><i class="fa-brands fa-facebook"></i> View FB Post</a>
                         <a href="EVENTS_ ACTIVITIES ( EJ & ANGEL)_compressed.pdf" target="_blank" class="btn-primary"><i class="fa-solid fa-file-pdf"></i> View in PDF</a>
@@ -992,15 +971,14 @@
                 </div>
             </div>
 
-            <!-- Event 7 -->
+            <!-- Page 3 / Event 7 -->
             <div class="card-item">
                 <div class="card-image-wrapper">
-                    <img src="image7.jpg" onerror="this.src='image1.jpg';" alt="Called to Serve with Purpose">
+                    <img src="image7.jpg" alt="Called to Serve with Purpose">
                     <span class="card-tag">Leadership</span>
                 </div>
                 <div class="card-body">
                     <h3 class="card-title">Called to Serve with Purpose</h3>
-                    <p class="card-desc">Leadership seminar empowering aspiring social work professionals.</p>
                     <div class="card-action-btns">
                         <a href="https://www.facebook.com/share/p/1Dxpukan6Z/" target="_blank" class="btn-gold"><i class="fa-brands fa-facebook"></i> View FB Post</a>
                         <a href="EVENTS_ ACTIVITIES ( EJ & ANGEL)_compressed.pdf" target="_blank" class="btn-primary"><i class="fa-solid fa-file-pdf"></i> View in PDF</a>
@@ -1008,15 +986,14 @@
                 </div>
             </div>
 
-            <!-- Event 8 -->
+            <!-- Page 4 / Event 8 -->
             <div class="card-item">
                 <div class="card-image-wrapper">
-                    <img src="image8.jpg" onerror="this.src='image2.jpg';" alt="BLESSED TO BE A BLESSING">
-                    <span class="card-tag">Community Outreach</span>
+                    <img src="image8.jpg" alt="BLESSED TO BE A BLESSING">
+                    <span class="card-tag">Outreach</span>
                 </div>
                 <div class="card-body">
                     <h3 class="card-title">BLESSED TO BE A BLESSING</h3>
-                    <p class="card-desc">Sharing blessings and supporting communities in need.</p>
                     <div class="card-action-btns">
                         <a href="https://www.facebook.com/share/p/1byKbFGL8j/" target="_blank" class="btn-gold"><i class="fa-brands fa-facebook"></i> View FB Post</a>
                         <a href="EVENTS_ ACTIVITIES ( EJ & ANGEL)_compressed.pdf" target="_blank" class="btn-primary"><i class="fa-solid fa-file-pdf"></i> View in PDF</a>
@@ -1024,15 +1001,14 @@
                 </div>
             </div>
 
-            <!-- Event 9 -->
+            <!-- Page 4 / Event 9 -->
             <div class="card-item">
                 <div class="card-image-wrapper">
-                    <img src="image9.jpg" onerror="this.src='image3.jpg';" alt="Social Work General Assembly 2025">
+                    <img src="image9.jpg" alt="Social Work General Assembly 2025">
                     <span class="card-tag">Assembly</span>
                 </div>
                 <div class="card-body">
                     <h3 class="card-title">Social Work General Assembly 2025</h3>
-                    <p class="card-desc">Annual assembly uniting all social work batches.</p>
                     <div class="card-action-btns">
                         <a href="https://www.facebook.com/share/v/1Ew9pv4oHB/" target="_blank" class="btn-gold"><i class="fa-brands fa-facebook"></i> Watch Video</a>
                         <a href="EVENTS_ ACTIVITIES ( EJ & ANGEL)_compressed.pdf" target="_blank" class="btn-primary"><i class="fa-solid fa-file-pdf"></i> View in PDF</a>
@@ -1040,15 +1016,14 @@
                 </div>
             </div>
 
-            <!-- Event 10 -->
+            <!-- Page 4 / Event 10 -->
             <div class="card-item">
                 <div class="card-image-wrapper">
-                    <img src="image10.jpg" onerror="this.src='image4.jpg';" alt="Freshmen Kalipay Foundation Outreach">
+                    <img src="image10.jpg" alt="Kalipay Foundation Visit">
                     <span class="card-tag">Child Welfare</span>
                 </div>
                 <div class="card-body">
-                    <h3 class="card-title">Freshmen Kalipay Foundation Outreach</h3>
-                    <p class="card-desc">First-year social work students building connections with children at Kalipay Foundation.</p>
+                    <h3 class="card-title">First-Year Social Work Students Foster Connections with Children in Foundation Visit</h3>
                     <div class="card-action-btns">
                         <a href="https://www.facebook.com/share/p/1Dj8MkjTvY/" target="_blank" class="btn-gold"><i class="fa-brands fa-facebook"></i> View FB Post</a>
                         <a href="EVENTS_ ACTIVITIES ( EJ & ANGEL)_compressed.pdf" target="_blank" class="btn-primary"><i class="fa-solid fa-file-pdf"></i> View in PDF</a>
@@ -1056,15 +1031,14 @@
                 </div>
             </div>
 
-            <!-- Event 11 -->
+            <!-- Page 5 / Event 11 -->
             <div class="card-item">
                 <div class="card-image-wrapper">
-                    <img src="image11.jpg" onerror="this.src='image5.jpg';" alt="Protect Our Forest Initiative">
+                    <img src="image11.jpg" alt="Protect Our Forest Initiative">
                     <span class="card-tag">Eco Advocacy</span>
                 </div>
                 <div class="card-body">
-                    <h3 class="card-title">Protect Our Forest Initiative</h3>
-                    <p class="card-desc">Environmental tree planting drive for ecological sustainability.</p>
+                    <h3 class="card-title">"The trees we plant today are the legacy we leave for tomorrow."</h3>
                     <div class="card-action-btns">
                         <a href="https://www.facebook.com/share/p/1HtGMYtzqA/" target="_blank" class="btn-gold"><i class="fa-brands fa-facebook"></i> View FB Post</a>
                         <a href="EVENTS_ ACTIVITIES ( EJ & ANGEL)_compressed.pdf" target="_blank" class="btn-primary"><i class="fa-solid fa-file-pdf"></i> View in PDF</a>
@@ -1072,15 +1046,14 @@
                 </div>
             </div>
 
-            <!-- Event 12 -->
+            <!-- Page 5 / Event 12 -->
             <div class="card-item">
                 <div class="card-image-wrapper">
-                    <img src="image12.jpg" onerror="this.src='image6.jpg';" alt="Mount Kanlaon Eruption Psychosocial Relief">
+                    <img src="image12.jpg" alt="Mount Kanlaon Eruption Psychosocial Relief">
                     <span class="card-tag">Disaster Relief</span>
                 </div>
                 <div class="card-body">
-                    <h3 class="card-title">Mount Kanlaon Eruption Psychosocial Relief</h3>
-                    <p class="card-desc">Volunteers conducting psychosocial first aid for eruption victims in La Castellana.</p>
+                    <h3 class="card-title">Six dedicated Social Work students from the University of Negros Occidental Recoletos volunteered to conduct a Psychosocial Processing Activity for victims of the recent Mount Kanlaon eruption in La Castellana, Negros Occidental.</h3>
                     <div class="card-action-btns">
                         <a href="https://www.facebook.com/share/p/1EjmDNi4vJ/" target="_blank" class="btn-gold"><i class="fa-brands fa-facebook"></i> View FB Post</a>
                         <a href="EVENTS_ ACTIVITIES ( EJ & ANGEL)_compressed.pdf" target="_blank" class="btn-primary"><i class="fa-solid fa-file-pdf"></i> View in PDF</a>
@@ -1088,15 +1061,14 @@
                 </div>
             </div>
 
-            <!-- Event 13 -->
+            <!-- Page 6 / Event 13 -->
             <div class="card-item">
                 <div class="card-image-wrapper">
-                    <img src="image13.jpg" onerror="this.src='image1.jpg';" alt="PEAKED EXCELLENCE | SW Quizzards">
-                    <span class="card-tag">Academic Quiz</span>
+                    <img src="image13.jpg" alt="SW Quizzards">
+                    <span class="card-tag">Academic</span>
                 </div>
                 <div class="card-body">
-                    <h3 class="card-title">PEAKED EXCELLENCE | SW Quizzards</h3>
-                    <p class="card-desc">Social Work students displaying razor-like wit in academic competition.</p>
+                    <h3 class="card-title">PEAKED EXCELLENCE | Social Work Students display razor-like wit in SW Quizzards</h3>
                     <div class="card-action-btns">
                         <a href="https://www.facebook.com/share/p/19n9sVQ707/" target="_blank" class="btn-gold"><i class="fa-brands fa-facebook"></i> View FB Post</a>
                         <a href="EVENTS_ ACTIVITIES ( EJ & ANGEL)_compressed.pdf" target="_blank" class="btn-primary"><i class="fa-solid fa-file-pdf"></i> View in PDF</a>
@@ -1104,15 +1076,14 @@
                 </div>
             </div>
 
-            <!-- Event 14 -->
+            <!-- Page 6 / Event 14 -->
             <div class="card-item">
                 <div class="card-image-wrapper">
-                    <img src="image14.jpg" onerror="this.src='image2.jpg';" alt="Pag-Arangkada in UWEEK 2024">
+                    <img src="image14.jpg" alt="Pag-Arangkada in UWEEK 2024">
                     <span class="card-tag">UWEEK 2024</span>
                 </div>
                 <div class="card-body">
-                    <h3 class="card-title">Pag-Arangkada in UWEEK 2024</h3>
-                    <p class="card-desc">Social Work students active participation in University Week festivities.</p>
+                    <h3 class="card-title">LOOKING BACK | Social Work Students hold Pag-Arangkada in UWEEK 2024</h3>
                     <div class="card-action-btns">
                         <a href="https://www.facebook.com/share/p/19VRNcTbqB/" target="_blank" class="btn-gold"><i class="fa-brands fa-facebook"></i> View FB Post</a>
                         <a href="EVENTS_ ACTIVITIES ( EJ & ANGEL)_compressed.pdf" target="_blank" class="btn-primary"><i class="fa-solid fa-file-pdf"></i> View in PDF</a>
@@ -1120,245 +1091,231 @@
                 </div>
             </div>
 
-            <!-- Event 15 -->
+            <!-- Page 6 / Event 15 -->
             <div class="card-item">
                 <div class="card-image-wrapper">
-                    <img src="image15.jpg" onerror="this.src='image3.jpg';" alt="Welcome Smash 2026">
-                    <span class="card-tag">Welcome Event</span>
+                    <img src="image15.jpg" alt="Welcome Smash 2026">
+                    <span class="card-tag">Event</span>
                 </div>
                 <div class="card-body">
                     <h3 class="card-title">Welcome Smash 2026</h3>
-                    <p class="card-desc">Welcoming event and team building for social work majors.</p>
                     <div class="card-action-btns">
-                        <a href="https://www.facebook.com/share/p/19iRw1h6bA/" target="_blank" class="btn-gold"><i class="fa-brands fa-facebook"></i> View FB Post</a>
+                        <a href="https://www.facebook.com/share/p/19iRw1h6bA/?mibextid=wwXlfr" target="_blank" class="btn-gold"><i class="fa-brands fa-facebook"></i> View FB Post</a>
                         <a href="EVENTS_ ACTIVITIES ( EJ & ANGEL)_compressed.pdf" target="_blank" class="btn-primary"><i class="fa-solid fa-file-pdf"></i> View in PDF</a>
                     </div>
                 </div>
             </div>
 
-            <!-- Event 16 -->
+            <!-- Page 7 / Event 16 -->
             <div class="card-item">
                 <div class="card-image-wrapper">
-                    <img src="image16.jpg" onerror="this.src='image4.jpg';" alt="JSWAP Freshmen Assembly and Orientation 2024">
+                    <img src="image16.jpg" alt="Jswap Freshmen Assembly and Orientation 2024">
                     <span class="card-tag">Orientation</span>
                 </div>
                 <div class="card-body">
-                    <h3 class="card-title">JSWAP Freshmen Assembly and Orientation 2024</h3>
-                    <p class="card-desc">Orientation and welcome assembly for incoming freshmen.</p>
+                    <h3 class="card-title">Jswap Freshmen Assembly and Orientation 2024</h3>
                     <div class="card-action-btns">
-                        <a href="https://www.facebook.com/share/1HSDNniQtw/" target="_blank" class="btn-gold"><i class="fa-brands fa-facebook"></i> View FB Post</a>
+                        <a href="https://www.facebook.com/share/1HSDNniQtw/?mibextid=wwXIfr" target="_blank" class="btn-gold"><i class="fa-brands fa-facebook"></i> View FB Post</a>
                         <a href="EVENTS_ ACTIVITIES ( EJ & ANGEL)_compressed.pdf" target="_blank" class="btn-primary"><i class="fa-solid fa-file-pdf"></i> View in PDF</a>
                     </div>
                 </div>
             </div>
 
-            <!-- Event 17 -->
+            <!-- Page 7 / Event 17 -->
             <div class="card-item">
                 <div class="card-image-wrapper">
-                    <img src="image17.jpg" onerror="this.src='image5.jpg';" alt="Dalangpan Activities Culmination">
-                    <span class="card-tag">Culmination</span>
+                    <img src="image17.jpg" alt="DALANGPAN ACTIVITIES">
+                    <span class="card-tag">Activity</span>
                 </div>
                 <div class="card-body">
-                    <h3 class="card-title">Dalangpan Activities Culmination</h3>
-                    <p class="card-desc">Dalangpan Ni Fabella community activities successfully concluded.</p>
+                    <h3 class="card-title">DALANGPAN ACTIVITIES COME TO AN END, DALANGPAN NI FABELLA FLEW THE HIGHEST</h3>
                     <div class="card-action-btns">
-                        <a href="https://www.facebook.com/share/p/1CRvtQiqYr/" target="_blank" class="btn-gold"><i class="fa-brands fa-facebook"></i> View FB Post</a>
+                        <a href="https://www.facebook.com/share/p/1CRvtQiqYr/?mibextid=wwXIfr" target="_blank" class="btn-gold"><i class="fa-brands fa-facebook"></i> View FB Post</a>
                         <a href="EVENTS_ ACTIVITIES ( EJ & ANGEL)_compressed.pdf" target="_blank" class="btn-primary"><i class="fa-solid fa-file-pdf"></i> View in PDF</a>
                     </div>
                 </div>
             </div>
 
-            <!-- Event 18 -->
+            <!-- Page 7-8 / Event 18 -->
             <div class="card-item">
                 <div class="card-image-wrapper">
-                    <img src="image18.jpg" onerror="this.src='image6.jpg';" alt="General Assembly 2025: Heart Illuminated">
+                    <img src="image18.jpg" alt="General Assembly 2025- Heart Illuminated">
                     <span class="card-tag">Assembly</span>
                 </div>
                 <div class="card-body">
-                    <h3 class="card-title">General Assembly 2025: Heart Illuminated</h3>
-                    <p class="card-desc">PAGBUTLAK: Illuminating the Heart of Social Work.</p>
+                    <h3 class="card-title">General Assembly 2025- Heart Illuminated</h3>
                     <div class="card-action-btns">
-                        <a href="https://www.facebook.com/share/1LwwQmLnPh/" target="_blank" class="btn-gold"><i class="fa-brands fa-facebook"></i> View FB Post</a>
+                        <a href="https://www.facebook.com/share/1LwwQmLnPh/?mibextid=wwXIfr" target="_blank" class="btn-gold"><i class="fa-brands fa-facebook"></i> View FB Post</a>
                         <a href="EVENTS_ ACTIVITIES ( EJ & ANGEL)_compressed.pdf" target="_blank" class="btn-primary"><i class="fa-solid fa-file-pdf"></i> View in PDF</a>
                     </div>
                 </div>
             </div>
 
-            <!-- Event 19 -->
+            <!-- Page 8 / Event 19 -->
             <div class="card-item">
                 <div class="card-image-wrapper">
-                    <img src="image19.jpg" onerror="this.src='image1.jpg';" alt="PAGBUTLAK: Service Fueled by Purpose">
-                    <span class="card-tag">Service</span>
+                    <img src="image19.jpg" alt="PAGBUTLAK: Service Fueled by Purpose">
+                    <span class="card-tag">Assembly</span>
                 </div>
                 <div class="card-body">
-                    <h3 class="card-title">PAGBUTLAK: Service Fueled by Purpose</h3>
-                    <p class="card-desc">A celebration of dedicated service and community empowerment.</p>
+                    <h3 class="card-title">PAGBUTLAK: Service Fueled by Purpose Once More</h3>
                     <div class="card-action-btns">
-                        <a href="https://www.facebook.com/share/p/1GD6Bn3hWf/" target="_blank" class="btn-gold"><i class="fa-brands fa-facebook"></i> View FB Post</a>
+                        <a href="https://www.facebook.com/share/p/1GD6Bn3hWf/?mibextid=wwXIfr" target="_blank" class="btn-gold"><i class="fa-brands fa-facebook"></i> View FB Post</a>
                         <a href="EVENTS_ ACTIVITIES ( EJ & ANGEL)_compressed.pdf" target="_blank" class="btn-primary"><i class="fa-solid fa-file-pdf"></i> View in PDF</a>
                     </div>
                 </div>
             </div>
 
-            <!-- Event 20 -->
+            <!-- Page 8-9 / Event 20 -->
             <div class="card-item">
                 <div class="card-image-wrapper">
-                    <img src="image20.jpg" onerror="this.src='image2.jpg';" alt="JSWAP General Assembly: Extravaganza">
-                    <span class="card-tag">General Assembly</span>
+                    <img src="image20.jpg" alt="In a Barbie World General Assembly">
+                    <span class="card-tag">Assembly</span>
                 </div>
                 <div class="card-body">
-                    <h3 class="card-title">JSWAP General Assembly: Extravaganza</h3>
-                    <p class="card-desc">Annual general gathering celebrating social work unity and purpose.</p>
+                    <h3 class="card-title">"In a Barbie World: Presenting you the JSWAP UNO-R Chapter General Assembly where extravaganza overflowed."</h3>
                     <div class="card-action-btns">
-                        <a href="https://www.facebook.com/share/1LkJuD8zWi/" target="_blank" class="btn-gold"><i class="fa-brands fa-facebook"></i> View FB Post</a>
+                        <a href="https://www.facebook.com/share/1LkJuD8zWi/?mibextid=wwXIfr" target="_blank" class="btn-gold"><i class="fa-brands fa-facebook"></i> View FB Post</a>
                         <a href="EVENTS_ ACTIVITIES ( EJ & ANGEL)_compressed.pdf" target="_blank" class="btn-primary"><i class="fa-solid fa-file-pdf"></i> View in PDF</a>
                     </div>
                 </div>
             </div>
 
-            <!-- Event 21 -->
+            <!-- Page 9 / Event 21 -->
             <div class="card-item">
                 <div class="card-image-wrapper">
-                    <img src="image21.jpg" onerror="this.src='image3.jpg';" alt="CAS Assembly 2024">
-                    <span class="card-tag">CAS Assembly</span>
+                    <img src="image21.jpg" alt="Cas Assembly 2024">
+                    <span class="card-tag">Assembly</span>
                 </div>
                 <div class="card-body">
-                    <h3 class="card-title">CAS Assembly 2024</h3>
-                    <p class="card-desc">ARTIANS, TRANSCEND! Painting the academic year green.</p>
+                    <h3 class="card-title">Cas Assembly 2024 "ARTIANS, TRANSCEND! HEAD-ON, PAINTING THE ACADEMIC YEAR GREEN!"</h3>
                     <div class="card-action-btns">
-                        <a href="https://www.facebook.com/share/19UmL7uxje/" target="_blank" class="btn-gold"><i class="fa-brands fa-facebook"></i> View FB Post</a>
+                        <a href="https://www.facebook.com/share/19UmL7uxje/?mibextid=wwXIfr" target="_blank" class="btn-gold"><i class="fa-brands fa-facebook"></i> View FB Post</a>
                         <a href="EVENTS_ ACTIVITIES ( EJ & ANGEL)_compressed.pdf" target="_blank" class="btn-primary"><i class="fa-solid fa-file-pdf"></i> View in PDF</a>
                     </div>
                 </div>
             </div>
 
-            <!-- Event 22 -->
+            <!-- Page 9-10 / Event 22 -->
             <div class="card-item">
                 <div class="card-image-wrapper">
-                    <img src="image22.jpg" onerror="this.src='image4.jpg';" alt="Social Work Pinning Ceremony 2024">
+                    <img src="image22.jpg" alt="Pinning Ceremony 2024">
                     <span class="card-tag">Ceremony</span>
                 </div>
                 <div class="card-body">
-                    <h3 class="card-title">Social Work Pinning Ceremony 2024</h3>
-                    <p class="card-desc">Official pinning ceremony marking field commitment and readiness.</p>
+                    <h3 class="card-title">Pinning Ceremony 2024</h3>
                     <div class="card-action-btns">
-                        <a href="https://www.facebook.com/share/1K6HLDk3pr/" target="_blank" class="btn-gold"><i class="fa-brands fa-facebook"></i> View FB Post</a>
+                        <a href="https://www.facebook.com/share/1K6HLDk3pr/?mibextid=wwXIfr" target="_blank" class="btn-gold"><i class="fa-brands fa-facebook"></i> View FB Post</a>
                         <a href="EVENTS_ ACTIVITIES ( EJ & ANGEL)_compressed.pdf" target="_blank" class="btn-primary"><i class="fa-solid fa-file-pdf"></i> View in PDF</a>
                     </div>
                 </div>
             </div>
 
-            <!-- Event 23 -->
+            <!-- Page 10 / Event 23 -->
             <div class="card-item">
                 <div class="card-image-wrapper">
-                    <img src="image23.jpg" onerror="this.src='image5.jpg';" alt="Pautokay: Inter-Society Brains Bee">
+                    <img src="image23.jpg" alt="Pautokay Brains Bee">
                     <span class="card-tag">Quiz Bee</span>
                 </div>
                 <div class="card-body">
-                    <h3 class="card-title">Pautokay: Inter-Society Brains Bee</h3>
-                    <p class="card-desc">Bico, Garcia, and Pacrim representing JSWAP UNO-R with academic prowess.</p>
+                    <h3 class="card-title">BRAIN PROWESS | Bico, Garcia, Pacrim represent JSWAP UNO-R in Pautokay: Inter-Society General Information Brains Bee</h3>
                     <div class="card-action-btns">
-                        <a href="https://www.facebook.com/share/1Byt2HKp8w/" target="_blank" class="btn-gold"><i class="fa-brands fa-facebook"></i> View FB Post</a>
+                        <a href="https://www.facebook.com/share/1Byt2HKp8w/?mibextid=wwXIfr" target="_blank" class="btn-gold"><i class="fa-brands fa-facebook"></i> View FB Post</a>
                         <a href="EVENTS_ ACTIVITIES ( EJ & ANGEL)_compressed.pdf" target="_blank" class="btn-primary"><i class="fa-solid fa-file-pdf"></i> View in PDF</a>
                     </div>
                 </div>
             </div>
 
-            <!-- Event 24 -->
+            <!-- Page 10 / Event 24 -->
             <div class="card-item">
                 <div class="card-image-wrapper">
-                    <img src="image24.jpg" onerror="this.src='image6.jpg';" alt="Commissioning Ceremony 2026 Part 2">
+                    <img src="image24.jpg" alt="Wit and Speech!">
+                    <span class="card-tag">Competition</span>
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">Wit and Speech!</h3>
+                    <div class="card-action-btns">
+                        <a href="https://www.facebook.com/share/14sws7LhVYa/?mibextid=wwXlfr" target="_blank" class="btn-gold"><i class="fa-brands fa-facebook"></i> View FB Post</a>
+                        <a href="EVENTS_ ACTIVITIES ( EJ & ANGEL)_compressed.pdf" target="_blank" class="btn-primary"><i class="fa-solid fa-file-pdf"></i> View in PDF</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Page 10-11 / Event 25 -->
+            <div class="card-item">
+                <div class="card-image-wrapper">
+                    <img src="image25.jpg" alt="LOOK BACK Recognition">
+                    <span class="card-tag">Recognition</span>
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">LOOK BACK | A moment of recognition, responsibility, and purpose.</h3>
+                    <div class="card-action-btns">
+                        <a href="https://www.facebook.com/share/p/1K8SpxtEba/?mibextid=wwXIfr" target="_blank" class="btn-gold"><i class="fa-brands fa-facebook"></i> View FB Post</a>
+                        <a href="EVENTS_ ACTIVITIES ( EJ & ANGEL)_compressed.pdf" target="_blank" class="btn-primary"><i class="fa-solid fa-file-pdf"></i> View in PDF</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Page 11 / Event 26 -->
+            <div class="card-item">
+                <div class="card-image-wrapper">
+                    <img src="image26.jpg" alt="Commissioning Ceremony 2026 part 2">
                     <span class="card-tag">Commissioning</span>
                 </div>
                 <div class="card-body">
-                    <h3 class="card-title">Commissioning Ceremony 2026 Part 2</h3>
-                    <p class="card-desc">Solemn commissioning service sending graduating social work interns to field placements.</p>
+                    <h3 class="card-title">Commissioning Ceremony 2026 part 2</h3>
                     <div class="card-action-btns">
-                        <a href="https://www.facebook.com/share/p/1DfjjWtQBD/" target="_blank" class="btn-gold"><i class="fa-brands fa-facebook"></i> View FB Post</a>
+                        <a href="https://www.facebook.com/share/p/1DfjjWtQBD/?mibextid=wwXIfr" target="_blank" class="btn-gold"><i class="fa-brands fa-facebook"></i> View FB Post</a>
                         <a href="EVENTS_ ACTIVITIES ( EJ & ANGEL)_compressed.pdf" target="_blank" class="btn-primary"><i class="fa-solid fa-file-pdf"></i> View in PDF</a>
                     </div>
                 </div>
             </div>
 
-            <!-- Event 25 -->
+            <!-- Page 11 / Event 27 -->
             <div class="card-item">
                 <div class="card-image-wrapper">
-                    <img src="image25.jpg" onerror="this.src='image1.jpg';" alt="Social Work Night 2026: THE FINAL SUNRISE">
+                    <img src="image27.jpg" alt="Social Work Night 2026">
                     <span class="card-tag">Social Night</span>
                 </div>
                 <div class="card-body">
                     <h3 class="card-title">Social Work Night 2026: THE FINAL SUNRISE</h3>
-                    <p class="card-desc">A celebratory evening of fellowship, awards, and memorable moments.</p>
                     <div class="card-action-btns">
-                        <a href="https://www.facebook.com/share/p/19V3acMAYv/" target="_blank" class="btn-gold"><i class="fa-brands fa-facebook"></i> View FB Post</a>
+                        <a href="https://www.facebook.com/share/p/19V3acMAYv/?mibextid=wwXIfr" target="_blank" class="btn-gold"><i class="fa-brands fa-facebook"></i> View FB Post</a>
                         <a href="EVENTS_ ACTIVITIES ( EJ & ANGEL)_compressed.pdf" target="_blank" class="btn-primary"><i class="fa-solid fa-file-pdf"></i> View in PDF</a>
                     </div>
                 </div>
             </div>
 
-            <!-- Event 26 -->
+            <!-- Page 11-12 / Event 28 -->
             <div class="card-item">
                 <div class="card-image-wrapper">
-                    <img src="image26.jpg" onerror="this.src='image2.jpg';" alt="JSWAP National Conference 2025">
-                    <span class="card-tag">Conference</span>
+                    <img src="image28.jpg" alt="PULLING HARDER, TOGETHER">
+                    <span class="card-tag">Seminar</span>
                 </div>
                 <div class="card-body">
-                    <h3 class="card-title">JSWAP National Conference 2025</h3>
-                    <p class="card-desc">JSWAP-UNOR Chapter delegates representing in Iloilo City, the City of Love.</p>
+                    <h3 class="card-title">Seminar: PULLING HARDER, TOGETHER</h3>
                     <div class="card-action-btns">
-                        <a href="https://www.facebook.com/share/p/1ErSX8JnWA/" target="_blank" class="btn-gold"><i class="fa-brands fa-facebook"></i> View FB Post</a>
+                        <a href="https://www.facebook.com/share/p/19pKgF3g1y/?mibextid=wwXIfr" target="_blank" class="btn-gold"><i class="fa-brands fa-facebook"></i> View FB Post</a>
                         <a href="EVENTS_ ACTIVITIES ( EJ & ANGEL)_compressed.pdf" target="_blank" class="btn-primary"><i class="fa-solid fa-file-pdf"></i> View in PDF</a>
                     </div>
                 </div>
             </div>
 
-            <!-- Event 27 -->
+            <!-- Page 12 / Event 29 -->
             <div class="card-item">
                 <div class="card-image-wrapper">
-                    <img src="image27.jpg" onerror="this.src='image3.jpg';" alt="6th A+SURE Research Expo">
-                    <span class="card-tag">Research Expo</span>
+                    <img src="image29.jpg" alt="Grade 12 Immersion">
+                    <span class="card-tag">Immersion</span>
                 </div>
                 <div class="card-body">
-                    <h3 class="card-title">6th A+SURE Research Expo</h3>
-                    <p class="card-desc">ONE UNORCAS: Connecting Ideas, Empowering Sustainable Development for Tomorrow.</p>
+                    <h3 class="card-title">Grade 12 Immersion students from Ramon Torres National High School</h3>
                     <div class="card-action-btns">
-                        <a href="https://www.facebook.com/share/p/1ByZmh12Dd/" target="_blank" class="btn-gold"><i class="fa-brands fa-facebook"></i> View FB Post</a>
+                        <a href="https://www.facebook.com/share/p/19L6TZDCsW/?mibextid=wwXIfr" target="_blank" class="btn-gold"><i class="fa-brands fa-facebook"></i> View FB Post</a>
                         <a href="EVENTS_ ACTIVITIES ( EJ & ANGEL)_compressed.pdf" target="_blank" class="btn-primary"><i class="fa-solid fa-file-pdf"></i> View in PDF</a>
                     </div>
                 </div>
             </div>
 
-            <!-- Event 28 -->
-            <div class="card-item">
-                <div class="card-image-wrapper">
-                    <img src="image28.jpg" onerror="this.src='image4.jpg';" alt="SW LE Topnotchers Certificates of Distinction">
-                    <span class="card-tag">Recognition</span>
-                </div>
-                <div class="card-body">
-                    <h3 class="card-title">SW LE Topnotchers Certificates of Distinction</h3>
-                    <p class="card-desc">Official recognition of board exam topnotchers and academic achievers.</p>
-                    <div class="card-action-btns">
-                        <a href="https://www.facebook.com/share/p/1EhonvxbW6/" target="_blank" class="btn-gold"><i class="fa-brands fa-facebook"></i> View FB Post</a>
-                        <a href="EVENTS_ ACTIVITIES ( EJ & ANGEL)_compressed.pdf" target="_blank" class="btn-primary"><i class="fa-solid fa-file-pdf"></i> View in PDF</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Event 29 -->
-            <div class="card-item">
-                <div class="card-image-wrapper">
-                    <img src="image29.jpg" onerror="this.src='image5.jpg';" alt="SOLID 237! General & Freshmen Assembly 2026">
-                    <span class="card-tag">Assembly</span>
-                </div>
-                <div class="card-body">
-                    <h3 class="card-title">SOLID 237! General & Freshmen Assembly 2026</h3>
-                    <p class="card-desc">Welcoming 237 active Social Work students and freshmen into the JSWAP chapter.</p>
-                    <div class="card-action-btns">
-                        <a href="https://www.facebook.com/share/1Fr3A5EYki/" target="_blank" class="btn-gold"><i class="fa-brands fa-facebook"></i> View FB Post</a>
-                        <a href="EVENTS_ ACTIVITIES ( EJ & ANGEL)_compressed.pdf" target="_blank" class="btn-primary"><i class="fa-solid fa-file-pdf"></i> View in PDF</a>
-                    </div>
-                </div>
-            </div>
         </div>
     </section>
 
@@ -1401,7 +1358,6 @@
 
     <!-- JAVASCRIPT -->
     <script>
-        /* 5-QUESTION QUIZ LOGIC */
         const quizQuestions = [
             {
                 question: "1. What core social impact vision drives you the most?",
@@ -1500,7 +1456,6 @@
 
         loadQuestion();
 
-        /* SEARCH FUNCTIONALITY */
         function filterWebsiteContent() {
             const query = document.getElementById('searchInput').value.toLowerCase();
             const cards = document.querySelectorAll('.card-item');
