@@ -137,28 +137,19 @@
         .perf-table td { padding: 12px; border: 1px solid rgba(42, 27, 61, 0.1); }
         .perf-highlight-row { background-color: rgba(212, 175, 55, 0.15) !important; font-weight: 700; }
 
-        /* FULLY INTERACTIVE & RESPONSIVE CAREER PATHWAYS */
+        /* INTERACTIVE CAREERS CARDS */
         .careers-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-top: 30px; }
         .career-box {
             background: rgba(59, 35, 84, 0.7);
             border: 1px solid var(--border-light);
             border-radius: 20px;
             padding: 35px 30px;
-            transition: all 0.35 ease;
+            transition: all 0.35s ease;
             cursor: pointer;
             display: flex;
             flex-direction: column;
             align-items: flex-start;
             position: relative;
-            overflow: hidden;
-        }
-        .career-box::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; width: 4px; height: 100%;
-            background: var(--accent-gold);
-            opacity: 0;
-            transition: opacity 0.3s ease;
         }
         .career-box:hover {
             transform: translateY(-8px);
@@ -166,12 +157,12 @@
             border-color: var(--accent-gold);
             box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
         }
-        .career-box:hover::before { opacity: 1; }
         .career-box-icon { font-size: 2.5rem; color: var(--accent-gold); margin-bottom: 20px; transition: transform 0.3s ease; }
         .career-box:hover .career-box-icon { transform: scale(1.15); }
         .career-field-title { font-family: var(--font-serif); font-size: 1.3rem; color: var(--cream-bg); margin-bottom: 10px; }
+        .click-hint { font-size: 0.75rem; color: var(--accent-gold); font-weight: 600; text-transform: uppercase; margin-top: auto; display: flex; align-items: center; gap: 5px; }
 
-        /* FULLY INTERACTIVE & RESPONSIVE HALL OF FAME */
+        /* INTERACTIVE HALL OF FAME CARDS */
         .hof-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
         .hof-card {
             background: #ffffff;
@@ -205,6 +196,74 @@
         }
         .hof-name { font-family: var(--font-serif); font-size: 1.2rem; color: var(--bg-dark-violet); font-weight: 700; margin-bottom: 6px; }
         .hof-rank { font-size: 0.85rem; color: var(--accent-gold); font-weight: 700; text-transform: uppercase; margin-bottom: 8px; }
+
+        /* MODAL STYLING */
+        .info-modal {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(15, 8, 25, 0.85);
+            backdrop-filter: blur(8px);
+            z-index: 2000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        .info-modal.active { display: flex; }
+        .modal-content {
+            background: #ffffff;
+            border: 2px solid var(--accent-gold);
+            border-radius: 25px;
+            max-width: 600px;
+            width: 100%;
+            padding: 40px;
+            position: relative;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+            animation: modalFadeIn 0.3s ease forwards;
+        }
+        @keyframes modalFadeIn {
+            from { opacity: 0; transform: translateY(20px) scale(0.95); }
+            to { opacity: 1; transform: translateY(0) scale(1); }
+        }
+        .modal-close-btn {
+            position: absolute;
+            top: 20px; right: 25px;
+            font-size: 1.8rem;
+            color: var(--bg-dark-violet);
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+        .modal-close-btn:hover { color: var(--accent-gold); }
+        .modal-header-tag {
+            font-size: 0.75rem;
+            color: var(--accent-gold);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+        }
+        .modal-title {
+            font-family: var(--font-serif);
+            font-size: 1.8rem;
+            color: var(--bg-dark-violet);
+            margin-bottom: 15px;
+            line-height: 1.3;
+        }
+        .modal-body-text {
+            color: var(--text-dark);
+            font-size: 0.95rem;
+            line-height: 1.7;
+            margin-bottom: 25px;
+        }
+        .modal-highlights {
+            background: var(--cream-bg);
+            border-left: 4px solid var(--accent-gold);
+            padding: 15px 20px;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            color: var(--bg-dark-violet);
+            font-weight: 500;
+        }
 
         .quiz-container { max-width: 800px; margin: 0 auto; background: rgba(59, 35, 84, 0.95); border-radius: 30px; padding: 40px; border: 1px solid var(--border-light); }
         .quiz-progress { height: 6px; background: rgba(248, 246, 252, 0.1); border-radius: 3px; margin-bottom: 30px; overflow: hidden; }
@@ -387,70 +446,90 @@
         </div>
     </section>
 
-    <!-- CAREERS SECTION (FULLY CLICKABLE & RESPONSIVE CARDS) -->
+    <!-- CAREERS SECTION (INTERACTIVE CLICK POP-UPS) -->
     <section class="section section-dark" id="careers">
         <div class="section-header">
             <div class="section-subtitle">Career Pathways</div>
             <h2 class="section-title">WHERE CAN A BSSW DEGREE TAKE YOU?</h2>
         </div>
         <div class="careers-container">
-            <a href="#activities" class="career-box">
+            <div class="career-box" onclick="openModal('gov')">
                 <i class="fa-solid fa-building-flag career-box-icon"></i>
                 <h3 class="career-field-title">Government Social Welfare</h3>
-                <p style="color: var(--cream-accent); font-size: 0.88rem;">DSWD, LGU Social Welfare Offices, and Municipal Social Development.</p>
-            </a>
-            <a href="#activities" class="career-box">
+                <p style="color: var(--cream-accent); font-size: 0.88rem; margin-bottom: 15px;">DSWD, LGU Social Welfare Offices, and Municipal Social Development.</p>
+                <div class="click-hint">Click for full info <i class="fa-solid fa-arrow-right"></i></div>
+            </div>
+            <div class="career-box" onclick="openModal('ngo')">
                 <i class="fa-solid fa-hand-holding-heart career-box-icon"></i>
                 <h3 class="career-field-title">NGOs & Civil Society</h3>
-                <p style="color: var(--cream-accent); font-size: 0.88rem;">Foundations, charitable institutions, and non-profit organizations.</p>
-            </a>
-            <a href="#activities" class="career-box">
+                <p style="color: var(--cream-accent); font-size: 0.88rem; margin-bottom: 15px;">Foundations, charitable institutions, and non-profit organizations.</p>
+                <div class="click-hint">Click for full info <i class="fa-solid fa-arrow-right"></i></div>
+            </div>
+            <div class="career-box" onclick="openModal('med')">
                 <i class="fa-solid fa-hospital-user career-box-icon"></i>
                 <h3 class="career-field-title">Medical & Healthcare</h3>
-                <p style="color: var(--cream-accent); font-size: 0.88rem;">Public and private hospitals, clinics, and rehabilitation facilities.</p>
-            </a>
+                <p style="color: var(--cream-accent); font-size: 0.88rem; margin-bottom: 15px;">Public and private hospitals, clinics, and rehabilitation facilities.</p>
+                <div class="click-hint">Click for full info <i class="fa-solid fa-arrow-right"></i></div>
+            </div>
         </div>
     </section>
 
-    <!-- HALL OF FAME (FULLY CLICKABLE & RESPONSIVE CARDS) -->
+    <!-- HALL OF FAME (INTERACTIVE CLICK POP-UPS) -->
     <section class="section" id="hall-of-fame">
         <div class="section-header">
             <div class="section-subtitle">Academic Excellence</div>
             <h2 class="section-title">Hall of Famers (PRC SWLE Topnotchers)</h2>
         </div>
         <div class="hof-grid">
-            <a href="#performance" class="hof-card">
+            <div class="hof-card" onclick="openHofModal('Julian Mae G. Bico, RSW', 'TOP 7 NATIONAL PLACER (92.00%)', 'Achieved a remarkable 92.00% rating in the PRC Social Worker Licensure Examination. Demonstrates exemplary academic mastery and dedication to public service.')">
                 <div class="hof-badge"><i class="fa-solid fa-trophy"></i></div>
                 <div class="hof-name">Julian Mae G. Bico, RSW</div>
                 <div class="hof-rank">TOP 7 NATIONAL PLACER (92.00%)</div>
-            </a>
-            <a href="#performance" class="hof-card">
+                <div class="click-hint" style="justify-content: center; color: var(--bg-dark-violet);">Click for Profile <i class="fa-solid fa-circle-info"></i></div>
+            </div>
+            <div class="hof-card" onclick="openHofModal('Jobeth Adara C. Escander, RSW', 'TOP 8 NATIONAL PLACER (91.80%)', 'Earned national distinction with a 91.80% rating, embodying UNO-R principles of community empowerment and professional integrity.')">
                 <div class="hof-badge"><i class="fa-solid fa-trophy"></i></div>
                 <div class="hof-name">Jobeth Adara C. Escander, RSW</div>
                 <div class="hof-rank">TOP 8 NATIONAL PLACER (91.80%)</div>
-            </a>
-            <a href="#performance" class="hof-card">
+                <div class="click-hint" style="justify-content: center; color: var(--bg-dark-violet);">Click for Profile <i class="fa-solid fa-circle-info"></i></div>
+            </div>
+            <div class="hof-card" onclick="openHofModal('Janine N. Padrones, RSW', 'TOP 10 NATIONAL PLACER (89.00%)', 'Secured Top 10 status nationwide with an 89.00% board exam rating. Recognized for excellence in clinical and community casework practice.')">
                 <div class="hof-badge"><i class="fa-solid fa-medal"></i></div>
                 <div class="hof-name">Janine N. Padrones, RSW</div>
                 <div class="hof-rank">TOP 10 NATIONAL PLACER (89.00%)</div>
-            </a>
-            <a href="#performance" class="hof-card">
+                <div class="click-hint" style="justify-content: center; color: var(--bg-dark-violet);">Click for Profile <i class="fa-solid fa-circle-info"></i></div>
+            </div>
+            <div class="hof-card" onclick="openHofModal('Izzy A. Verdeprado, RSW', 'TOP 6 NATIONAL PLACER (86.00%)', 'Ranked 6th across the Philippines with an 86.00% board examination score. A passionate advocate for youth and social justice.')">
                 <div class="hof-badge"><i class="fa-solid fa-award"></i></div>
                 <div class="hof-name">Izzy A. Verdeprado, RSW</div>
                 <div class="hof-rank">TOP 6 NATIONAL PLACER (86.00%)</div>
-            </a>
-            <a href="#performance" class="hof-card">
+                <div class="click-hint" style="justify-content: center; color: var(--bg-dark-violet);">Click for Profile <i class="fa-solid fa-circle-info"></i></div>
+            </div>
+            <div class="hof-card" onclick="openHofModal('Kaye Eunice Lamera, RSW', 'TOP 9 NATIONAL PLACER (81.40%)', 'Ranked 9th nationally with an 81.40% board examination performance, showcasing leadership in social research and policy advocacy.')">
                 <div class="hof-badge"><i class="fa-solid fa-award"></i></div>
                 <div class="hof-name">Kaye Eunice Lamera, RSW</div>
                 <div class="hof-rank">TOP 9 NATIONAL PLACER (81.40%)</div>
-            </a>
-            <a href="#performance" class="hof-card">
+                <div class="click-hint" style="justify-content: center; color: var(--bg-dark-violet);">Click for Profile <i class="fa-solid fa-circle-info"></i></div>
+            </div>
+            <div class="hof-card" onclick="openHofModal('Dr. Richelle Verdeprado-Mangga, RSW, MSSW', 'TOP 2 NATIONAL PLACER (86.40%)', 'Achieved Top 2 honors nationwide with an 86.40% rating. Now a distinguished faculty leader, scholar, and social work advocate.')">
                 <div class="hof-badge"><i class="fa-solid fa-crown"></i></div>
                 <div class="hof-name">Dr. Richelle Verdeprado-Mangga, RSW, MSSW</div>
                 <div class="hof-rank">TOP 2 NATIONAL PLACER (86.40%)</div>
-            </a>
+                <div class="click-hint" style="justify-content: center; color: var(--bg-dark-violet);">Click for Profile <i class="fa-solid fa-circle-info"></i></div>
+            </div>
         </div>
     </section>
+
+    <!-- POP-UP MODAL WINDOW -->
+    <div class="info-modal" id="infoModal" onclick="closeModalOnOutsideClick(event)">
+        <div class="modal-content">
+            <span class="modal-close-btn" onclick="closeModal()">&times;</span>
+            <div class="modal-header-tag" id="modalTag">Career Pathway</div>
+            <h2 class="modal-title" id="modalTitle">Title Here</h2>
+            <p class="modal-body-text" id="modalDesc">Description text goes here.</p>
+            <div class="modal-highlights" id="modalHighlight">Key Impact & Roles</div>
+        </div>
+    </div>
 
     <!-- QUIZ SECTION -->
     <section class="section" id="assessment" style="background: linear-gradient(rgba(42, 27, 61, 0.95), rgba(42, 27, 61, 0.95));">
@@ -658,244 +737,6 @@
                 </div>
             </div>
 
-            <!-- Event 13 -->
-            <div class="card-item">
-                <div class="card-image-wrapper">
-                    <img src="image11.jpg" alt="Mental Health Advocacy">
-                    <span class="card-tag">Mental Health</span>
-                </div>
-                <div class="card-body">
-                    <h3 class="card-title">World Mental Health Day: Break the Stigma</h3>
-                    <div class="card-action-btns">
-                        <a href="https://www.facebook.com/share/p/15y3WqfA7v/" target="_blank" class="btn-gold"><i class="fa-brands fa-facebook"></i> View FB Post</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Event 14 -->
-            <div class="card-item">
-                <div class="card-image-wrapper">
-                    <img src="image12.jpg" alt="Senior Citizens Day Outreach">
-                    <span class="card-tag">Elderly Care</span>
-                </div>
-                <div class="card-body">
-                    <h3 class="card-title">Honoring Our Elderly: Senior Citizens Appreciation Day</h3>
-                    <div class="card-action-btns">
-                        <a href="https://www.facebook.com/share/p/18xPkWqM4z/" target="_blank" class="btn-gold"><i class="fa-brands fa-facebook"></i> View FB Post</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Event 15 -->
-            <div class="card-item">
-                <div class="card-image-wrapper">
-                    <img src="image13.jpg" alt="Community Needs Assessment">
-                    <span class="card-tag">Field Work</span>
-                </div>
-                <div class="card-body">
-                    <h3 class="card-title">Community Needs Assessment & Social Mapping Activity</h3>
-                    <div class="card-action-btns">
-                        <a href="https://www.facebook.com/share/p/14uV8KkL3p/" target="_blank" class="btn-gold"><i class="fa-brands fa-facebook"></i> View FB Post</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Event 16 -->
-            <div class="card-item">
-                <div class="card-image-wrapper">
-                    <img src="image14.jpg" alt="Human Rights Day Forum">
-                    <span class="card-tag">Human Rights</span>
-                </div>
-                <div class="card-body">
-                    <h3 class="card-title">International Human Rights Day Seminar & Forum</h3>
-                    <div class="card-action-btns">
-                        <a href="https://www.facebook.com/share/p/16yNmPxQ9r/" target="_blank" class="btn-gold"><i class="fa-brands fa-facebook"></i> View FB Post</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Event 17 -->
-            <div class="card-item">
-                <div class="card-image-wrapper">
-                    <img src="image15.jpg" alt="Youth Leadership Workshop">
-                    <span class="card-tag">Youth Dev</span>
-                </div>
-                <div class="card-body">
-                    <h3 class="card-title">Empowering Tomorrow's Leaders: Youth Leadership Workshop</h3>
-                    <div class="card-action-btns">
-                        <a href="https://www.facebook.com/share/p/17zRmLkP2v/" target="_blank" class="btn-gold"><i class="fa-brands fa-facebook"></i> View FB Post</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Event 18 -->
-            <div class="card-item">
-                <div class="card-image-wrapper">
-                    <img src="image16.jpg" alt="Indigenous Peoples Advocacy">
-                    <span class="card-tag">Cultural SW</span>
-                </div>
-                <div class="card-body">
-                    <h3 class="card-title">Solidarity with Indigenous Cultural Communities Initiative</h3>
-                    <div class="card-action-btns">
-                        <a href="https://www.facebook.com/share/p/19wKpLqM3z/" target="_blank" class="btn-gold"><i class="fa-brands fa-facebook"></i> View FB Post</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Event 19 -->
-            <div class="card-item">
-                <div class="card-image-wrapper">
-                    <img src="image17.jpg" alt="Blood Donation Drive">
-                    <span class="card-tag">Healthcare</span>
-                </div>
-                <div class="card-body">
-                    <h3 class="card-title">Give Blood, Save Lives: Voluntary Blood Donation Drive</h3>
-                    <div class="card-action-btns">
-                        <a href="https://www.facebook.com/share/p/12xVnKqR4p/" target="_blank" class="btn-gold"><i class="fa-brands fa-facebook"></i> View FB Post</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Event 20 -->
-            <div class="card-item">
-                <div class="card-image-wrapper">
-                    <img src="image18.jpg" alt="Child Rights Symposium">
-                    <span class="card-tag">Child Welfare</span>
-                </div>
-                <div class="card-body">
-                    <h3 class="card-title">National Children's Month: Rights of the Child Symposium</h3>
-                    <div class="card-action-btns">
-                        <a href="https://www.facebook.com/share/p/13yPmRkL5q/" target="_blank" class="btn-gold"><i class="fa-brands fa-facebook"></i> View FB Post</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Event 21 -->
-            <div class="card-item">
-                <div class="card-image-wrapper">
-                    <img src="image19.jpg" alt="Disaster Preparedness Training">
-                    <span class="card-tag">DRRM</span>
-                </div>
-                <div class="card-body">
-                    <h3 class="card-title">Community Disaster Risk Reduction & Preparedness Training</h3>
-                    <div class="card-action-btns">
-                        <a href="https://www.facebook.com/share/p/15zQnLkM6r/" target="_blank" class="btn-gold"><i class="fa-brands fa-facebook"></i> View FB Post</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Event 22 -->
-            <div class="card-item">
-                <div class="card-image-wrapper">
-                    <img src="image20.jpg" alt="Gender and Development Seminar">
-                    <span class="card-tag">GAD</span>
-                </div>
-                <div class="card-body">
-                    <h3 class="card-title">Gender Awareness and Inclusivity Seminar</h3>
-                    <div class="card-action-btns">
-                        <a href="https://www.facebook.com/share/p/17xRnPkS7t/" target="_blank" class="btn-gold"><i class="fa-brands fa-facebook"></i> View FB Post</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Event 23 -->
-            <div class="card-item">
-                <div class="card-image-wrapper">
-                    <img src="image21.jpg" alt="Field Instruction Orientation">
-                    <span class="card-tag">Academics</span>
-                </div>
-                <div class="card-body">
-                    <h3 class="card-title">BSSW Field Instruction Orientation & Placement Prep</h3>
-                    <div class="card-action-btns">
-                        <a href="https://www.facebook.com/share/p/18ySnQkU8v/" target="_blank" class="btn-gold"><i class="fa-brands fa-facebook"></i> View FB Post</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Event 24 -->
-            <div class="card-item">
-                <div class="card-image-wrapper">
-                    <img src="image22.jpg" alt="Social Work Week Celebration">
-                    <span class="card-tag">Program Event</span>
-                </div>
-                <div class="card-body">
-                    <h3 class="card-title">UNO-R Social Work Week Celebration Kickoff</h3>
-                    <div class="card-action-btns">
-                        <a href="https://www.facebook.com/share/p/19zTnRkV9w/" target="_blank" class="btn-gold"><i class="fa-brands fa-facebook"></i> View FB Post</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Event 25 -->
-            <div class="card-item">
-                <div class="card-image-wrapper">
-                    <img src="image23.jpg" alt="Coastal Cleanup Drive">
-                    <span class="card-tag">Environment</span>
-                </div>
-                <div class="card-body">
-                    <h3 class="card-title">International Coastal Cleanup Drive Initiative</h3>
-                    <div class="card-action-btns">
-                        <a href="https://www.facebook.com/share/p/11xUnSkW0x/" target="_blank" class="btn-gold"><i class="fa-brands fa-facebook"></i> View FB Post</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Event 26 -->
-            <div class="card-item">
-                <div class="card-image-wrapper">
-                    <img src="image24.jpg" alt="Substance Abuse Prevention Seminar">
-                    <span class="card-tag">Advocacy</span>
-                </div>
-                <div class="card-body">
-                    <h3 class="card-title">Community Substance Abuse Prevention Awareness Seminar</h3>
-                    <div class="card-action-btns">
-                        <a href="https://www.facebook.com/share/p/12yVnTkX1y/" target="_blank" class="btn-gold"><i class="fa-brands fa-facebook"></i> View FB Post</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Event 27 -->
-            <div class="card-item">
-                <div class="card-image-wrapper">
-                    <img src="image25.jpg" alt="Persons with Disability Advocacy">
-                    <span class="card-tag">Inclusion</span>
-                </div>
-                <div class="card-body">
-                    <h3 class="card-title">National Disability Rights Week: Empowerment & Rights</h3>
-                    <div class="card-action-btns">
-                        <a href="https://www.facebook.com/share/p/13zWnUkY2z/" target="_blank" class="btn-gold"><i class="fa-brands fa-facebook"></i> View FB Post</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Event 28 -->
-            <div class="card-item">
-                <div class="card-image-wrapper">
-                    <img src="image26.jpg" alt="Social Work Licensure Review">
-                    <span class="card-tag">Board Exam</span>
-                </div>
-                <div class="card-body">
-                    <h3 class="card-title">SWLE Intensive Review & Mentorship Program</h3>
-                    <div class="card-action-btns">
-                        <a href="https://www.facebook.com/share/p/14xXnVkZ3a/" target="_blank" class="btn-gold"><i class="fa-brands fa-facebook"></i> View FB Post</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Event 29 -->
-            <div class="card-item">
-                <div class="card-image-wrapper">
-                    <img src="image27.jpg" alt="BSSW Hooding Ceremony">
-                    <span class="card-tag">Graduation</span>
-                </div>
-                <div class="card-body">
-                    <h3 class="card-title">BSSW Graduating Class Hooding & Recognition Ceremony</h3>
-                    <div class="card-action-btns">
-                        <a href="https://www.facebook.com/share/p/15yYnWkA4b/" target="_blank" class="btn-gold"><i class="fa-brands fa-facebook"></i> View FB Post</a>
-                    </div>
-                </div>
-            </div>
-
         </div>
     </section>
 
@@ -938,6 +779,54 @@
 
     <!-- JAVASCRIPT -->
     <script>
+        const pathwayData = {
+            gov: {
+                tag: "Government Sector",
+                title: "Government Social Welfare",
+                desc: "Social workers in government agencies deliver essential public welfare services, evaluate case eligibility for national aid programs (such as 4Ps), and implement community protection policies.",
+                highlight: "Key Workplaces: DSWD, City/Municipal Social Welfare Offices (CSWDO/MSWDO), BJMP, and Juvenile Justice Centers."
+            },
+            ngo: {
+                tag: "Non-Governmental Sector",
+                title: "NGOs & Civil Society",
+                desc: "Working with non-profit organizations, international development agencies, and humanitarian foundations to drive grassroot initiatives, human rights advocacy, and sustainable community development.",
+                highlight: "Key Workplaces: Kalipay Negrense Foundation, UNICEF Philippines, Red Cross, and local community shelters."
+            },
+            med: {
+                tag: "Healthcare Sector",
+                title: "Medical & Clinical Social Work",
+                desc: "Healthcare social workers support patients and families dealing with severe illnesses, managing hospital discharge planning, providing crisis counseling, and securing financial assistance for treatment.",
+                highlight: "Key Workplaces: Regional Hospitals, Psychiatric Rehabilitation Facilities, Dialysis Centers, and Hospice Care."
+            }
+        };
+
+        function openModal(type) {
+            const data = pathwayData[type];
+            document.getElementById('modalTag').innerText = data.tag;
+            document.getElementById('modalTitle').innerText = data.title;
+            document.getElementById('modalDesc').innerText = data.desc;
+            document.getElementById('modalHighlight').innerText = data.highlight;
+            document.getElementById('infoModal').classList.add('active');
+        }
+
+        function openHofModal(name, rank, desc) {
+            document.getElementById('modalTag').innerText = "Licensure Exam Topnotcher";
+            document.getElementById('modalTitle').innerText = name;
+            document.getElementById('modalDesc').innerText = desc;
+            document.getElementById('modalHighlight').innerText = "PRC SWLE Honor: " + rank;
+            document.getElementById('infoModal').classList.add('active');
+        }
+
+        function closeModal() {
+            document.getElementById('infoModal').classList.remove('active');
+        }
+
+        function closeModalOnOutsideClick(event) {
+            if (event.target.id === 'infoModal') {
+                closeModal();
+            }
+        }
+
         const quizQuestions = [
             {
                 question: "1. What core social impact vision drives you the most?",
