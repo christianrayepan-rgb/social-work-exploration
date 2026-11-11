@@ -156,6 +156,9 @@
             letter-spacing: 1px;
             cursor: pointer;
             transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
         }
 
         .btn-primary:hover {
@@ -186,9 +189,7 @@
         /* HERO SECTION */
         .hero-section {
             height: 100vh;
-            background: linear-gradient(rgba(42, 27, 61, 0.75), rgba(42, 27, 61, 0.85)), 
-                        url('image6.jpg') center/cover no-repeat,
-                        url('./image6.jpg') center/cover no-repeat;
+            background: linear-gradient(rgba(42, 27, 61, 0.85), rgba(42, 27, 61, 0.95));
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -531,43 +532,32 @@
             text-transform: uppercase;
         }
 
-        /* ACTIVITIES & EVENTS GRID */
-        .filter-tabs {
-            display: flex;
-            justify-content: center;
-            gap: 12px;
-            margin-bottom: 40px;
-            flex-wrap: wrap;
-        }
-
-        .tab-btn {
-            background: rgba(42, 27, 61, 0.08);
-            border: 1px solid var(--border-dark);
-            padding: 8px 20px;
-            border-radius: 25px;
-            cursor: pointer;
-        }
-
-        .tab-btn.active, .tab-btn:hover {
-            background: var(--bg-dark-violet);
+        /* ACTIVITIES & EVENTS GRID (SIMPLIFIED PDF CARD LAYOUT) */
+        .pdf-banner {
+            background: var(--bg-card-violet);
+            border: 2px solid var(--accent-gold);
+            border-radius: 20px;
+            padding: 25px;
+            text-align: center;
             color: var(--cream-bg);
+            margin-bottom: 40px;
         }
 
         .cards-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 25px;
         }
 
         .card-item {
             background: #ffffff;
             border-radius: 20px;
-            overflow: hidden;
+            padding: 25px;
             box-shadow: 0 8px 25px rgba(0,0,0,0.06);
             border: 1px solid var(--border-dark);
             display: flex;
             flex-direction: column;
-            cursor: pointer;
+            justify-content: space-between;
             transition: transform 0.3s ease;
         }
 
@@ -576,68 +566,31 @@
             border-color: var(--accent-gold);
         }
 
-        .card-image {
-            height: 180px;
-            position: relative;
-            background-color: var(--bg-dark-violet);
-        }
-
-        .card-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .card-category {
-            position: absolute;
-            top: 12px;
-            right: 12px;
-            background: var(--accent-gold);
-            color: var(--bg-dark-violet);
-            font-size: 0.68rem;
-            font-weight: 700;
-            padding: 4px 10px;
-            border-radius: 12px;
-            text-transform: uppercase;
-        }
-
-        .card-content {
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            flex-grow: 1;
-        }
-
-        .card-date {
-            font-size: 0.75rem;
+        .card-header-icon {
+            font-size: 1.8rem;
             color: var(--accent-gold);
-            font-weight: 600;
-            margin-bottom: 6px;
+            margin-bottom: 12px;
         }
 
         .card-title {
             font-family: var(--font-serif);
-            font-size: 1.05rem;
+            font-size: 1.1rem;
             color: var(--bg-dark-violet);
-            margin-bottom: 8px;
+            margin-bottom: 10px;
             line-height: 1.4;
         }
 
         .card-desc {
-            font-size: 0.83rem;
+            font-size: 0.85rem;
             color: #555;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
             flex-grow: 1;
         }
 
-        .card-link-badge {
-            font-size: 0.75rem;
-            color: var(--bg-dark-violet);
-            font-weight: 700;
-            text-transform: uppercase;
+        .card-action-btns {
             display: flex;
-            align-items: center;
-            gap: 6px;
+            flex-direction: column;
+            gap: 8px;
         }
 
         /* CONTACT SECTION */
@@ -781,7 +734,7 @@
         <p class="hero-desc">An interactive awareness platform for students to discover, explore, understand, and consider the field of Social Work.</p>
         <div class="hero-buttons">
             <a href="#assessment" class="btn-gold"><i class="fa-solid fa-compass"></i> Start Interactive Assessment</a>
-            <a href="#performance" class="btn-primary">Board Performance</a>
+            <a href="EVENTS_ ACTIVITIES ( EJ & ANGEL)_2.pdf" target="_blank" class="btn-primary"><i class="fa-solid fa-file-pdf"></i> View Official PDF Archive</a>
         </div>
     </section>
 
@@ -955,12 +908,11 @@
             <h3 class="modal-title" id="modalTitle">Overview</h3>
             <div id="modalSubtitle" style="color: var(--accent-gold); font-size: 0.85rem; margin-bottom: 15px;"></div>
             <div class="modal-body" id="modalBody"></div>
-            <div id="modalFooterBtn" style="margin-top: 20px;"></div>
         </div>
     </div>
 
     <!-- 5-QUESTION QUIZ -->
-    <section class="section" id="assessment" style="background: linear-gradient(rgba(42, 27, 61, 0.95), rgba(42, 27, 61, 0.95)), url('image6.jpg') center/cover;">
+    <section class="section" id="assessment" style="background: linear-gradient(rgba(42, 27, 61, 0.95), rgba(42, 27, 61, 0.95));">
         <div class="section-header">
             <div class="section-subtitle">5-Question Career Matcher</div>
             <h2 class="section-title" style="color: var(--cream-bg);">Discover Your Potential Pathway</h2>
@@ -982,214 +934,174 @@
         </div>
     </section>
 
-    <!-- ACTIVITIES & EVENTS SECTION -->
+    <!-- ACTIVITIES & EVENTS SECTION (CLEAN PDF ARCHIVE LAYOUT) -->
     <section class="section" id="activities">
         <div class="section-header">
-            <div class="section-subtitle">PDF Archive Alignment</div>
-            <h2 class="section-title">Activities & Events</h2>
+            <div class="section-subtitle">Official Records & Events</div>
+            <h2 class="section-title">Activities & Events Directory</h2>
         </div>
 
-        <div class="filter-tabs">
-            <button class="tab-btn active" onclick="filterCategory('all')">All Events</button>
-            <button class="tab-btn" onclick="filterCategory('research')">Research & Academics</button>
-            <button class="tab-btn" onclick="filterCategory('outreach')">Outreach & Community</button>
-            <button class="tab-btn" onclick="filterCategory('assembly')">Assemblies & Culture</button>
+        <div class="pdf-banner">
+            <i class="fa-solid fa-file-pdf" style="font-size: 2.5rem; color: var(--accent-gold); margin-bottom: 10px;"></i>
+            <h3 style="font-family: var(--font-serif); font-size: 1.3rem; margin-bottom: 8px;">Full Event Documentation PDF</h3>
+            <p style="font-size: 0.9rem; color: var(--cream-accent); margin-bottom: 15px;">Access the entire photo gallery, event logs, and official records in a single document.</p>
+            <a href="EVENTS_ ACTIVITIES ( EJ & ANGEL)_2.pdf" target="_blank" class="btn-gold"><i class="fa-solid fa-download"></i> Open Full PDF Document</a>
         </div>
 
         <div class="cards-grid" id="contentCardsGrid">
             <!-- 1. Levamen Societatem -->
-            <div class="card-item" data-category="research" onclick="openEventModal('Levamen Societatem: Relieving Society through Social Work Research', 'https://www.facebook.com/share/p/1EzjbcjMPP/')">
-                <div class="card-image">
-                    <img src="image3.jpg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=600&q=80';" alt="Levamen Societatem">
-                    <span class="card-category">Research</span>
-                </div>
-                <div class="card-content">
-                    <div class="card-date">RESEARCH SYMPOSIUM</div>
+            <div class="card-item">
+                <div>
+                    <i class="fa-solid fa-flask card-header-icon"></i>
                     <h3 class="card-title">Levamen Societatem: Relieving Society through Social Work Research</h3>
                     <p class="card-desc">PAGHIMAKAS: Life through the lens of college student assistants living in economically disadvantaged areas.</p>
-                    <div class="card-link-badge">FB Link sang Event <i class="fa-solid fa-arrow-right"></i></div>
+                </div>
+                <div class="card-action-btns">
+                    <a href="https://www.facebook.com/share/p/1EzjbcjMPP/" target="_blank" class="btn-gold"><i class="fa-brands fa-facebook"></i> View FB Post</a>
+                    <a href="EVENTS_ ACTIVITIES ( EJ & ANGEL)_2.pdf" target="_blank" class="btn-primary"><i class="fa-solid fa-file-pdf"></i> View in PDF</a>
                 </div>
             </div>
 
             <!-- 2. Mahal ang Magmahal -->
-            <div class="card-item" data-category="assembly" onclick="openEventModal('Mahal ang Magmahal', 'https://www.facebook.com/share/v/16AKDMfGYGp/')">
-                <div class="card-image">
-                    <img src="image1.jpg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=600&q=80';" alt="Mahal ang Magmahal">
-                    <span class="card-category">Video Feature</span>
-                </div>
-                <div class="card-content">
-                    <div class="card-date">SPECIAL ADVOCACY VIDEO</div>
+            <div class="card-item">
+                <div>
+                    <i class="fa-solid fa-video card-header-icon"></i>
                     <h3 class="card-title">Mahal ang Magmahal</h3>
-                    <p class="card-desc">Video documentation highlighting compassionate advocacy and love in social work service.</p>
-                    <div class="card-link-badge">FB Link sang Event <i class="fa-solid fa-arrow-right"></i></div>
+                    <p class="card-desc">Video feature documenting love and compassionate social work service.</p>
+                </div>
+                <div class="card-action-btns">
+                    <a href="https://www.facebook.com/share/v/16AKDMfGYGp/" target="_blank" class="btn-gold"><i class="fa-brands fa-facebook"></i> Watch Video</a>
+                    <a href="EVENTS_ ACTIVITIES ( EJ & ANGEL)_2.pdf" target="_blank" class="btn-primary"><i class="fa-solid fa-file-pdf"></i> View in PDF</a>
                 </div>
             </div>
 
             <!-- 3. SHARED HUMANITY -->
-            <div class="card-item" data-category="outreach" onclick="openEventModal('SHARED HUMANITY', 'https://www.facebook.com/share/p/19gi25wsAE/')">
-                <div class="card-image">
-                    <img src="image2.jpg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=600&q=80';" alt="SHARED HUMANITY">
-                    <span class="card-category">Outreach</span>
-                </div>
-                <div class="card-content">
-                    <div class="card-date">HUMANITARIAN SERVICE</div>
+            <div class="card-item">
+                <div>
+                    <i class="fa-solid fa-hands-holding-child card-header-icon"></i>
                     <h3 class="card-title">SHARED HUMANITY</h3>
-                    <p class="card-desc">Community engagement activity honoring dignity, empathy, and collective support across diverse groups.</p>
-                    <div class="card-link-badge">FB Link sang Event <i class="fa-solid fa-arrow-right"></i></div>
+                    <p class="card-desc">Community outreach honoring human dignity and empathy across diverse sectors.</p>
+                </div>
+                <div class="card-action-btns">
+                    <a href="https://www.facebook.com/share/p/19gi25wsAE/" target="_blank" class="btn-gold"><i class="fa-brands fa-facebook"></i> View FB Post</a>
+                    <a href="EVENTS_ ACTIVITIES ( EJ & ANGEL)_2.pdf" target="_blank" class="btn-primary"><i class="fa-solid fa-file-pdf"></i> View in PDF</a>
                 </div>
             </div>
 
             <!-- 4. Metro Bacolod District Jail Visit -->
-            <div class="card-item" data-category="outreach" onclick="openEventModal('UNO-R Social Work Program and JSWAP UNO-R Chapter visited the Metro Bacolod District Jail Female Dormitory in Brgy. Handumanan, Bacolod City', 'https://www.facebook.com/share/p/19pEtJcrqo/')">
-                <div class="card-image">
-                    <img src="image2.jpg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1531545514256-b1400bc00f31?auto=format&fit=crop&w=600&q=80';" alt="Metro Bacolod District Jail">
-                    <span class="card-category">Correctional SW</span>
-                </div>
-                <div class="card-content">
-                    <div class="card-date">CORRECTIONAL OUTREACH</div>
+            <div class="card-item">
+                <div>
+                    <i class="fa-solid fa-building-shield card-header-icon"></i>
                     <h3 class="card-title">Metro Bacolod District Jail Female Dormitory Visit</h3>
-                    <p class="card-desc">Institutional visit providing psychosocial and legal support at Brgy. Handumanan, Bacolod City.</p>
-                    <div class="card-link-badge">FB Link sang Event <i class="fa-solid fa-arrow-right"></i></div>
+                    <p class="card-desc">Correctional outreach providing support at Brgy. Handumanan, Bacolod City.</p>
+                </div>
+                <div class="card-action-btns">
+                    <a href="https://www.facebook.com/share/p/19pEtJcrqo/" target="_blank" class="btn-gold"><i class="fa-brands fa-facebook"></i> View FB Post</a>
+                    <a href="EVENTS_ ACTIVITIES ( EJ & ANGEL)_2.pdf" target="_blank" class="btn-primary"><i class="fa-solid fa-file-pdf"></i> View in PDF</a>
                 </div>
             </div>
 
             <!-- 5. Women's Month 2026 -->
-            <div class="card-item" data-category="research" onclick="openEventModal('Our Field Instruction (FI) students joined the celebration of Women\'s Month 2026', 'https://www.facebook.com/share/p/1CB48SRw4M/')">
-                <div class="card-image">
-                    <img src="image4.jpg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600&q=80';" alt="Women's Month 2026">
-                    <span class="card-category">Advocacy</span>
-                </div>
-                <div class="card-content">
-                    <div class="card-date">FIELD INSTRUCTION</div>
+            <div class="card-item">
+                <div>
+                    <i class="fa-solid fa-person-dress card-header-icon"></i>
                     <h3 class="card-title">Women's Month 2026 Celebration</h3>
-                    <p class="card-desc">Field Instruction (FI) students active involvement in gender advocacy initiatives.</p>
-                    <div class="card-link-badge">FB Link sang Event <i class="fa-solid fa-arrow-right"></i></div>
+                    <p class="card-desc">Field Instruction (FI) students active involvement in women and gender advocacy.</p>
+                </div>
+                <div class="card-action-btns">
+                    <a href="https://www.facebook.com/share/p/1CB48SRw4M/" target="_blank" class="btn-gold"><i class="fa-brands fa-facebook"></i> View FB Post</a>
+                    <a href="EVENTS_ ACTIVITIES ( EJ & ANGEL)_2.pdf" target="_blank" class="btn-primary"><i class="fa-solid fa-file-pdf"></i> View in PDF</a>
                 </div>
             </div>
 
             <!-- 6. HEALING HEARTS AFTER THE FIRE -->
-            <div class="card-item" data-category="outreach" onclick="openEventModal('HEALING HEARTS AFTER THE FIRE', 'https://www.facebook.com/share/p/19Rrv2vKUD/')">
-                <div class="card-image">
-                    <img src="image6.jpg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?auto=format&fit=crop&w=600&q=80';" alt="HEALING HEARTS AFTER THE FIRE">
-                    <span class="card-category">Disaster Relief</span>
-                </div>
-                <div class="card-content">
-                    <div class="card-date">CRISIS INTERVENTION</div>
+            <div class="card-item">
+                <div>
+                    <i class="fa-solid fa-fire-extinguisher card-header-icon"></i>
                     <h3 class="card-title">HEALING HEARTS AFTER THE FIRE</h3>
-                    <p class="card-desc">Emergency psychosocial aid provided to community members impacted by fire.</p>
-                    <div class="card-link-badge">FB Link sang Event <i class="fa-solid fa-arrow-right"></i></div>
+                    <p class="card-desc">Emergency psychosocial response provided to fire victim families.</p>
+                </div>
+                <div class="card-action-btns">
+                    <a href="https://www.facebook.com/share/p/19Rrv2vKUD/" target="_blank" class="btn-gold"><i class="fa-brands fa-facebook"></i> View FB Post</a>
+                    <a href="EVENTS_ ACTIVITIES ( EJ & ANGEL)_2.pdf" target="_blank" class="btn-primary"><i class="fa-solid fa-file-pdf"></i> View in PDF</a>
                 </div>
             </div>
 
             <!-- 7. Called to Serve with Purpose -->
-            <div class="card-item" data-category="assembly" onclick="openEventModal('Called to Serve with Purpose', 'https://www.facebook.com/share/p/1Dxpukan6Z/')">
-                <div class="card-image">
-                    <img src="image5.jpg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=600&q=80';" alt="Called to Serve with Purpose">
-                    <span class="card-category">Leadership</span>
-                </div>
-                <div class="card-content">
-                    <div class="card-date">DEPARTMENT SEMINAR</div>
+            <div class="card-item">
+                <div>
+                    <i class="fa-solid fa-award card-header-icon"></i>
                     <h3 class="card-title">Called to Serve with Purpose</h3>
-                    <p class="card-desc">Special leadership development session for future social work leaders.</p>
-                    <div class="card-link-badge">FB Link sang Event <i class="fa-solid fa-arrow-right"></i></div>
+                    <p class="card-desc">Leadership seminar empowering aspiring social work professionals.</p>
+                </div>
+                <div class="card-action-btns">
+                    <a href="https://www.facebook.com/share/p/1Dxpukan6Z/" target="_blank" class="btn-gold"><i class="fa-brands fa-facebook"></i> View FB Post</a>
+                    <a href="EVENTS_ ACTIVITIES ( EJ & ANGEL)_2.pdf" target="_blank" class="btn-primary"><i class="fa-solid fa-file-pdf"></i> View in PDF</a>
                 </div>
             </div>
 
-            <!-- 8. First-Year SW Kalipay Visit -->
-            <div class="card-item" data-category="outreach" onclick="openEventModal('First-Year Social Work Students Foster Connections with Children in Foundation Visit', 'https://www.facebook.com/share/p/1Dj8MkjTvY/')">
-                <div class="card-image">
-                    <img src="image2.jpg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1509099836639-18ba1795216d?auto=format&fit=crop&w=600&q=80';" alt="Kalipay Foundation Visit">
-                    <span class="card-category">Child Welfare</span>
+            <!-- 8. Kalipay Foundation Visit -->
+            <div class="card-item">
+                <div>
+                    <i class="fa-solid fa-child-reaching card-header-icon"></i>
+                    <h3 class="card-title">Freshmen Kalipay Foundation Outreach</h3>
+                    <p class="card-desc">First-year social work students building connections with children at Kalipay Foundation.</p>
                 </div>
-                <div class="card-content">
-                    <div class="card-date">FRESHMEN KALIPAY VISIT</div>
-                    <h3 class="card-title">First-Year SW Students Kalipay Foundation Outreach</h3>
-                    <p class="card-desc">Fostering connections and child advocacy at Kalipay Negrense Foundation.</p>
-                    <div class="card-link-badge">FB Link sang Event <i class="fa-solid fa-arrow-right"></i></div>
+                <div class="card-action-btns">
+                    <a href="https://www.facebook.com/share/p/1Dj8MkjTvY/" target="_blank" class="btn-gold"><i class="fa-brands fa-facebook"></i> View FB Post</a>
+                    <a href="EVENTS_ ACTIVITIES ( EJ & ANGEL)_2.pdf" target="_blank" class="btn-primary"><i class="fa-solid fa-file-pdf"></i> View in PDF</a>
                 </div>
             </div>
 
             <!-- 9. Protect Our Forest Initiative -->
-            <div class="card-item" data-category="outreach" onclick="openEventModal('The trees we plant today are the legacy we leave for tomorrow. Protect Our Forest Initiative', 'https://www.facebook.com/share/p/1HtGMYtzqA/')">
-                <div class="card-image">
-                    <img src="image3.jpg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=600&q=80';" alt="Protect Our Forest Initiative">
-                    <span class="card-category">Environmental SW</span>
-                </div>
-                <div class="card-content">
-                    <div class="card-date">ECO ADVOCACY</div>
+            <div class="card-item">
+                <div>
+                    <i class="fa-solid fa-tree card-header-icon"></i>
                     <h3 class="card-title">Protect Our Forest Initiative</h3>
-                    <p class="card-desc">"The trees we plant today are the legacy we leave for tomorrow." Tree planting drive.</p>
-                    <div class="card-link-badge">FB Link sang Event <i class="fa-solid fa-arrow-right"></i></div>
+                    <p class="card-desc">Environmental tree planting drive for ecological sustainability.</p>
+                </div>
+                <div class="card-action-btns">
+                    <a href="https://www.facebook.com/share/p/1HtGMYtzqA/" target="_blank" class="btn-gold"><i class="fa-brands fa-facebook"></i> View FB Post</a>
+                    <a href="EVENTS_ ACTIVITIES ( EJ & ANGEL)_2.pdf" target="_blank" class="btn-primary"><i class="fa-solid fa-file-pdf"></i> View in PDF</a>
                 </div>
             </div>
 
-            <!-- 10. Mount Kanlaon Eruption Psychosocial Relief -->
-            <div class="card-item" data-category="outreach" onclick="openEventModal('Six dedicated Social Work students from UNO-R volunteered to conduct a Psychosocial Processing Activity for victims of the recent Mount Kanlaon eruption in La Castellana', 'https://www.facebook.com/share/p/1EjmDNi4vJ/')">
-                <div class="card-image">
-                    <img src="image5.jpg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?auto=format&fit=crop&w=600&q=80';" alt="Mount Kanlaon Psychosocial Relief">
-                    <span class="card-category">Disaster Relief</span>
-                </div>
-                <div class="card-content">
-                    <div class="card-date">DISASTER VOLUNTEERING</div>
+            <!-- 10. Mount Kanlaon Relief -->
+            <div class="card-item">
+                <div>
+                    <i class="fa-solid fa-volcano card-header-icon"></i>
                     <h3 class="card-title">Mount Kanlaon Eruption Psychosocial Relief</h3>
-                    <p class="card-desc">Six student volunteers conducting psychosocial first aid for eruption victims in La Castellana.</p>
-                    <div class="card-link-badge">FB Link sang Event <i class="fa-solid fa-arrow-right"></i></div>
+                    <p class="card-desc">Volunteers conducting psychosocial first aid for eruption victims in La Castellana.</p>
+                </div>
+                <div class="card-action-btns">
+                    <a href="https://www.facebook.com/share/p/1EjmDNi4vJ/" target="_blank" class="btn-gold"><i class="fa-brands fa-facebook"></i> View FB Post</a>
+                    <a href="EVENTS_ ACTIVITIES ( EJ & ANGEL)_2.pdf" target="_blank" class="btn-primary"><i class="fa-solid fa-file-pdf"></i> View in PDF</a>
                 </div>
             </div>
 
-            <!-- 11. SOLID 237! General Assembly 2026 -->
-            <div class="card-item" data-category="assembly" onclick="openEventModal('SOLID 237! General and Freshmen Assembly 2026', 'https://www.facebook.com/share/1Fr3A5EYki/')">
-                <div class="card-image">
-                    <img src="image1.jpg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=600&q=80';" alt="SOLID 237! General Assembly">
-                    <span class="card-category">Assembly</span>
+            <!-- 11. SOLID 237! General Assembly -->
+            <div class="card-item">
+                <div>
+                    <i class="fa-solid fa-users card-header-icon"></i>
+                    <h3 class="card-title">SOLID 237! General & Freshmen Assembly 2026</h3>
+                    <p class="card-desc">Welcoming 237 active Social Work students and freshmen into the JSWAP chapter.</p>
                 </div>
-                <div class="card-content">
-                    <div class="card-date">GENERAL ASSEMBLY 2026</div>
-                    <h3 class="card-title">SOLID 237! General and Freshmen Assembly 2026</h3>
-                    <p class="card-desc">Welcoming 237 active Social Work students and freshmen into the JSWAP UNO-R Chapter family.</p>
-                    <div class="card-link-badge">FB Link sang Event <i class="fa-solid fa-arrow-right"></i></div>
+                <div class="card-action-btns">
+                    <a href="https://www.facebook.com/share/1Fr3A5EYki/" target="_blank" class="btn-gold"><i class="fa-brands fa-facebook"></i> View FB Post</a>
+                    <a href="EVENTS_ ACTIVITIES ( EJ & ANGEL)_2.pdf" target="_blank" class="btn-primary"><i class="fa-solid fa-file-pdf"></i> View in PDF</a>
                 </div>
             </div>
 
-            <!-- 12. Commissioning Ceremony 2026 part 2 -->
-            <div class="card-item" data-category="assembly" onclick="openEventModal('Commissioning Ceremony 2026 part 2', 'https://www.facebook.com/share/p/1DfjjWtQBD/?mibextid=wwXIfr')">
-                <div class="card-image">
-                    <img src="image4.jpg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=600&q=80';" alt="Commissioning Ceremony 2026">
-                    <span class="card-category">Ceremony</span>
-                </div>
-                <div class="card-content">
-                    <div class="card-date">INTERNSHIP SEND-OFF</div>
+            <!-- 12. Commissioning Ceremony 2026 -->
+            <div class="card-item">
+                <div>
+                    <i class="fa-solid fa-graduation-cap card-header-icon"></i>
                     <h3 class="card-title">Commissioning Ceremony 2026 Part 2</h3>
                     <p class="card-desc">Solemn commissioning service sending graduating social work interns to field placements.</p>
-                    <div class="card-link-badge">FB Link sang Event <i class="fa-solid fa-arrow-right"></i></div>
                 </div>
-            </div>
-
-            <!-- 13. Social Work Night 2026: THE FINAL SUNRISE -->
-            <div class="card-item" data-category="assembly" onclick="openEventModal('Social Work Night 2026: THE FINAL SUNRISE', 'https://www.facebook.com/share/p/19V3acMAYv/?mibextid=wwXIfr')">
-                <div class="card-image">
-                    <img src="image4.jpg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=600&q=80';" alt="Social Work Night 2026">
-                    <span class="card-category">Gala Night</span>
-                </div>
-                <div class="card-content">
-                    <div class="card-date">ANNUAL GALA</div>
-                    <h3 class="card-title">Social Work Night 2026: The Final Sunrise</h3>
-                    <p class="card-desc">Grand celebratory banquet honoring department achievements and graduating seniors.</p>
-                    <div class="card-link-badge">FB Link sang Event <i class="fa-solid fa-arrow-right"></i></div>
-                </div>
-            </div>
-
-            <!-- 14. JSWAP National Conference 2025 -->
-            <div class="card-item" data-category="research" onclick="openEventModal('JSWAP-UNOR CHAPTER GOES TO THE CITY OF LOVE FOR THE JSWAP NATIONAL CONFERENCE 2025', 'https://www.facebook.com/share/p/1LzaXmUqgu/?mibextid=wwXIfr')">
-                <div class="card-image">
-                    <img src="image1.jpg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=600&q=80';" alt="JSWAP National Conference 2025">
-                    <span class="card-category">National Conference</span>
-                </div>
-                <div class="card-content">
-                    <div class="card-date">ILOILO CITY 2025</div>
-                    <h3 class="card-title">JSWAP National Conference 2025</h3>
-                    <p class="card-desc">UNO-R student delegation representing the chapter at the NASWEI National Social Work Conference.</p>
-                    <div class="card-link-badge">FB Link sang Event <i class="fa-solid fa-arrow-right"></i></div>
+                <div class="card-action-btns">
+                    <a href="https://www.facebook.com/share/p/1DfjjWtQBD/?mibextid=wwXIfr" target="_blank" class="btn-gold"><i class="fa-brands fa-facebook"></i> View FB Post</a>
+                    <a href="EVENTS_ ACTIVITIES ( EJ & ANGEL)_2.pdf" target="_blank" class="btn-primary"><i class="fa-solid fa-file-pdf"></i> View in PDF</a>
                 </div>
             </div>
         </div>
@@ -1258,13 +1170,6 @@
             document.getElementById('modalTitle').innerText = "Career Field Overview";
             document.getElementById('modalSubtitle').innerText = "Sector Opportunities";
             document.getElementById('modalBody').innerHTML = "<p>Detailed career settings and functions for BSSW graduates.</p>";
-            document.getElementById('detailModal').style.display = 'flex';
-        }
-
-        function openEventModal(eventTitle, fbUrl) {
-            document.getElementById('modalTitle').innerText = eventTitle;
-            document.getElementById('modalSubtitle').innerText = 'Official Facebook Documentation';
-            document.getElementById('modalBody').innerHTML = `<p>Click the link below to view the full Facebook documentation and photos.</p><p style="margin-top:15px;"><a href="${fbUrl}" target="_blank" class="btn-gold">Open Facebook Link</a></p>`;
             document.getElementById('detailModal').style.display = 'flex';
         }
 
@@ -1371,22 +1276,7 @@
 
         loadQuestion();
 
-        /* FILTER & SEARCH */
-        function filterCategory(category) {
-            const buttons = document.querySelectorAll('.filter-tabs .tab-btn');
-            buttons.forEach(btn => btn.classList.remove('active'));
-            event.target.classList.add('active');
-
-            const cards = document.querySelectorAll('#contentCardsGrid .card-item');
-            cards.forEach(card => {
-                if (category === 'all' || card.getAttribute('data-category') === category) {
-                    card.style.display = 'flex';
-                } else {
-                    card.style.display = 'none';
-                }
-            });
-        }
-
+        /* SEARCH FUNCTIONALITY */
         function filterWebsiteContent() {
             const query = document.getElementById('searchInput').value.toLowerCase();
             const cards = document.querySelectorAll('.card-item');
