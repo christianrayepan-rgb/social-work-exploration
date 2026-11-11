@@ -127,9 +127,32 @@
         .section-dark { background-color: var(--bg-dark-violet); color: var(--cream-bg); }
         .section-dark .section-title { color: var(--cream-bg); }
 
-        .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; }
-        .about-card { background: #ffffff; padding: 40px; border-radius: 25px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); border: 1px solid var(--border-dark); }
-        .about-card h3 { font-family: var(--font-serif); font-size: 1.45rem; color: var(--bg-dark-violet); margin-bottom: 15px; }
+        /* ABOUT GRID UPDATE */
+        .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+        .about-card {
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 25px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            border: 1px solid var(--border-dark);
+            display: flex;
+            flex-direction: column;
+        }
+        .about-card h3 {
+            font-family: var(--font-serif);
+            font-size: 1.35rem;
+            color: var(--bg-dark-violet);
+            margin-bottom: 18px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .about-card p {
+            font-size: 0.95rem;
+            color: var(--text-dark);
+            line-height: 1.8;
+            margin-bottom: 12px;
+        }
 
         .performance-table-wrapper { background: #ffffff; border-radius: 20px; padding: 30px; border: 2px solid var(--border-dark); overflow-x: auto; }
         .perf-table { width: 100%; border-collapse: collapse; text-align: center; }
@@ -137,13 +160,13 @@
         .perf-table td { padding: 12px; border: 1px solid rgba(42, 27, 61, 0.1); }
         .perf-highlight-row { background-color: rgba(212, 175, 55, 0.15) !important; font-weight: 700; }
 
-        /* INTERACTIVE CAREERS CARDS */
+        /* RESPONSIVE CAREERS GRID (8 PATHWAYS FROM DOCX) */
         .careers-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-top: 30px; }
         .career-box {
             background: rgba(59, 35, 84, 0.7);
             border: 1px solid var(--border-light);
             border-radius: 20px;
-            padding: 35px 30px;
+            padding: 30px 25px;
             transition: all 0.35s ease;
             cursor: pointer;
             display: flex;
@@ -157,9 +180,9 @@
             border-color: var(--accent-gold);
             box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
         }
-        .career-box-icon { font-size: 2.5rem; color: var(--accent-gold); margin-bottom: 20px; transition: transform 0.3s ease; }
+        .career-box-icon { font-size: 2.2rem; color: var(--accent-gold); margin-bottom: 15px; transition: transform 0.3s ease; }
         .career-box:hover .career-box-icon { transform: scale(1.15); }
-        .career-field-title { font-family: var(--font-serif); font-size: 1.3rem; color: var(--cream-bg); margin-bottom: 10px; }
+        .career-field-title { font-family: var(--font-serif); font-size: 1.15rem; color: var(--cream-bg); margin-bottom: 8px; }
         .click-hint { font-size: 0.75rem; color: var(--accent-gold); font-weight: 600; text-transform: uppercase; margin-top: auto; display: flex; align-items: center; gap: 5px; }
 
         /* INTERACTIVE HALL OF FAME CARDS */
@@ -214,12 +237,14 @@
             background: #ffffff;
             border: 2px solid var(--accent-gold);
             border-radius: 25px;
-            max-width: 600px;
+            max-width: 650px;
             width: 100%;
-            padding: 40px;
+            padding: 35px;
             position: relative;
             box-shadow: 0 20px 50px rgba(0,0,0,0.4);
             animation: modalFadeIn 0.3s ease forwards;
+            max-height: 90vh;
+            overflow-y: auto;
         }
         @keyframes modalFadeIn {
             from { opacity: 0; transform: translateY(20px) scale(0.95); }
@@ -244,25 +269,36 @@
         }
         .modal-title {
             font-family: var(--font-serif);
-            font-size: 1.8rem;
+            font-size: 1.6rem;
             color: var(--bg-dark-violet);
             margin-bottom: 15px;
             line-height: 1.3;
         }
+        .modal-section-block {
+            margin-bottom: 15px;
+        }
+        .modal-section-label {
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: var(--accent-gold);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 4px;
+        }
         .modal-body-text {
             color: var(--text-dark);
-            font-size: 0.95rem;
-            line-height: 1.7;
-            margin-bottom: 25px;
+            font-size: 0.92rem;
+            line-height: 1.6;
         }
         .modal-highlights {
             background: var(--cream-bg);
             border-left: 4px solid var(--accent-gold);
-            padding: 15px 20px;
+            padding: 15px;
             border-radius: 8px;
-            font-size: 0.9rem;
+            font-size: 0.88rem;
             color: var(--bg-dark-violet);
             font-weight: 500;
+            margin-top: 15px;
         }
 
         .quiz-container { max-width: 800px; margin: 0 auto; background: rgba(59, 35, 84, 0.95); border-radius: 30px; padding: 40px; border: 1px solid var(--border-light); }
@@ -349,7 +385,7 @@
         </div>
     </section>
 
-    <!-- ABOUT SECTION -->
+    <!-- ABOUT SECTION (UPDATED TEXT DEFINITIONS) -->
     <section class="section" id="about">
         <div class="section-header">
             <div class="section-subtitle">Empowering Change Agents</div>
@@ -357,12 +393,14 @@
         </div>
         <div class="about-grid">
             <div class="about-card">
-                <h3><i class="fa-solid fa-globe" style="color: var(--accent-gold);"></i> Global Definition of Social Work</h3>
-                <p>Social work is a practice-based profession and an academic discipline that promotes social change and development, social cohesion, and the empowerment and liberation of people.</p>
+                <h3><i class="fa-solid fa-globe" style="color: var(--accent-gold);"></i> Global Definition of the Social Work Profession</h3>
+                <p>Social work is a practice-based profession and an academic discipline that promotes social change and development, social cohesion, and the empowerment and liberation of people. Principles of social justice, human rights, collective responsibility and respect for diversities are central to social work.</p>
+                <p>Underpinned by theories of social work, social sciences, humanities and indigenous knowledges, social work engages people and structures to address life challenges and enhance wellbeing. The above definition may be amplified at national and/or regional levels.</p>
             </div>
             <div class="about-card">
                 <h3><i class="fa-solid fa-graduation-cap" style="color: var(--accent-gold);"></i> UNO-R BSSW Program</h3>
-                <p>The Bachelor of Science in Social Work readies professionals who are globally competitive and dedicated to promoting social justice, human dignity, and empowerment within communities.</p>
+                <p>The Bachelor of Science in Social Work readies professionals who are globally competitive and dedicated to promoting social justice, human dignity, and empowerment within communities. Rooted in Catholic Christian principles, the program provides students with the essential knowledge, skills, and ethical grounding needed to tackle intricate social challenges and encourage sustainable growth.</p>
+                <p>Graduates are equipped to spearhead transformative projects that enhance the well-being and comprehensive development of individuals, families, and communities.</p>
             </div>
         </div>
     </section>
@@ -446,7 +484,7 @@
         </div>
     </section>
 
-    <!-- CAREERS SECTION (INTERACTIVE CLICK POP-UPS) -->
+    <!-- CAREERS SECTION (8 CAREER PATHWAYS FROM DOCX DOCUMENT) -->
     <section class="section section-dark" id="careers">
         <div class="section-header">
             <div class="section-subtitle">Career Pathways</div>
@@ -456,25 +494,55 @@
             <div class="career-box" onclick="openModal('gov')">
                 <i class="fa-solid fa-building-flag career-box-icon"></i>
                 <h3 class="career-field-title">Government Social Welfare</h3>
-                <p style="color: var(--cream-accent); font-size: 0.88rem; margin-bottom: 15px;">DSWD, LGU Social Welfare Offices, and Municipal Social Development.</p>
-                <div class="click-hint">Click for full info <i class="fa-solid fa-arrow-right"></i></div>
+                <p style="color: var(--cream-accent); font-size: 0.88rem; margin-bottom: 15px;">DSWD, Local Government Units (LGUs), Municipal & City Social Welfare Offices.</p>
+                <div class="click-hint">Click for positions & functions <i class="fa-solid fa-arrow-right"></i></div>
             </div>
             <div class="career-box" onclick="openModal('ngo')">
                 <i class="fa-solid fa-hand-holding-heart career-box-icon"></i>
                 <h3 class="career-field-title">NGOs & Civil Society</h3>
-                <p style="color: var(--cream-accent); font-size: 0.88rem; margin-bottom: 15px;">Foundations, charitable institutions, and non-profit organizations.</p>
-                <div class="click-hint">Click for full info <i class="fa-solid fa-arrow-right"></i></div>
+                <p style="color: var(--cream-accent); font-size: 0.88rem; margin-bottom: 15px;">Non-government foundations, charitable institutions, and rights advocacy organizations.</p>
+                <div class="click-hint">Click for positions & functions <i class="fa-solid fa-arrow-right"></i></div>
             </div>
             <div class="career-box" onclick="openModal('med')">
                 <i class="fa-solid fa-hospital-user career-box-icon"></i>
                 <h3 class="career-field-title">Medical & Healthcare</h3>
-                <p style="color: var(--cream-accent); font-size: 0.88rem; margin-bottom: 15px;">Public and private hospitals, clinics, and rehabilitation facilities.</p>
-                <div class="click-hint">Click for full info <i class="fa-solid fa-arrow-right"></i></div>
+                <p style="color: var(--cream-accent); font-size: 0.88rem; margin-bottom: 15px;">Public and private hospitals, psychiatric centers, and rehabilitation facilities.</p>
+                <div class="click-hint">Click for positions & functions <i class="fa-solid fa-arrow-right"></i></div>
+            </div>
+            <div class="career-box" onclick="openModal('child')">
+                <i class="fa-solid fa-child-reaching career-box-icon"></i>
+                <h3 class="career-field-title">Child Welfare & Residential Care</h3>
+                <p style="color: var(--cream-accent); font-size: 0.88rem; margin-bottom: 15px;">Residential care homes, child protection agencies, and adoption/foster services.</p>
+                <div class="click-hint">Click for positions & functions <i class="fa-solid fa-arrow-right"></i></div>
+            </div>
+            <div class="career-box" onclick="openModal('school')">
+                <i class="fa-solid fa-school career-box-icon"></i>
+                <h3 class="career-field-title">Schools & Youth Services</h3>
+                <p style="color: var(--cream-accent); font-size: 0.88rem; margin-bottom: 15px;">Educational institutions, student affairs offices, and youth development programs.</p>
+                <div class="click-hint">Click for positions & functions <i class="fa-solid fa-arrow-right"></i></div>
+            </div>
+            <div class="career-box" onclick="openModal('drrm')">
+                <i class="fa-solid fa-kit-medical career-box-icon"></i>
+                <h3 class="career-field-title">Disaster Response & DRRM</h3>
+                <p style="color: var(--cream-accent); font-size: 0.88rem; margin-bottom: 15px;">Humanitarian aid agencies, emergency response units, and community disaster resilience.</p>
+                <div class="click-hint">Click for positions & functions <i class="fa-solid fa-arrow-right"></i></div>
+            </div>
+            <div class="career-box" onclick="openModal('comm')">
+                <i class="fa-solid fa-users-rays career-box-icon"></i>
+                <h3 class="career-field-title">Community Development</h3>
+                <p style="color: var(--cream-accent); font-size: 0.88rem; margin-bottom: 15px;">Barangay organizing, Indigenous Peoples' advocate groups, and rural development programs.</p>
+                <div class="click-hint">Click for positions & functions <i class="fa-solid fa-arrow-right"></i></div>
+            </div>
+            <div class="career-box" onclick="openModal('spec')">
+                <i class="fa-solid fa-wheelchair-move career-box-icon"></i>
+                <h3 class="career-field-title">Specialized Populations</h3>
+                <p style="color: var(--cream-accent); font-size: 0.88rem; margin-bottom: 15px;">Senior citizen care, PWD programs, gender-based violence, and correctional reintegration.</p>
+                <div class="click-hint">Click for positions & functions <i class="fa-solid fa-arrow-right"></i></div>
             </div>
         </div>
     </section>
 
-    <!-- HALL OF FAME (INTERACTIVE CLICK POP-UPS) -->
+    <!-- HALL OF FAME -->
     <section class="section" id="hall-of-fame">
         <div class="section-header">
             <div class="section-subtitle">Academic Excellence</div>
@@ -526,8 +594,21 @@
             <span class="modal-close-btn" onclick="closeModal()">&times;</span>
             <div class="modal-header-tag" id="modalTag">Career Pathway</div>
             <h2 class="modal-title" id="modalTitle">Title Here</h2>
-            <p class="modal-body-text" id="modalDesc">Description text goes here.</p>
-            <div class="modal-highlights" id="modalHighlight">Key Impact & Roles</div>
+            
+            <div class="modal-section-block">
+                <div class="modal-section-label">Possible Settings:</div>
+                <p class="modal-body-text" id="modalSettings"></p>
+            </div>
+
+            <div class="modal-section-block">
+                <div class="modal-section-label">Possible Positions:</div>
+                <p class="modal-body-text" id="modalPositions"></p>
+            </div>
+
+            <div class="modal-section-block">
+                <div class="modal-section-label">Typical Functions:</div>
+                <p class="modal-body-text" id="modalFunctions"></p>
+            </div>
         </div>
     </div>
 
@@ -777,26 +858,64 @@
         <p>&copy; 2026 Christian Ray Epan. All Rights Reserved.</p>
     </footer>
 
-    <!-- JAVASCRIPT -->
+    <!-- JAVASCRIPT WITH COMPLETE CAREER PATHWAY DETAILS FROM DOCUMENT -->
     <script>
         const pathwayData = {
             gov: {
-                tag: "Government Sector",
-                title: "Government Social Welfare",
-                desc: "Social workers in government agencies deliver essential public welfare services, evaluate case eligibility for national aid programs (such as 4Ps), and implement community protection policies.",
-                highlight: "Key Workplaces: DSWD, City/Municipal Social Welfare Offices (CSWDO/MSWDO), BJMP, and Juvenile Justice Centers."
+                tag: "Government Practice",
+                title: "Government Social Welfare & Development",
+                settings: "DSWD, Local Government Units (LGUs), Municipal or City Social Welfare and Development Offices, and Provincial Social Welfare Offices.",
+                positions: "Social Welfare Officer, Municipal/City Social Welfare Officer, Case Manager, Disaster Response & Emergency Assistance Worker, Community-Based Program Officer, Social Welfare Program Coordinator.",
+                functions: "Social case assessment, intervention planning, crisis response, referrals, social protection, and program monitoring."
             },
             ngo: {
-                tag: "Non-Governmental Sector",
-                title: "NGOs & Civil Society",
-                desc: "Working with non-profit organizations, international development agencies, and humanitarian foundations to drive grassroot initiatives, human rights advocacy, and sustainable community development.",
-                highlight: "Key Workplaces: Kalipay Negrense Foundation, UNICEF Philippines, Red Cross, and local community shelters."
+                tag: "Civil Society Practice",
+                title: "Non-Government Organizations & Civil Society",
+                settings: "NGOs, foundations, charitable institutions, and advocacy organizations.",
+                positions: "Project/Program Officer, Community Development Worker, Case Worker, Child Protection Officer, Advocacy & Partnership Officer, MEAL (Monitoring, Evaluation, Accountability & Learning) Officer.",
+                functions: "Community organizing, rights-based programming, resource mobilization, program implementation, and evaluation."
             },
             med: {
-                tag: "Healthcare Sector",
-                title: "Medical & Clinical Social Work",
-                desc: "Healthcare social workers support patients and families dealing with severe illnesses, managing hospital discharge planning, providing crisis counseling, and securing financial assistance for treatment.",
-                highlight: "Key Workplaces: Regional Hospitals, Psychiatric Rehabilitation Facilities, Dialysis Centers, and Hospice Care."
+                tag: "Healthcare Practice",
+                title: "Medical & Healthcare Social Work",
+                settings: "Public and private hospitals, rehabilitation centers, and healthcare facilities.",
+                positions: "Medical Social Worker, Patient & Family Support Worker, Hospital Case Manager, Social Service or Patient Assistance Officer.",
+                functions: "Psychosocial assessment, discharge planning, resource referrals, patient assistance, and coordination with multidisciplinary healthcare teams."
+            },
+            child: {
+                tag: "Child Protection",
+                title: "Child Welfare & Residential Care",
+                settings: "Residential care facilities, child-caring agencies, and adoption/foster care services.",
+                positions: "Child & Family Social Worker, Residential Social Worker, Child Protection Case Worker, Family Reintegration Worker, Adoption or Foster Care Program Worker.",
+                functions: "Child and family assessment, case conferences, individualized intervention plans, safeguarding, and family reunification support."
+            },
+            school: {
+                tag: "Educational Practice",
+                title: "Schools, Universities, & Youth Services",
+                settings: "Educational institutions, student affairs offices, and youth-serving organizations.",
+                positions: "Student Welfare/Services Officer, Youth Development Program Officer, Student Support Case Worker, School-Based Social Worker.",
+                functions: "Student welfare, psychosocial support, referrals, family coordination, inclusion, and prevention programs."
+            },
+            drrm: {
+                tag: "Humanitarian Practice",
+                title: "Disaster Risk Reduction & Humanitarian Response",
+                settings: "LGUs, humanitarian organizations, and disaster response agencies.",
+                positions: "Disaster Response Social Worker, Humanitarian Case Worker, Emergency Assistance Officer, Psychosocial Support Program Worker, Community Resilience Officer.",
+                functions: "Needs assessment, relief coordination, protection of vulnerable populations, psychosocial support, and recovery planning."
+            },
+            comm: {
+                tag: "Advocacy Practice",
+                title: "Community Development & Social Advocacy",
+                settings: "Barangays, people's organizations, Indigenous Peoples' communities, and rural development programs.",
+                positions: "Community Organizer, Community Development Officer, Social Mobilization Officer, Human Rights/Social Justice Program Officer, Livelihood Project Officer.",
+                functions: "Participatory needs assessment, community capacity-building, advocacy, organizing, and strengthening access to social services."
+            },
+            spec: {
+                tag: "Specialized Practice",
+                title: "Specialized Populations & Social Protection",
+                settings: "Senior citizen services, PWD programs, gender-based violence services, substance-use recovery centers, and correctional reintegration services.",
+                positions: "PWD/Disability Inclusion Program Officer, Older Persons' Welfare Worker, Gender-Based Violence Case Worker, Rehabilitation Case Worker, Family Welfare Officer.",
+                functions: "Individualized support, protection planning, rehabilitation coordination, rights advocacy, and social reintegration."
             }
         };
 
@@ -804,16 +923,18 @@
             const data = pathwayData[type];
             document.getElementById('modalTag').innerText = data.tag;
             document.getElementById('modalTitle').innerText = data.title;
-            document.getElementById('modalDesc').innerText = data.desc;
-            document.getElementById('modalHighlight').innerText = data.highlight;
+            document.getElementById('modalSettings').innerText = data.settings;
+            document.getElementById('modalPositions').innerText = data.positions;
+            document.getElementById('modalFunctions').innerText = data.functions;
             document.getElementById('infoModal').classList.add('active');
         }
 
         function openHofModal(name, rank, desc) {
             document.getElementById('modalTag').innerText = "Licensure Exam Topnotcher";
             document.getElementById('modalTitle').innerText = name;
-            document.getElementById('modalDesc').innerText = desc;
-            document.getElementById('modalHighlight').innerText = "PRC SWLE Honor: " + rank;
+            document.getElementById('modalSettings').innerText = "University of Negros Occidental - Recoletos (UNO-R)";
+            document.getElementById('modalPositions').innerText = "Registered Social Worker (RSW)";
+            document.getElementById('modalFunctions').innerText = desc + " (" + rank + ")";
             document.getElementById('infoModal').classList.add('active');
         }
 
