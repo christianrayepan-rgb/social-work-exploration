@@ -137,15 +137,73 @@
         .perf-table td { padding: 12px; border: 1px solid rgba(42, 27, 61, 0.1); }
         .perf-highlight-row { background-color: rgba(212, 175, 55, 0.15) !important; font-weight: 700; }
 
-        .careers-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; margin-top: 30px; }
-        .career-box { background: rgba(59, 35, 84, 0.7); border: 1px solid var(--border-light); border-radius: 20px; padding: 30px; transition: all 0.3s ease; }
-        .career-box-icon { font-size: 2.2rem; color: var(--accent-gold); margin-bottom: 15px; }
-        .career-field-title { font-family: var(--font-serif); font-size: 1.25rem; color: var(--cream-bg); margin-bottom: 8px; }
+        /* FULLY INTERACTIVE & RESPONSIVE CAREER PATHWAYS */
+        .careers-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-top: 30px; }
+        .career-box {
+            background: rgba(59, 35, 84, 0.7);
+            border: 1px solid var(--border-light);
+            border-radius: 20px;
+            padding: 35px 30px;
+            transition: all 0.35 ease;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            position: relative;
+            overflow: hidden;
+        }
+        .career-box::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 4px; height: 100%;
+            background: var(--accent-gold);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .career-box:hover {
+            transform: translateY(-8px);
+            background: rgba(59, 35, 84, 0.95);
+            border-color: var(--accent-gold);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+        }
+        .career-box:hover::before { opacity: 1; }
+        .career-box-icon { font-size: 2.5rem; color: var(--accent-gold); margin-bottom: 20px; transition: transform 0.3s ease; }
+        .career-box:hover .career-box-icon { transform: scale(1.15); }
+        .career-field-title { font-family: var(--font-serif); font-size: 1.3rem; color: var(--cream-bg); margin-bottom: 10px; }
 
+        /* FULLY INTERACTIVE & RESPONSIVE HALL OF FAME */
         .hof-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
-        .hof-card { background: #ffffff; border-radius: 20px; padding: 30px; text-align: center; border: 2px solid var(--accent-gold); box-shadow: 0 8px 25px rgba(0,0,0,0.06); }
-        .hof-badge { width: 70px; height: 70px; background: var(--bg-dark-violet); color: var(--accent-gold); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; margin: 0 auto 15px; border: 2px solid var(--accent-gold); }
-        .hof-name { font-family: var(--font-serif); font-size: 1.15rem; color: var(--bg-dark-violet); font-weight: 700; }
+        .hof-card {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 35px 25px;
+            text-align: center;
+            border: 2px solid var(--accent-gold);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+            transition: all 0.35s ease;
+            cursor: pointer;
+        }
+        .hof-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(42, 27, 61, 0.15);
+            background: #faf8fe;
+            border-color: var(--bg-dark-violet);
+        }
+        .hof-badge {
+            width: 75px; height: 75px;
+            background: var(--bg-dark-violet);
+            color: var(--accent-gold);
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 2rem; margin: 0 auto 20px;
+            border: 2px solid var(--accent-gold);
+            transition: transform 0.3s ease, background 0.3s ease;
+        }
+        .hof-card:hover .hof-badge {
+            transform: rotate(10deg) scale(1.1);
+            background: var(--bg-card-violet);
+        }
+        .hof-name { font-family: var(--font-serif); font-size: 1.2rem; color: var(--bg-dark-violet); font-weight: 700; margin-bottom: 6px; }
         .hof-rank { font-size: 0.85rem; color: var(--accent-gold); font-weight: 700; text-transform: uppercase; margin-bottom: 8px; }
 
         .quiz-container { max-width: 800px; margin: 0 auto; background: rgba(59, 35, 84, 0.95); border-radius: 30px; padding: 40px; border: 1px solid var(--border-light); }
@@ -329,68 +387,68 @@
         </div>
     </section>
 
-    <!-- CAREERS SECTION -->
+    <!-- CAREERS SECTION (FULLY CLICKABLE & RESPONSIVE CARDS) -->
     <section class="section section-dark" id="careers">
         <div class="section-header">
             <div class="section-subtitle">Career Pathways</div>
             <h2 class="section-title">WHERE CAN A BSSW DEGREE TAKE YOU?</h2>
         </div>
         <div class="careers-container">
-            <div class="career-box">
+            <a href="#activities" class="career-box">
                 <i class="fa-solid fa-building-flag career-box-icon"></i>
                 <h3 class="career-field-title">Government Social Welfare</h3>
                 <p style="color: var(--cream-accent); font-size: 0.88rem;">DSWD, LGU Social Welfare Offices, and Municipal Social Development.</p>
-            </div>
-            <div class="career-box">
+            </a>
+            <a href="#activities" class="career-box">
                 <i class="fa-solid fa-hand-holding-heart career-box-icon"></i>
                 <h3 class="career-field-title">NGOs & Civil Society</h3>
                 <p style="color: var(--cream-accent); font-size: 0.88rem;">Foundations, charitable institutions, and non-profit organizations.</p>
-            </div>
-            <div class="career-box">
+            </a>
+            <a href="#activities" class="career-box">
                 <i class="fa-solid fa-hospital-user career-box-icon"></i>
                 <h3 class="career-field-title">Medical & Healthcare</h3>
                 <p style="color: var(--cream-accent); font-size: 0.88rem;">Public and private hospitals, clinics, and rehabilitation facilities.</p>
-            </div>
+            </a>
         </div>
     </section>
 
-    <!-- HALL OF FAME -->
+    <!-- HALL OF FAME (FULLY CLICKABLE & RESPONSIVE CARDS) -->
     <section class="section" id="hall-of-fame">
         <div class="section-header">
             <div class="section-subtitle">Academic Excellence</div>
             <h2 class="section-title">Hall of Famers (PRC SWLE Topnotchers)</h2>
         </div>
         <div class="hof-grid">
-            <div class="hof-card">
+            <a href="#performance" class="hof-card">
                 <div class="hof-badge"><i class="fa-solid fa-trophy"></i></div>
                 <div class="hof-name">Julian Mae G. Bico, RSW</div>
                 <div class="hof-rank">TOP 7 NATIONAL PLACER (92.00%)</div>
-            </div>
-            <div class="hof-card">
+            </a>
+            <a href="#performance" class="hof-card">
                 <div class="hof-badge"><i class="fa-solid fa-trophy"></i></div>
                 <div class="hof-name">Jobeth Adara C. Escander, RSW</div>
                 <div class="hof-rank">TOP 8 NATIONAL PLACER (91.80%)</div>
-            </div>
-            <div class="hof-card">
+            </a>
+            <a href="#performance" class="hof-card">
                 <div class="hof-badge"><i class="fa-solid fa-medal"></i></div>
                 <div class="hof-name">Janine N. Padrones, RSW</div>
                 <div class="hof-rank">TOP 10 NATIONAL PLACER (89.00%)</div>
-            </div>
-            <div class="hof-card">
+            </a>
+            <a href="#performance" class="hof-card">
                 <div class="hof-badge"><i class="fa-solid fa-award"></i></div>
                 <div class="hof-name">Izzy A. Verdeprado, RSW</div>
                 <div class="hof-rank">TOP 6 NATIONAL PLACER (86.00%)</div>
-            </div>
-            <div class="hof-card">
+            </a>
+            <a href="#performance" class="hof-card">
                 <div class="hof-badge"><i class="fa-solid fa-award"></i></div>
                 <div class="hof-name">Kaye Eunice Lamera, RSW</div>
                 <div class="hof-rank">TOP 9 NATIONAL PLACER (81.40%)</div>
-            </div>
-            <div class="hof-card">
+            </a>
+            <a href="#performance" class="hof-card">
                 <div class="hof-badge"><i class="fa-solid fa-crown"></i></div>
                 <div class="hof-name">Dr. Richelle Verdeprado-Mangga, RSW, MSSW</div>
                 <div class="hof-rank">TOP 2 NATIONAL PLACER (86.40%)</div>
-            </div>
+            </a>
         </div>
     </section>
 
@@ -417,7 +475,7 @@
         </div>
     </section>
 
-    <!-- ACTIVITIES & EVENTS GALLERY SECTION (ALL 29 EVENTS) -->
+    <!-- ACTIVITIES & EVENTS GALLERY SECTION -->
     <section class="section" id="activities">
         <div class="section-header">
             <div class="section-subtitle">Official Records & Events</div>
