@@ -38,524 +38,155 @@
             overflow-x: hidden;
         }
 
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
+        a { text-decoration: none; color: inherit; }
 
-        /* HEADER & NAV */
         header {
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
+            top: 0; left: 0; width: 100%;
             z-index: 1000;
             background: rgba(42, 27, 61, 0.94);
             backdrop-filter: blur(10px);
             padding: 12px 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            display: flex; justify-content: space-between; align-items: center;
             border-bottom: 1px solid var(--border-light);
         }
 
-        .logo-container {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
+        .logo-container { display: flex; align-items: center; gap: 12px; }
 
         .header-logo-img {
-            width: 52px;
-            height: 52px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 2px solid var(--accent-gold);
-            background-color: #ffffff;
-            flex-shrink: 0;
+            width: 52px; height: 52px; border-radius: 50%;
+            object-fit: cover; border: 2px solid var(--accent-gold);
+            background-color: #ffffff; flex-shrink: 0;
         }
 
         .logo-title {
-            font-family: var(--font-serif);
-            color: var(--cream-bg);
-            font-size: 1.15rem;
-            letter-spacing: 1.5px;
-            font-weight: 700;
+            font-family: var(--font-serif); color: var(--cream-bg);
+            font-size: 1.15rem; letter-spacing: 1.5px; font-weight: 700;
         }
 
         .logo-subtitle {
-            font-size: 0.65rem;
-            color: var(--accent-gold);
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
+            font-size: 0.65rem; color: var(--accent-gold);
+            letter-spacing: 1.5px; text-transform: uppercase;
         }
 
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 20px;
-        }
+        nav ul { display: flex; list-style: none; gap: 20px; }
+        nav a { color: var(--cream-bg); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; transition: color 0.3s ease; }
+        nav a:hover { color: var(--accent-gold); }
 
-        nav a {
-            color: var(--cream-bg);
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: color 0.3s ease;
-        }
+        .nav-actions { display: flex; align-items: center; gap: 15px; }
 
-        nav a:hover {
-            color: var(--accent-gold);
+        .search-box { position: relative; display: flex; align-items: center; }
+        .search-box input {
+            background: rgba(248, 246, 252, 0.1);
+            border: 1px solid var(--border-light);
+            padding: 6px 12px 6px 30px; border-radius: 20px;
+            color: var(--cream-bg); font-size: 0.8rem; outline: none;
+            width: 140px; transition: width 0.3s ease;
         }
-
-        .nav-actions {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
+        .search-box input:focus { width: 200px; background: rgba(248, 246, 252, 0.2); }
+        .search-box i { position: absolute; left: 10px; color: var(--accent-gold); font-size: 0.8rem; }
 
         .btn-primary {
-            background-color: var(--bg-card-violet);
-            color: var(--cream-bg);
-            border: 1px solid var(--accent-gold);
-            padding: 8px 18px;
-            border-radius: 30px;
-            font-family: var(--font-sans);
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 6px;
+            background-color: var(--bg-card-violet); color: var(--cream-bg);
+            border: 1px solid var(--accent-gold); padding: 8px 18px;
+            border-radius: 30px; font-family: var(--font-sans);
+            font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px;
+            cursor: pointer; transition: all 0.3s ease;
+            display: inline-flex; align-items: center; justify-content: center; gap: 6px;
         }
-
-        .btn-primary:hover {
-            background-color: var(--accent-gold);
-            color: var(--bg-dark-violet);
-        }
+        .btn-primary:hover { background-color: var(--accent-gold); color: var(--bg-dark-violet); }
 
         .btn-gold {
-            background-color: var(--accent-gold);
-            color: var(--bg-dark-violet);
-            padding: 10px 20px;
-            border-radius: 30px;
-            font-weight: 600;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            font-size: 0.8rem;
-            cursor: pointer;
-            border: none;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            transition: all 0.3s ease;
+            background-color: var(--accent-gold); color: var(--bg-dark-violet);
+            padding: 10px 20px; border-radius: 30px; font-weight: 600;
+            letter-spacing: 1px; text-transform: uppercase; font-size: 0.8rem;
+            cursor: pointer; border: none; display: inline-flex; align-items: center;
+            justify-content: center; gap: 8px; transition: all 0.3s ease;
         }
+        .btn-gold:hover { background-color: var(--cream-bg); }
 
-        .btn-gold:hover {
-            background-color: var(--cream-bg);
-        }
-
-        /* HERO SECTION */
         .hero-section {
             height: 100vh;
             background: linear-gradient(rgba(42, 27, 61, 0.85), rgba(42, 27, 61, 0.95)),
-                        url('https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 0 20px;
-            color: var(--cream-bg);
+                        url('image1.jpg') center/cover no-repeat;
+            display: flex; flex-direction: column; justify-content: center;
+            align-items: center; text-align: center; padding: 0 20px; color: var(--cream-bg);
         }
 
-        .hero-tagline {
-            font-size: 0.85rem;
-            letter-spacing: 4px;
-            text-transform: uppercase;
-            color: var(--accent-gold);
-            margin-bottom: 15px;
-        }
+        .hero-tagline { font-size: 0.85rem; letter-spacing: 4px; text-transform: uppercase; color: var(--accent-gold); margin-bottom: 15px; }
+        .hero-title { font-family: var(--font-serif); font-size: 3.5rem; letter-spacing: 4px; margin-bottom: 20px; line-height: 1.2; font-weight: 400; }
+        .hero-desc { max-width: 650px; font-size: 1.05rem; margin-bottom: 35px; color: var(--cream-accent); }
+        .hero-buttons { display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; }
 
-        .hero-title {
-            font-family: var(--font-serif);
-            font-size: 3.5rem;
-            letter-spacing: 4px;
-            margin-bottom: 20px;
-            line-height: 1.2;
-            font-weight: 400;
-        }
+        .section { padding: 90px 8%; }
+        .section-header { text-align: center; margin-bottom: 60px; }
+        .section-subtitle { font-size: 0.75rem; letter-spacing: 3px; text-transform: uppercase; color: var(--accent-gold); margin-bottom: 10px; font-weight: 600; }
+        .section-title { font-family: var(--font-serif); font-size: 2.3rem; color: var(--bg-dark-violet); letter-spacing: 2px; position: relative; display: inline-block; }
+        .section-title::after { content: ''; position: absolute; bottom: -12px; left: 50%; transform: translateX(-50%); width: 60px; height: 2px; background-color: var(--accent-gold); }
 
-        .hero-desc {
-            max-width: 650px;
-            font-size: 1.05rem;
-            margin-bottom: 35px;
-            color: var(--cream-accent);
-        }
+        .section-dark { background-color: var(--bg-dark-violet); color: var(--cream-bg); }
+        .section-dark .section-title { color: var(--cream-bg); }
 
-        .hero-buttons {
-            display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
+        .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; }
+        .about-card { background: #ffffff; padding: 40px; border-radius: 25px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); border: 1px solid var(--border-dark); }
+        .about-card h3 { font-family: var(--font-serif); font-size: 1.45rem; color: var(--bg-dark-violet); margin-bottom: 15px; }
 
-        /* SECTIONS */
-        .section {
-            padding: 90px 8%;
-        }
+        .performance-table-wrapper { background: #ffffff; border-radius: 20px; padding: 30px; border: 2px solid var(--border-dark); overflow-x: auto; }
+        .perf-table { width: 100%; border-collapse: collapse; text-align: center; }
+        .perf-table th { background-color: var(--bg-dark-violet); color: var(--accent-gold); font-family: var(--font-serif); padding: 14px; border: 1px solid var(--border-light); }
+        .perf-table td { padding: 12px; border: 1px solid rgba(42, 27, 61, 0.1); }
+        .perf-highlight-row { background-color: rgba(212, 175, 55, 0.15) !important; font-weight: 700; }
 
-        .section-header {
-            text-align: center;
-            margin-bottom: 50px;
-        }
+        .careers-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; margin-top: 30px; }
+        .career-box { background: rgba(59, 35, 84, 0.7); border: 1px solid var(--border-light); border-radius: 20px; padding: 30px; transition: all 0.3s ease; }
+        .career-box-icon { font-size: 2.2rem; color: var(--accent-gold); margin-bottom: 15px; }
+        .career-field-title { font-family: var(--font-serif); font-size: 1.25rem; color: var(--cream-bg); margin-bottom: 8px; }
 
-        .section-subtitle {
-            font-size: 0.75rem;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            color: var(--accent-gold);
-            margin-bottom: 10px;
-            font-weight: 600;
-        }
+        .hof-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
+        .hof-card { background: #ffffff; border-radius: 20px; padding: 30px; text-align: center; border: 2px solid var(--accent-gold); box-shadow: 0 8px 25px rgba(0,0,0,0.06); }
+        .hof-badge { width: 70px; height: 70px; background: var(--bg-dark-violet); color: var(--accent-gold); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; margin: 0 auto 15px; border: 2px solid var(--accent-gold); }
+        .hof-name { font-family: var(--font-serif); font-size: 1.15rem; color: var(--bg-dark-violet); font-weight: 700; }
+        .hof-rank { font-size: 0.85rem; color: var(--accent-gold); font-weight: 700; text-transform: uppercase; margin-bottom: 8px; }
 
-        .section-title {
-            font-family: var(--font-serif);
-            font-size: 2.3rem;
-            color: var(--bg-dark-violet);
-            letter-spacing: 2px;
-            position: relative;
-            display: inline-block;
-        }
+        .quiz-container { max-width: 800px; margin: 0 auto; background: rgba(59, 35, 84, 0.95); border-radius: 30px; padding: 40px; border: 1px solid var(--border-light); }
+        .quiz-progress { height: 6px; background: rgba(248, 246, 252, 0.1); border-radius: 3px; margin-bottom: 30px; overflow: hidden; }
+        .quiz-progress-bar { height: 100%; width: 0%; background: var(--accent-gold); transition: width 0.4s ease; }
+        .quiz-question-title { font-family: var(--font-serif); font-size: 1.3rem; margin-bottom: 25px; color: var(--cream-bg); }
+        .quiz-options { display: flex; flex-direction: column; gap: 12px; }
+        .quiz-option-btn { background: rgba(248, 246, 252, 0.05); border: 1px solid var(--border-light); padding: 14px 20px; border-radius: 15px; color: var(--cream-bg); text-align: left; font-size: 0.9rem; cursor: pointer; transition: all 0.3s ease; display: flex; align-items: center; justify-content: space-between; }
+        .quiz-option-btn:hover { background: var(--accent-gold); color: var(--bg-dark-violet); }
+        .quiz-result-box { display: none; text-align: center; }
+        .result-badge { display: inline-block; background: var(--accent-gold); color: var(--bg-dark-violet); padding: 8px 20px; border-radius: 20px; font-weight: 700; margin-bottom: 20px; text-transform: uppercase; }
 
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -12px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 60px;
-            height: 2px;
-            background-color: var(--accent-gold);
-        }
+        .pdf-banner { background: var(--bg-card-violet); border: 2px solid var(--accent-gold); border-radius: 20px; padding: 25px; text-align: center; color: var(--cream-bg); margin-bottom: 40px; }
+        .cards-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(310px, 1fr)); gap: 25px; }
+        .card-item { background: #ffffff; border-radius: 20px; overflow: hidden; box-shadow: 0 8px 25px rgba(0,0,0,0.06); border: 1px solid var(--border-dark); display: flex; flex-direction: column; transition: transform 0.3s ease, border-color 0.3s ease; }
+        .card-item:hover { transform: translateY(-5px); border-color: var(--accent-gold); }
+        .card-image-wrapper { position: relative; height: 200px; background-color: var(--bg-dark-violet); overflow: hidden; display: flex; align-items: center; justify-content: center; }
+        .card-image-wrapper img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease; }
+        .card-item:hover .card-image-wrapper img { transform: scale(1.05); }
+        .card-tag { position: absolute; top: 12px; right: 12px; background: var(--accent-gold); color: var(--bg-dark-violet); font-size: 0.7rem; font-weight: 700; padding: 4px 10px; border-radius: 12px; text-transform: uppercase; box-shadow: 0 2px 8px rgba(0,0,0,0.2); }
+        .card-body { padding: 22px; display: flex; flex-direction: column; flex-grow: 1; }
+        .card-title { font-family: var(--font-serif); font-size: 1.1rem; color: var(--bg-dark-violet); margin-bottom: 10px; line-height: 1.4; }
+        .card-action-btns { display: flex; flex-direction: column; gap: 8px; margin-top: auto; }
 
-        .section-dark {
-            background-color: var(--bg-dark-violet);
-            color: var(--cream-bg);
-        }
+        .video-placeholder { background: linear-gradient(135deg, #2a1b3d, #3b2354); color: var(--accent-gold); width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; }
+        .video-placeholder i { font-size: 3rem; }
+        .video-placeholder span { font-size: 0.8rem; font-weight: 600; letter-spacing: 1px; color: var(--cream-bg); }
 
-        .section-dark .section-title {
-            color: var(--cream-bg);
-        }
-
-        /* ABOUT GRID */
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-        }
-
-        .about-card {
-            background: #ffffff;
-            padding: 40px;
-            border-radius: 25px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            border: 1px solid var(--border-dark);
-        }
-
-        .about-card h3 {
-            font-family: var(--font-serif);
-            font-size: 1.45rem;
-            color: var(--bg-dark-violet);
-            margin-bottom: 15px;
-        }
-
-        /* PERFORMANCE TABLE */
-        .performance-table-wrapper {
-            background: #ffffff;
-            border-radius: 20px;
-            padding: 30px;
-            border: 2px solid var(--border-dark);
-            overflow-x: auto;
-        }
-
-        .perf-table {
-            width: 100%;
-            border-collapse: collapse;
-            text-align: center;
-        }
-
-        .perf-table th {
-            background-color: var(--bg-dark-violet);
-            color: var(--accent-gold);
-            font-family: var(--font-serif);
-            padding: 14px;
-            border: 1px solid var(--border-light);
-        }
-
-        .perf-table td {
-            padding: 12px;
-            border: 1px solid rgba(42, 27, 61, 0.1);
-        }
-
-        .perf-highlight-row {
-            background-color: rgba(212, 175, 55, 0.15) !important;
-            font-weight: 700;
-        }
-
-        /* CAREER PATHWAYS */
-        .careers-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-            margin-top: 30px;
-        }
-
-        .career-box {
-            background: rgba(59, 35, 84, 0.7);
-            border: 1px solid var(--border-light);
-            border-radius: 20px;
-            padding: 30px;
-            transition: all 0.3s ease;
-        }
-
-        .career-box-icon {
-            font-size: 2.2rem;
-            color: var(--accent-gold);
-            margin-bottom: 15px;
-        }
-
-        .career-field-title {
-            font-family: var(--font-serif);
-            font-size: 1.25rem;
-            color: var(--cream-bg);
-            margin-bottom: 8px;
-        }
-
-        /* HALL OF FAME */
-        .hof-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-        }
-
-        .hof-card {
-            background: #ffffff;
-            border-radius: 20px;
-            padding: 30px;
-            text-align: center;
-            border: 2px solid var(--accent-gold);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.06);
-        }
-
-        .hof-badge {
-            width: 70px;
-            height: 70px;
-            background: var(--bg-dark-violet);
-            color: var(--accent-gold);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.8rem;
-            margin: 0 auto 15px;
-            border: 2px solid var(--accent-gold);
-        }
-
-        .hof-name {
-            font-family: var(--font-serif);
-            font-size: 1.15rem;
-            color: var(--bg-dark-violet);
-            font-weight: 700;
-        }
-
-        .hof-rank {
-            font-size: 0.85rem;
-            color: var(--accent-gold);
-            font-weight: 700;
-            text-transform: uppercase;
-            margin-bottom: 8px;
-        }
-
-        /* QUIZ CONTAINER */
-        .quiz-container {
-            max-width: 800px;
-            margin: 0 auto;
-            background: rgba(59, 35, 84, 0.95);
-            border-radius: 30px;
-            padding: 40px;
-            border: 1px solid var(--border-light);
-        }
-
-        .quiz-progress {
-            height: 6px;
-            background: rgba(248, 246, 252, 0.1);
-            border-radius: 3px;
-            margin-bottom: 30px;
-            overflow: hidden;
-        }
-
-        .quiz-progress-bar {
-            height: 100%;
-            width: 0%;
-            background: var(--accent-gold);
-            transition: width 0.4s ease;
-        }
-
-        .quiz-question-title {
-            font-family: var(--font-serif);
-            font-size: 1.3rem;
-            margin-bottom: 25px;
-            color: var(--cream-bg);
-        }
-
-        .quiz-options {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
-
-        .quiz-option-btn {
-            background: rgba(248, 246, 252, 0.05);
-            border: 1px solid var(--border-light);
-            padding: 14px 20px;
-            border-radius: 15px;
-            color: var(--cream-bg);
-            text-align: left;
-            font-size: 0.9rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .quiz-option-btn:hover {
-            background: var(--accent-gold);
-            color: var(--bg-dark-violet);
-        }
-
-        .quiz-result-box {
-            display: none;
-            text-align: center;
-        }
-
-        .result-badge {
-            display: inline-block;
-            background: var(--accent-gold);
-            color: var(--bg-dark-violet);
-            padding: 8px 20px;
-            border-radius: 20px;
-            font-weight: 700;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-        }
-
-        /* DIRECT EMBEDDED PDF VIEWER STYLING */
-        .pdf-banner {
-            background: var(--bg-card-violet);
-            border: 2px solid var(--accent-gold);
-            border-radius: 20px;
-            padding: 25px;
-            text-align: center;
-            color: var(--cream-bg);
-            margin-bottom: 30px;
-        }
-
-        .pdf-frame-wrapper {
-            width: 100%;
-            height: 850px;
-            background: #ffffff;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-            border: 2px solid var(--accent-gold);
-        }
-
-        .pdf-frame-wrapper iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-
-        /* CONTACT SECTION */
-        .contact-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-            align-items: center;
-        }
-
-        .qr-card {
-            background: #ffffff;
-            border-radius: 25px;
-            padding: 40px;
-            text-align: center;
-            border: 1px solid var(--border-dark);
-        }
-
-        .qr-box {
-            width: 190px;
-            height: 190px;
-            margin: 0 auto 20px;
-            background: #fff;
-            padding: 10px;
-            border: 2px solid var(--accent-gold);
-            border-radius: 15px;
-        }
-
-        .qr-box img {
-            width: 100%;
-            height: 100%;
-        }
-
-        .contact-details {
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
-            margin-bottom: 30px;
-        }
-
-        .contact-item-link {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            font-size: 0.95rem;
-            color: var(--cream-accent);
-        }
-
-        .contact-item-link i {
-            color: var(--accent-gold);
-            font-size: 1.25rem;
-            width: 25px;
-            text-align: center;
-        }
-
-        footer {
-            background: #1c102b;
-            color: var(--cream-accent);
-            padding: 40px 5% 20px;
-            text-align: center;
-            border-top: 1px solid var(--border-light);
-        }
+        .contact-container { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
+        .qr-card { background: #ffffff; border-radius: 25px; padding: 40px; text-align: center; border: 1px solid var(--border-dark); }
+        .qr-box { width: 190px; height: 190px; margin: 0 auto 20px; background: #fff; padding: 10px; border: 2px solid var(--accent-gold); border-radius: 15px; }
+        .qr-box img { width: 100%; height: 100%; }
+        .contact-details { display: flex; flex-direction: column; gap: 16px; margin-bottom: 30px; }
+        .contact-item-link { display: flex; align-items: center; gap: 15px; font-size: 0.95rem; color: var(--cream-accent); }
+        .contact-item-link i { color: var(--accent-gold); font-size: 1.25rem; width: 25px; text-align: center; }
+        footer { background: #1c102b; color: var(--cream-accent); padding: 40px 5% 20px; text-align: center; border-top: 1px solid var(--border-light); }
 
         @media (max-width: 992px) {
-            .about-grid, .contact-container {
-                grid-template-columns: 1fr;
-            }
-            .hero-title {
-                font-size: 2.5rem;
-            }
-            .pdf-frame-wrapper {
-                height: 600px;
-            }
-            nav {
-                display: none;
-            }
+            .about-grid, .contact-container { grid-template-columns: 1fr; }
+            .hero-title { font-size: 2.5rem; }
+            nav { display: none; }
         }
     </style>
 </head>
@@ -584,6 +215,10 @@
         </nav>
 
         <div class="nav-actions">
+            <div class="search-box">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" id="searchInput" placeholder="Search..." onkeyup="filterWebsiteContent()">
+            </div>
             <a href="#assessment" class="btn-primary">Take Quiz</a>
         </div>
     </header>
@@ -689,7 +324,7 @@
                         <td>44</td>
                         <td>28</td>
                         <td>63.64%</td>
-                        <td>63.64%</td>
+                        <td>46.31%</td>
                     </tr>
                 </tbody>
             </table>
@@ -784,23 +419,208 @@
         </div>
     </section>
 
-    <!-- ACTIVITIES & EVENTS SECTION (AUTHENTIC EMBEDDED DOCUMENT VIEWER) -->
+    <!-- ACTIVITIES & EVENTS SECTION (EXACT SEQUENTIAL CORRECTION) -->
     <section class="section" id="activities">
         <div class="section-header">
             <div class="section-subtitle">Official Records & Events</div>
-            <h2 class="section-title">Activities & Events Documentation</h2>
+            <h2 class="section-title">Activities & Events Gallery</h2>
         </div>
 
         <div class="pdf-banner">
             <i class="fa-solid fa-file-pdf" style="font-size: 2.5rem; color: var(--accent-gold); margin-bottom: 10px;"></i>
-            <h3 style="font-family: var(--font-serif); font-size: 1.3rem; margin-bottom: 8px;">Interactive Document Reader</h3>
-            <p style="font-size: 0.9rem; color: var(--cream-accent); margin-bottom: 15px;">Explore all authentic program event photos, activity logs, and official records directly inside the reader below.</p>
-            <a href="EVENTS_ ACTIVITIES ( EJ & ANGEL)_compressed.pdf" target="_blank" class="btn-gold"><i class="fa-solid fa-download"></i> Open / Download Full PDF</a>
+            <h3 style="font-family: var(--font-serif); font-size: 1.3rem; margin-bottom: 8px;">Full Event Documentation PDF</h3>
+            <p style="font-size: 0.9rem; color: var(--cream-accent); margin-bottom: 15px;">Access the complete photo gallery, event logs, and official records in a single document.</p>
+            <a href="EVENTS_ ACTIVITIES ( EJ & ANGEL)_compressed.pdf" target="_blank" class="btn-gold"><i class="fa-solid fa-download"></i> Open Full PDF Document</a>
         </div>
 
-        <!-- EMBEDDED PDF VIEWER -->
-        <div class="pdf-frame-wrapper">
-            <iframe src="EVENTS_ ACTIVITIES ( EJ & ANGEL)_compressed.pdf"></iframe>
+        <div class="cards-grid" id="contentCardsGrid">
+            
+            <!-- Event 1 (Page 1) -->
+            <div class="card-item">
+                <div class="card-image-wrapper">
+                    <img src="image1.jpg" alt="Levamen Societatem">
+                    <span class="card-tag">Research</span>
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">Levamen Societatem: Relieving Society through Social Work Research</h3>
+                    <div class="card-action-btns">
+                        <a href="https://www.facebook.com/share/p/1EzjbcjMPP/" target="_blank" class="btn-gold"><i class="fa-brands fa-facebook"></i> View FB Post</a>
+                        <a href="EVENTS_ ACTIVITIES ( EJ & ANGEL)_compressed.pdf" target="_blank" class="btn-primary"><i class="fa-solid fa-file-pdf"></i> View in PDF</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Event 2 (Page 1 - VIDEO ONLY, NO PHOTO IN PDF) -->
+            <div class="card-item">
+                <div class="card-image-wrapper">
+                    <div class="video-placeholder">
+                        <i class="fa-solid fa-circle-play"></i>
+                        <span>WATCH FACEBOOK VIDEO</span>
+                    </div>
+                    <span class="card-tag">Video</span>
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">Mahal ang Magmahal</h3>
+                    <div class="card-action-btns">
+                        <a href="https://www.facebook.com/share/v/16AKDMfGYGp/" target="_blank" class="btn-gold"><i class="fa-brands fa-facebook"></i> Watch Video</a>
+                        <a href="EVENTS_ ACTIVITIES ( EJ & ANGEL)_compressed.pdf" target="_blank" class="btn-primary"><i class="fa-solid fa-file-pdf"></i> View in PDF</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Event 3 (Page 1 - MATCHES image2.jpg) -->
+            <div class="card-item">
+                <div class="card-image-wrapper">
+                    <img src="image2.jpg" alt="SHARED HUMANITY">
+                    <span class="card-tag">Outreach</span>
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">SHARED HUMANITY</h3>
+                    <div class="card-action-btns">
+                        <a href="https://www.facebook.com/share/p/19gi25wsAE/" target="_blank" class="btn-gold"><i class="fa-brands fa-facebook"></i> View FB Post</a>
+                        <a href="EVENTS_ ACTIVITIES ( EJ & ANGEL)_compressed.pdf" target="_blank" class="btn-primary"><i class="fa-solid fa-file-pdf"></i> View in PDF</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Event 4 (Page 2 - MATCHES image3.jpg) -->
+            <div class="card-item">
+                <div class="card-image-wrapper">
+                    <img src="image3.jpg" alt="Metro Bacolod District Jail Visit">
+                    <span class="card-tag">Correctional SW</span>
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">UNO-R Social Work Program and JSWAP UNO-R Chapter visited the Metro Bacolod District Jail Female Dormitory in Brgy. Handumanan, Bacolod City</h3>
+                    <div class="card-action-btns">
+                        <a href="https://www.facebook.com/share/p/19pEtJcrqo/" target="_blank" class="btn-gold"><i class="fa-brands fa-facebook"></i> View FB Post</a>
+                        <a href="EVENTS_ ACTIVITIES ( EJ & ANGEL)_compressed.pdf" target="_blank" class="btn-primary"><i class="fa-solid fa-file-pdf"></i> View in PDF</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Event 5 (Page 2 - MATCHES image4.jpg) -->
+            <div class="card-item">
+                <div class="card-image-wrapper">
+                    <img src="image4.jpg" alt="Women's Month 2026">
+                    <span class="card-tag">Advocacy</span>
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">Our Field Instruction (FI) students joined the celebration of Women's Month 2026</h3>
+                    <div class="card-action-btns">
+                        <a href="https://www.facebook.com/share/p/1CB48SRw4M/" target="_blank" class="btn-gold"><i class="fa-brands fa-facebook"></i> View FB Post</a>
+                        <a href="EVENTS_ ACTIVITIES ( EJ & ANGEL)_compressed.pdf" target="_blank" class="btn-primary"><i class="fa-solid fa-file-pdf"></i> View in PDF</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Event 6 (Page 3 - MATCHES image5.jpg) -->
+            <div class="card-item">
+                <div class="card-image-wrapper">
+                    <img src="image5.jpg" alt="HEALING HEARTS AFTER THE FIRE">
+                    <span class="card-tag">Relief</span>
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">HEALING HEARTS AFTER THE FIRE</h3>
+                    <div class="card-action-btns">
+                        <a href="https://www.facebook.com/share/p/19Rrv2vKUD/" target="_blank" class="btn-gold"><i class="fa-brands fa-facebook"></i> View FB Post</a>
+                        <a href="EVENTS_ ACTIVITIES ( EJ & ANGEL)_compressed.pdf" target="_blank" class="btn-primary"><i class="fa-solid fa-file-pdf"></i> View in PDF</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Event 7 (Page 3 - MATCHES image6.jpg) -->
+            <div class="card-item">
+                <div class="card-image-wrapper">
+                    <img src="image6.jpg" alt="Called to Serve with Purpose">
+                    <span class="card-tag">Leadership</span>
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">Called to Serve with Purpose</h3>
+                    <div class="card-action-btns">
+                        <a href="https://www.facebook.com/share/p/1Dxpukan6Z/" target="_blank" class="btn-gold"><i class="fa-brands fa-facebook"></i> View FB Post</a>
+                        <a href="EVENTS_ ACTIVITIES ( EJ & ANGEL)_compressed.pdf" target="_blank" class="btn-primary"><i class="fa-solid fa-file-pdf"></i> View in PDF</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Event 8 (Page 4 - MATCHES image7.jpg) -->
+            <div class="card-item">
+                <div class="card-image-wrapper">
+                    <img src="image7.jpg" alt="BLESSED TO BE A BLESSING">
+                    <span class="card-tag">Outreach</span>
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">BLESSED TO BE A BLESSING</h3>
+                    <div class="card-action-btns">
+                        <a href="https://www.facebook.com/share/p/1byKbFGL8j/" target="_blank" class="btn-gold"><i class="fa-brands fa-facebook"></i> View FB Post</a>
+                        <a href="EVENTS_ ACTIVITIES ( EJ & ANGEL)_compressed.pdf" target="_blank" class="btn-primary"><i class="fa-solid fa-file-pdf"></i> View in PDF</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Event 9 (Page 4 - VIDEO ONLY, NO PHOTO IN PDF) -->
+            <div class="card-item">
+                <div class="card-image-wrapper">
+                    <div class="video-placeholder">
+                        <i class="fa-solid fa-circle-play"></i>
+                        <span>WATCH FACEBOOK VIDEO</span>
+                    </div>
+                    <span class="card-tag">Video</span>
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">Social Work General Assembly 2025</h3>
+                    <div class="card-action-btns">
+                        <a href="https://www.facebook.com/share/v/1Ew9pv4oHB/" target="_blank" class="btn-gold"><i class="fa-brands fa-facebook"></i> Watch Video</a>
+                        <a href="EVENTS_ ACTIVITIES ( EJ & ANGEL)_compressed.pdf" target="_blank" class="btn-primary"><i class="fa-solid fa-file-pdf"></i> View in PDF</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Event 10 (Page 4 - MATCHES image8.jpg) -->
+            <div class="card-item">
+                <div class="card-image-wrapper">
+                    <img src="image8.jpg" alt="Kalipay Foundation Visit">
+                    <span class="card-tag">Child Welfare</span>
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">First-Year Social Work Students Foster Connections with Children in Foundation Visit</h3>
+                    <div class="card-action-btns">
+                        <a href="https://www.facebook.com/share/p/1Dj8MkjTvY/" target="_blank" class="btn-gold"><i class="fa-brands fa-facebook"></i> View FB Post</a>
+                        <a href="EVENTS_ ACTIVITIES ( EJ & ANGEL)_compressed.pdf" target="_blank" class="btn-primary"><i class="fa-solid fa-file-pdf"></i> View in PDF</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Event 11 (Page 5 - MATCHES image9.jpg) -->
+            <div class="card-item">
+                <div class="card-image-wrapper">
+                    <img src="image9.jpg" alt="Protect Our Forest Initiative">
+                    <span class="card-tag">Eco Advocacy</span>
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">"The trees we plant today are the legacy we leave for tomorrow."</h3>
+                    <div class="card-action-btns">
+                        <a href="https://www.facebook.com/share/p/1HtGMYtzqA/" target="_blank" class="btn-gold"><i class="fa-brands fa-facebook"></i> View FB Post</a>
+                        <a href="EVENTS_ ACTIVITIES ( EJ & ANGEL)_compressed.pdf" target="_blank" class="btn-primary"><i class="fa-solid fa-file-pdf"></i> View in PDF</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Event 12 (Page 5 - MATCHES image10.jpg) -->
+            <div class="card-item">
+                <div class="card-image-wrapper">
+                    <img src="image10.jpg" alt="Mount Kanlaon Eruption Psychosocial Relief">
+                    <span class="card-tag">Disaster Relief</span>
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">Six dedicated Social Work students from the University of Negros Occidental Recoletos volunteered to conduct a Psychosocial Processing Activity for victims of the recent Mount Kanlaon eruption in La Castellana, Negros Occidental.</h3>
+                    <div class="card-action-btns">
+                        <a href="https://www.facebook.com/share/p/1EjmDNi4vJ/" target="_blank" class="btn-gold"><i class="fa-brands fa-facebook"></i> View FB Post</a>
+                        <a href="EVENTS_ ACTIVITIES ( EJ & ANGEL)_compressed.pdf" target="_blank" class="btn-primary"><i class="fa-solid fa-file-pdf"></i> View in PDF</a>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </section>
 
@@ -940,6 +760,16 @@
         }
 
         loadQuestion();
+
+        function filterWebsiteContent() {
+            const query = document.getElementById('searchInput').value.toLowerCase();
+            const cards = document.querySelectorAll('.card-item');
+
+            cards.forEach(card => {
+                const text = card.innerText.toLowerCase();
+                card.style.display = text.includes(query) ? 'flex' : 'none';
+            });
+        }
     </script>
 </body>
 </html>
